@@ -1,0 +1,153 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { Image } from 'astro:assets';
+import equipaImage from '../assets/sobre/images/equipa.jpg';
+import microsoftImage from '../assets/sobre/images/microsoft_image.jpg';
+import servicosImage from '../assets/sobre/images/smart.jpeg';
+---
+
+<Layout title="Sobre - SmartData FEP">
+    
+    <section class="relative bg-[#1e1b4b] text-white pt-12 pb-12 md:pt-28 md:pb-32 px-4 md:px-6 overflow-hidden">
+        <div class="absolute inset-0 z-0">
+             <div class="absolute inset-0 bg-[url('/src/assets/home/images/smart_backgroud.png')] opacity-100 bg-cover bg-center mix-blend-overlay"></div>
+            <div class="absolute inset-0 bg-gradient-to-r from-[#1e1b4b] via-[#1e1b4b]/90 to-transparent"></div>
+        </div>
+        
+        <div class="relative z-10 mx-auto max-w-screen-xl px-4 md:px-10">
+            <div class="inline-block border-l-4 border-blue-400 pl-4 mb-6 md:mb-8">
+                <span class="text-blue-200 uppercase tracking-widest text-xs md:text-sm font-semibold">Sobre Nós</span>
+            </div>
+            
+            <h1 class="text-3xl md:text-6xl lg:text-6xl font-medium leading-tight max-w-5xl">
+                Transforming potential into <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-200 to-indigo-400">competence</span>.
+            </h1>
+            
+            <p class="mt-6 md:mt-8 text-lg md:text-2xl text-gray-300 font-light max-w-3xl leading-relaxed">
+                A SmartData FEP existe para transformar potencial em competência, e competência em impacto — formando a próxima geração de profissionais preparados para liderar na era digital.
+            </p>
+        </div>
+    </section>
+
+    <section class="w-full bg-white">
+    <div class="grid grid-cols-1 md:grid-cols-2 w-full">
+        
+        <div class="flex flex-col justify-center px-6 py-12 md:px-16 md:py-16 lg:px-24 xl:px-32">
+            <h2 class="text-3xl md:text-5xl font-semibold text-indigo-950 mb-6 md:mb-8">Quem Somos</h2>
+            <p class="text-lg md:text-xl font-normal text-indigo-950 text-justify leading-relaxed">
+                Somos uma organização estudantil orientada para a inovação, dedicada ao desenvolvimento de competências avançadas em <span class="font-bold">Inteligência Artificial (IA)</span> e <span class="font-bold">Business Intelligence (BI)</span>.
+            </p>
+        </div>
+        <div class="relative w-full h-64 md:h-[600px]">
+             <Image src={equipaImage} alt="Quem Somos Image" class="absolute inset-0 w-full h-full object-cover" />
+             <div class="absolute inset-0 bg-black/22"></div>
+        </div>
+
+    </div>
+    </section>
+
+    <section class="bg-gray-50 py-16 md:py-32">
+        <div class="mx-auto max-w-7xl px-6 lg:px-8">
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-10 lg:gap-12">
+
+                <div class="group relative flex flex-col items-start justify-between rounded-2xl bg-white p-8 md:p-10 h-full shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] border border-gray-100 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl">
+                    <div class="absolute top-0 left-0 w-full h-1.5 bg-[#1e1b4b] rounded-t-2xl opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
+                    
+                    <div>
+                        <h3 class="text-xl md:text-2xl font-bold text-indigo-950 mb-4 md:mb-6">Propósito & missão</h3>
+                        <p class="text-base md:text-lg leading-relaxed text-gray-600">
+                            Impulsionar a literacia digital e analítica dentro da comunidade académica e no ecossistema empresarial.
+                        </p>
+                    </div>
+                    <a href="#" class="mt-6 md:mt-8 inline-flex items-center text-sm font-bold tracking-wide text-indigo-950 uppercase hover:text-blue-700 transition-colors">
+                        Sobre os nossos valores
+                        <svg xmlns="http://www.w3.org/2000/svg" class="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+                    </a>
+                </div>
+
+                <div class="group relative flex flex-col items-start justify-between rounded-2xl bg-white p-8 md:p-10 h-full shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] border border-gray-100 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl">
+                    <div class="absolute top-0 left-0 w-full h-1.5 bg-[#1e1b4b] rounded-t-2xl opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
+                    
+                    <div>
+                        <h3 class="text-xl md:text-2xl font-bold text-indigo-950 mb-4 md:mb-6">A nossa equipa</h3>
+                        <p class="text-base md:text-lg leading-relaxed text-gray-600">
+                            Somos definidos pelas pessoas e pelo compromisso profundo de construir uma cultura diversa, inclusiva e acolhedora.
+                        </p>
+                    </div>
+                    <a href="/equipa" class="mt-6 md:mt-8 inline-flex items-center text-sm font-bold tracking-wide text-indigo-950 uppercase hover:text-blue-700 transition-colors">
+                        Conhece a nossa equipa
+                        <svg xmlns="http://www.w3.org/2000/svg" class="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+                    </a>
+                </div>
+
+                <div class="group relative flex flex-col items-start justify-between rounded-2xl bg-white p-8 md:p-10 h-full shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] border border-gray-100 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl">
+                    <div class="absolute top-0 left-0 w-full h-1.5 bg-[#1e1b4b] rounded-t-2xl opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
+                    
+                    <div>
+                        <h3 class="text-xl md:text-2xl font-bold text-indigo-950 mb-4 md:mb-6">Impacto & Soluções</h3>
+                        <p class="text-base md:text-lg leading-relaxed text-gray-600">
+                            Formação contínua, eventos, parcerias e soluções tecnológicas que capacitam os nossos membros e parceiros.
+                        </p>
+                    </div>
+                    <a href="#" class="mt-6 md:mt-8 inline-flex items-center text-sm font-bold tracking-wide text-indigo-950 uppercase hover:text-blue-700 transition-colors">
+                        Explora as nossas formações
+                        <svg xmlns="http://www.w3.org/2000/svg" class="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="relative overflow-hidden bg-gradient-to-r from-indigo-950 to-indigo-900 text-white">
+        <div class="mx-auto max-w-screen-xl px-6 md:px-10 py-10 md:py-12">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
+                
+                <div class="flex flex-col justify-center items-center px-4 md:px-16 lg:px-30 order-2 md:order-1">
+                    <Image src={microsoftImage} alt="Satya Nadella" class="w-full rounded-3xl shadow-2xl" />
+                </div>
+
+                <div class="absolute inset-0 bg-black/22"></div>
+
+                <div class="order-1 md:order-2 relative z-10">
+                    <p class="text-lg md:text-2xl font-normal mb-6 md:mb-8">
+                        Our industry does not respect tradition. It only respects innovation.
+                    </p>
+                    <p class="text-base md:text-lg font-semibold">~Satya Nadella<br/>CEO, Microsoft</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-gray-50 py-16 md:py-24 border-t border-gray-200">
+        <div class="mx-auto max-w-screen-xl px-6 md:px-10">
+            <div class="flex flex-col md:flex-row gap-10 md:gap-16 items-center">
+                <div class="md:w-1/2">
+                    <span class="text-blue-600 font-bold uppercase tracking-wider text-xs mb-3 block">Responsabilidade Social</span>
+                    <h2 class="text-2xl md:text-4xl font-bold text-[#1e1b4b] mb-4 md:mb-6">Impacto na Comunidade</h2>
+                    <p class="text-base md:text-lg text-gray-700 leading-relaxed mb-4 md:mb-6 text-justify">
+                        Acreditamos que tecnologia e impacto social só fazem sentido quando caminham lado a lado.
+                    </p>
+                    <p class="text-base md:text-lg text-gray-700 leading-relaxed mb-6 md:mb-8 text-justify">
+                        Na SmartData FEP, assumimos a responsabilidade de colocar as nossas competências ao serviço da comunidade, contribuindo para causas que tornam o mundo à nossa volta mais justo e solidário.
+                    </p>
+                    
+                    <a href="/equipa" class="group inline-flex items-center gap-2 text-[#1e1b4b] font-bold text-base md:text-lg hover:text-blue-700 transition-colors">
+                        Conhecer a equipa responsável
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                        </svg>
+                    </a>
+                </div>
+                
+                <div class="md:w-1/2 w-full">
+                    <div class="relative rounded-2xl overflow-hidden shadow-xl aspect-video bg-white p-2">
+                        <Image src={servicosImage} alt="Social Impact" class="w-full h-full object-cover rounded-xl object-[center_-200px] md:object-[center_-350px]" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</Layout>

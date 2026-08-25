@@ -1,0 +1,335 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { Image } from 'astro:assets';
+import horseIcon from '../assets/servicos/icons/horse_icon.svg';
+import manWithBlockIcon from '../assets/servicos/icons/man_with_bock_icon.svg';
+import buttonSlidersIcon from '../assets/servicos/icons/button_sliders_icon.svg';
+import codeIcon from '../assets/servicos/icons/code_icon.svg';
+import lensIcon from '../assets/servicos/icons/lens_icon.svg';
+import toolsInCloudIcon from '../assets/servicos/icons/tools_in_cloud_icon.svg';
+---
+
+<Layout title="Serviços - SmartData FEP">
+    
+    <section class="relative bg-[#1e1b4b] text-white pt-12 pb-12 md:pt-28 md:pb-32 px-4 md:px-6 overflow-hidden" id="services-hero">
+        <div class="absolute inset-0 z-0">
+             <div class="absolute inset-0 bg-[url('/src/assets/home/images/smart_backgroud.png')] opacity-100 bg-cover bg-center mix-blend-overlay"></div>
+            <div class="absolute inset-0 bg-gradient-to-r from-[#1e1b4b] via-[#1e1b4b]/90 to-transparent"></div>
+        </div>
+        
+        <div class="relative z-10 mx-auto max-w-screen-xl px-4 md:px-10">
+            <div class="inline-block border-l-4 border-blue-400 pl-4 mb-6 md:mb-8">
+                <span class="text-blue-200 uppercase tracking-widest text-xs md:text-sm font-semibold">Serviços</span>
+            </div>
+            
+            <h1 class="text-3xl md:text-6xl lg:text-6xl font-medium leading-tight max-w-5xl">
+                Data-driven solutions for <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-200 to-indigo-400">complex challenges</span>.
+            </h1>
+            
+            <p class="mt-6 md:mt-8 text-lg md:text-2xl text-gray-300 font-light max-w-3xl leading-relaxed">
+                Desenvolvemos estratégias digitais, análises avançadas e soluções de inteligência artificial que transformam dados em valor real para o seu negócio.
+            </p>
+        </div>
+    </section>
+
+    <section class="relative overflow-hidden bg-white py-12 md:py-24" id="services-content">
+     <div class="mx-auto max-w-screen-xl px-4 md:px-6">
+        
+        <div class="relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mb-6 md:mb-8 h-auto md:h-[350px]">
+            
+            <div class="group relative z-10 hover:z-30 transition-all duration-300 h-full">
+                <div class="flex h-full flex-col items-center justify-center rounded-2xl border-2 border-indigo-950 bg-white p-6 md:p-8 text-center transition-opacity group-hover:opacity-0">
+                    <h3 class="text-lg md:text-2xl font-bold text-indigo-950 py-4 md:py-6">Estratégia e Maturidade Digital</h3>
+                     <ul class="text-sm md:text-base text-indigo-950/80 space-y-2">
+                        <li>• Roadmap digital</li>
+                        <li>• Diagnóstico digital</li>
+                        <li>• Estratégia datadriven</li> 
+                    </ul>
+                </div>
+                <div class="invisible absolute inset-0 left-0 flex flex-col rounded-2xl border-2 border-indigo-950 bg-white p-8 md:p-12 opacity-0 scale-95 transition-opacity  group-hover:visible group-hover:opacity-100 group-hover:scale-100 md:w-[calc(300%+4rem)] shadow-2xl">
+                     <div class="absolute -top-8 left-12 flex h-16 w-24 items-center justify-center rounded-t-2xl border-2 border-b-0 border-indigo-950 bg-white">
+                        <Image src={horseIcon} alt="Strategy Icon" class="h-12 w-12 object-contain" />
+                    </div>
+                    <div class="flex flex-col md:flex-row gap-12 mt-4">
+                         <div class="md:w-3/5">
+                            <h3 class="text-xl md:text-2xl font-bold text-indigo-950 mb-4">Estratégia e Maturidade Digital</h3>
+                            <p class="text-sm md:text-base text-indigo-950/80 py-6 md:py-10">Desenvolvemos aplicações e soluções digitais leves que otimizam processos internos e aceleram a 
+                            adoção de práticas data-driven.</p>
+                        </div>
+                        <ul class="md:w-2/5 border-l border-indigo-950/20 pl-8 py-6 md:py-10 space-y-3 text-indigo-950 font-medium text-sm md:text-base">
+                            <li>• Roadmap digital</li>
+                            <li>• Diagnóstico digital</li>
+                            <li>• Estratégia datadriven</li>
+                        </ul>
+                    </div>
+                 </div>
+            </div>
+
+            <div class="group relative z-10 hover:z-30 transition-all duration-300 h-full">
+                <div class="flex h-full flex-col items-center justify-center rounded-2xl border-2 border-indigo-950 bg-white p-6 md:p-8 text-center transition-opacity group-hover:opacity-0">
+                    <h3 class="text-lg md:text-2xl font-bold text-indigo-950 py-4 md:py-6">Dashboards e Business Intelligence</h3>
+                    <ul class="text-sm md:text-base text-indigo-950/80 space-y-2">
+                        <li>• KPIs</li>
+                        <li>• Reporting</li>
+                        <li>• Data views</li>
+                    </ul>
+                </div>
+                <div class="invisible absolute inset-0 right-0 left-auto flex flex-col rounded-2xl border-2 border-indigo-95 bg-white p-8 md:p-12 opacity-0 scale-95 transition-opacity group-hover:visible group-hover:opacity-100 group-hover:scale-100 md:w-[calc(300%+4rem)] md:left-[calc(-100%-2rem)] shadow-2xl">
+                    <div class="absolute -top-8 left-1/2 -translate-x-1/2 flex h-16 w-24 items-center justify-center rounded-t-2xl border-2 
+                    border-b-0 border-indigo-950 bg-white">
+                        <Image src={manWithBlockIcon} alt="Dashboard Icon" class="h-12 w-12 object-contain" />
+                    </div>
+                    <div class="flex flex-col md:flex-row gap-12 mt-4">
+                         <div class="md:w-3/5">
+                            <h3 class="text-xl md:text-2xl font-bold text-indigo-950 mb-4">Dashboards e Business Intelligence</h3>
+                            <p class="text-sm md:text-base text-indigo-950/80 py-6 md:py-10">Transformamos dados complexos em painéis visuais intuitivos para facilitar a tomada de decisão estratégica.</p>
+                        </div>
+                        <ul class="md:w-2/5 border-l border-indigo-950/20 pl-8 py-6 md:py-10 space-y-3 text-indigo-950 font-medium text-sm md:text-base">
+                            <li>• KPIs</li>
+                            <li>• Reporting</li>
+                            <li>• Data views</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+    
+             <div class="group relative z-10 hover:z-30 transition-all duration-300 h-full">
+                <div class="flex h-full flex-col items-center justify-center rounded-2xl border-2 border-indigo-950 bg-white p-6 md:p-8 text-center transition-opacity group-hover:opacity-0">
+                    <h3 class="text-lg md:text-2xl font-bold text-indigo-950 py-4 md:py-6">Engenharia, Processamento e Qualidade de Dados</h3>
+                    <ul class="text-sm md:text-base text-indigo-950/80 space-y-2">
+                        <li>• Integração de dados</li>
+                        <li>• Limpeza de dados</li>
+                        <li>• Qualidade de dados</li>
+                    </ul>
+                 </div>
+                <div class="invisible absolute inset-0 right-0 left-auto flex flex-col rounded-2xl border-2 border-indigo-950 bg-white p-8 md:p-12 opacity-0 scale-95 transition-opacity group-hover:visible group-hover:opacity-100 group-hover:scale-100 md:w-[calc(300%+4rem)] shadow-2xl">
+                    <div class="absolute -top-8 right-12 flex h-16 w-24 items-center justify-center rounded-t-2xl border-2 border-b-0 border-indigo-950 bg-white">
+                        <Image src={buttonSlidersIcon} alt="Processing Icon" class="h-12 w-12 object-contain" />
+                    </div>
+                    <div class="flex flex-col md:flex-row gap-12 mt-4">
+                        <div class="md:w-3/5">
+                             <h3 class="text-xl md:text-2xl font-bold text-indigo-950 mb-4">Engenharia, Processamento e Qualidade de Dados</h3>
+                            <p class="text-sm md:text-base text-indigo-950/80 py-6 md:py-10">Desenvolvemos aplicações e soluções digitais leves que otimizam processos internos, melhoram a colaboração e aceleram a adoção de práticas data-driven.</p>
+                        </div>
+                        <ul class="md:w-2/5 border-l border-indigo-950/20 pl-8 py-6 md:py-10 space-y-3 text-indigo-950 font-medium text-sm md:text-base">
+                            <li>• Integração de dados</li>
+                            <li>• Limpeza de dados</li>
+                            <li>• Qualidade de dados</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+         <div class="relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mb-6 md:mb-8 h-auto md:h-[350px]">
+            
+            <div class="group relative z-10 hover:z-30 transition-all duration-300 h-full">
+                <div class="flex h-full flex-col items-center justify-center rounded-2xl border-2 border-indigo-950 bg-white p-6 md:p-8 text-center transition-opacity group-hover:opacity-0">
+                    <h3 class="text-lg md:text-2xl font-bold text-indigo-950 py-4 md:py-6">Desenvolvimento de soluções 
+                    digitais</h3>
+                     <ul class="text-sm md:text-base text-indigo-950/80 space-y-2">
+                        <li>• Websites</li>
+                        <li>• Softwares</li>
+                        <li>• Apps internas</li>
+                    </ul>
+                </div>
+                <div class="invisible absolute inset-0 left-0 flex flex-col rounded-2xl border-2 border-indigo-950 bg-white p-8 md:p-12 opacity-0 scale-95 transition-opacity group-hover:visible group-hover:opacity-100 group-hover:scale-100 md:w-[calc(300%+4rem)] shadow-2xl">
+                    <div class="absolute -top-8 left-12 flex h-16 w-24 items-center justify-center rounded-t-2xl 
+                    border-2 border-b-0 border-indigo-950 bg-white">
+                        <Image src={codeIcon} alt="Digital Solutions Icon" class="h-12 w-12 object-contain" />
+                    </div>
+                    <div class="flex flex-col md:flex-row gap-12 mt-4">
+                        <div class="md:w-3/5">
+                            <h3 class="text-xl md:text-2xl font-bold text-indigo-950 mb-4">Desenvolvimento de soluções digitais</h3>
+                            <p class="text-sm md:text-base text-indigo-950/80 py-6 md:py-10">Desenvolvemos aplicações e soluções digitais leves que otimizam processos internos, melhoram a colaboração e aceleram a adoção de práticas data-driven.</p>
+                        </div>
+                        <ul class="md:w-2/5 border-l border-indigo-950/20 pl-8 py-6 md:py-10 space-y-3 text-indigo-950 font-medium text-sm md:text-base">
+                            <li>• Websites</li>
+                             <li>• Softwares</li>
+                            <li>• Apps internas</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="group relative z-10 hover:z-30 transition-all duration-300 h-full">
+                <div class="flex h-full flex-col items-center justify-center rounded-2xl border-2 border-indigo-950 bg-white p-6 md:p-8 text-center transition-opacity group-hover:opacity-0">
+                    <h3 class="text-lg md:text-2xl font-bold text-indigo-950 py-4 md:py-6">Inteligência Artificial de Soluções Preditiva</h3>
+                     <ul class="text-sm md:text-base text-indigo-950/80 space-y-2">
+                        <li>• Modelos preditivos</li>
+                        <li>• Forecasting</li>
+                        <li>• Análise avançada</li>
+                    </ul>
+                </div>
+                <div class="invisible absolute inset-0 right-0 left-auto flex flex-col rounded-2xl border-2 border-indigo-950 bg-white p-8 md:p-12 opacity-0 scale-95 transition-opacity group-hover:visible group-hover:opacity-100 group-hover:scale-100 md:w-[calc(300%+4rem)] md:left-[calc(-100%-2rem)] shadow-2xl">
+                    <div class="absolute -top-8 left-1/2 -translate-x-1/2 flex h-16 w-24 items-center justify-center rounded-t-2xl border-2 border-b-0 border-indigo-950 bg-white">
+                        <Image src={lensIcon} alt="AI Predictive Icon" class="h-12 w-12 object-contain" />
+                    </div>
+                    <div class="flex flex-col md:flex-row gap-12 mt-4">
+                        <div class="md:w-3/5">
+                             <h3 class="text-xl md:text-2xl font-bold text-indigo-950 mb-4">Inteligência Artificial de Soluções Preditiva</h3>
+                            <p class="text-sm md:text-base text-indigo-950/80 py-6 md:py-10">Desenvolvemos aplicações e soluções digitais leves que otimizam processos internos, melhoram a colaboração e aceleram a adoção de práticas data-driven.</p>
+                        </div>
+                         <ul class="md:w-2/5 border-l border-indigo-950/20 pl-8 py-6 md:py-10 space-y-3 text-indigo-950 font-medium text-sm md:text-base">
+                            <li>• Modelos preditivos</li>
+                            <li>• Forecasting</li>
+                             <li>• Análise avançada</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+             <div class="group relative z-10 hover:z-30 transition-all duration-300 h-full">
+                <div class="flex h-full flex-col items-center justify-center rounded-2xl border-2 border-indigo-950 bg-white p-6 md:p-8 text-center transition-opacity group-hover:opacity-0">
+                    <h3 class="text-lg md:text-2xl font-bold text-indigo-950 py-4 md:py-6">Automação Inteligente e NLP</h3>
+                    <ul class="text-sm md:text-base text-indigo-950/80 space-y-2">
+                        <li>• Automação</li>
+                        <li>• Classificação textual</li>
+                        <li>• NLP</li>
+                    </ul>
+                </div>
+                 <div class="invisible absolute inset-0 right-0 left-auto flex flex-col rounded-2xl border-2 border-indigo-950 bg-white p-8 md:p-12 opacity-0 scale-95 transition-opacity group-hover:visible group-hover:opacity-100 group-hover:scale-100 md:w-[calc(300%+4rem)] shadow-2xl">
+                    <div class="absolute -top-8 right-12 flex h-16 w-24 items-center justify-center rounded-t-2xl border-2 border-b-0 border-indigo-950 bg-white">
+                        <Image src={toolsInCloudIcon} alt="Automation NLP Icon" class="h-12 w-12 object-contain" />
+                    </div>
+                    <div class="flex flex-col md:flex-row gap-12 mt-4">
+                        <div class="md:w-3/5">
+                            <h3 class="text-xl md:text-2xl font-bold 
+                            text-indigo-950 mb-4">Automação Inteligente e NLP</h3>
+                            <p class="text-sm md:text-base text-indigo-950/80 py-6 md:py-10">Desenvolvemos aplicações e soluções digitais leves que otimizam processos internos, melhoram a colaboração e aceleram a adoção de práticas data-driven.</p>
+                        </div>
+                        <ul class="md:w-2/5 border-l border-indigo-950/20 pl-8 py-6 md:py-10 space-y-3 text-indigo-950 font-medium text-sm md:text-base">
+                            <li>• Automação</li>
+                            <li>• Classificação textual</li>
+                            <li>• NLP</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+    </section>
+
+    <section class="relative overflow-hidden bg-indigo-950 text-white" id="services-cta">
+         <div class="mx-auto max-w-screen-xl px-4 py-12 md:px-10 md:py-24 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4 md:mb-6">Pronto para começar?</h2>
+            <p class="text-lg md:text-xl text-indigo-100 mb-6 md:mb-8">Entre em contacto connosco para saber mais sobre os nossos serviços.</p>
+            <a href="/contactos">
+                <button class="bg-white text-indigo-950 rounded-2xl px-6 py-2.5 md:px-8 md:py-3 text-lg md:text-xl font-bold shadow-lg hover:shadow-xl hover:bg-indigo-100 transition-shadow cursor-pointer">
+                     Contactar
+                </button>
+            </a>
+        </div>
+    </section>
+</Layout>
+
+<script>
+    // Make service cards clickable on mobile/touch devices
+    document.addEventListener('DOMContentLoaded', () => {
+        const serviceCards = document.querySelectorAll('.group.relative');
+        
+        serviceCards.forEach(card => {
+            let isExpanded = false;
+            
+            card.addEventListener('click', (e) => {
+                // Check if it's a touch device or small screen
+                const isMobile = window.matchMedia('(max-width: 768px)').matches || 
+                                ('ontouchstart' in window);
+                
+                if (isMobile) {
+                    e.stopPropagation();
+                    
+                    // Close all other cards
+                    serviceCards.forEach(otherCard => {
+                        if (otherCard !== card) {
+                            otherCard.classList.remove('is-active');
+                        }
+                    });
+                    
+                    // Toggle current card
+                    card.classList.toggle('is-active');
+                }
+            });
+        });
+        
+        // Close cards when clicking outside
+        document.addEventListener('click', (e) => {
+            const isMobile = window.matchMedia('(max-width: 768px)').matches || 
+                            ('ontouchstart' in window);
+            
+            if (isMobile && e.target instanceof HTMLElement && !e.target.closest('.group.relative')) {
+                serviceCards.forEach(card => {
+                    card.classList.remove('is-active');
+                });
+            }
+        });
+    });
+</script>
+
+<style>
+    /* Mobile card expansion styles */
+    @media (max-width: 768px) {
+        /* Keep the card container in normal flow */
+        .group.relative {
+            position: relative !important;
+        }
+        
+        /* Hide the summary when expanded */
+        .group.relative.is-active > div:first-child {
+            display: none;
+        }
+        
+        /* Make expanded content visible and full-width on mobile */
+        .group.relative.is-active > div:last-child {
+            visibility: visible !important;
+            opacity: 1 !important;
+            transform: scale(1) !important;
+            position: relative !important;
+            width: 100% !important;
+            left: 0 !important;
+            right: 0 !important;
+            inset: auto !important;
+        }
+        
+        /* Keep default expanded card hidden */
+        .group.relative > div:last-child {
+            position: absolute;
+        }
+        
+        /* Center ALL icon tabs on mobile - Ultimate Reset */
+        .group.relative.is-active > div:last-child > div.absolute {
+            /* Reset all horizontal positioning */
+            left: 0 !important;
+            right: 0 !important;
+            top: -2rem !important;
+            
+            /* Force center with margin */
+            margin-left: auto !important;
+            margin-right: auto !important;
+            
+            /* Ensure dimensions */
+            width: 6rem !important;
+            height: 4rem !important;
+            
+            /* NUCLEAR OPTION: Kill all transforms */
+            transform: none !important;
+            --tw-translate-x: 0 !important;
+            --tw-translate-y: 0 !important;
+            --tw-rotate: 0 !important;
+            --tw-skew-x: 0 !important;
+            --tw-skew-y: 0 !important;
+            --tw-scale-x: 1 !important;
+            --tw-scale-y: 1 !important;
+        }
+        
+        /* Remove border-left on mobile for better layout */
+        .group.relative.is-active > div:last-child ul {
+            border-left: none !important;
+            padding-left: 0 !important;
+            padding-top: 1rem !important;
+        }
+    }
+</style>

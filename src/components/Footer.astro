@@ -1,0 +1,40 @@
+---
+import { Image } from 'astro:assets';
+import instagramIcon from '../assets/contato/icons/instagram_light_icon.svg';
+import linkedinIcon from '../assets/contato/icons/linkedin_light_icon.svg';
+import locationIcon from '../assets/contato/icons/location.svg';
+---
+
+<footer class="bg-indigo-950 text-white" id="contact">
+  <div class="flex w-[84%] mx-auto flex-col gap-6 px-6 py-10 md:px-10">
+    <div class="flex flex-col md:flex-row w-full gap-10 md:gap-0">
+      
+      <div class="flex flex-col sm:flex-row items-center gap-4 md:gap-3 flex-1 justify-center md:justify-start">
+        <a href="mailto:geral@smartdatafep.pt" class="text-lg font-semibold hover:underline">geral@smartdatafep.pt</a>
+        <div class="flex items-center gap-3">
+            <a href="https://www.instagram.com/smartdatafep/" target="_blank" rel="noopener noreferrer">
+              <Image src={instagramIcon} alt="Instagram" class="h-7 w-7" />
+            </a>
+            <a href="https://pt.linkedin.com/company/smartdata-fep" target="_blank" rel="noopener noreferrer">
+                <Image src={linkedinIcon} alt="LinkedIn" class="h-5 w-5" />
+            </a>
+        </div>
+      </div>
+
+      <!-- <div class="flex justify-center items-center flex-1 order-first md:order-none"> -->
+      <div class="hidden md:flex justify-center items-center flex-1 order-first md:order-none">
+        <img src="/favicon.svg" alt="Favicon" class="h-20 w-20 md:h-25 md:w-25 p-2" />
+      </div>
+
+      <div class="flex items-center gap-4 text-lg text-indigo-100 flex-1 justify-center md:justify-end">
+        <div class="max-w-md leading-relaxed flex flex-col md:flex-row items-center gap-2 text-center md:text-right">
+          <!-- <Image src={locationIcon} alt="Location" class="h-6 w-6 shrink-0" /> -->
+          <a href="https://www.google.com/maps/place/Faculdade+de+Economia+da+Universidade+do+Porto/@41.1752483,-8.6033509,17z/data=!3m2!4b1!5s0xd2464415dbd2009:0x97bd55a1784f38cb!4m6!3m5!1s0xd246440b861c0dd:0xe7e20cb197a6ebd0!8m2!3d41.1752444!4d-8.5987375!16s%2Fg%2F1223kj5b?entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer" class="hover:underline whitespace-normal break-words">
+            FEP, Rua Dr. Roberto Frias, 4200-464 Paranhos, Porto
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</footer>

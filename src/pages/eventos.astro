@@ -1,0 +1,266 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="AI Summit 2026 — Eventos">
+  
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+      /* small global font helpers for Playfair heading and Instrument Sans body */
+      :global(body) { font-family: 'Instrument Sans', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; }
+      :global(.font-playfair) { font-family: 'Playfair Display', serif; }
+    </style>
+  
+
+  <section class="bg-gray-50">
+    <div class="max-w-3xl mx-auto bg-white overflow-hidden shadow-md">
+
+      <!-- HERO -->
+      <div class="relative bg-gradient-to-br from-[#2D1B4E] via-[#4A2D7A] to-[#6B3FA0] px-8 py-12 text-center overflow-hidden">
+        <div class="relative z-10">
+          <span class="inline-block bg-white/10 border border-white/20 rounded-3xl px-4 py-1 text-xs font-semibold tracking-wider uppercase text-amber-300">SmartData FEP apresenta</span>
+
+          <h1 class="mt-4 text-white font-playfair text-3xl md:text-4xl lg:text-5xl leading-tight font-bold">
+            AI Summit 2026
+            <span class="block text-sm font-medium tracking-widest uppercase text-purple-200 mt-3">Faculdade de Economia · Universidade do Porto</span>
+          </h1>
+
+          <div class="inline-flex items-center gap-3 bg-white/8 rounded-lg px-4 py-2 mt-6 mx-auto">
+            <svg class="w-5 h-5 text-amber-400" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor">
+              <rect x="2" y="4" width="16" height="14" rx="2" stroke-width="1.5" />
+              <line x1="6" y1="2" x2="6" y2="6" stroke-width="1.5" stroke-linecap="round" />
+              <line x1="14" y1="2" x2="14" y2="6" stroke-width="1.5" stroke-linecap="round" />
+              <line x1="2" y1="9" x2="18" y2="9" stroke-width="1.5" />
+            </svg>
+            <p class="text-sm text-white"><strong class="text-amber-300">14 &amp; 15 de abril</strong> · Salão Nobre da FEP</p>
+          </div>
+        </div>
+
+        <!-- decorative circles (purely visual) -->
+        <div class="absolute -top-16 -right-16 w-56 h-56 rounded-full bg-gradient-to-br from-[#9B6DD7]/30 to-transparent pointer-events-none"></div>
+        <div class="absolute -bottom-10 -left-8 w-40 h-40 rounded-full bg-yellow-300/10 pointer-events-none"></div>
+      </div>
+
+      <!-- INTRO -->
+      <div class="px-8 py-8 text-center">
+        <p class="text-xl font-semibold text-purple-700">O maior evento de IA da Universidade do Porto chega pela primeira vez.</p>
+        <p class="mt-4 text-gray-600 max-w-2xl mx-auto leading-relaxed">
+          Dois dias intensos de <strong>keynotes com líderes de empresas como McKinsey, AWS, FC Porto e Millennium BCP</strong>, painéis de debate, workshops práticos e networking exclusivo. Se queres perceber como a Inteligência Artificial está a transformar negócios, carreiras e o mundo — este é o teu lugar.
+        </p>
+      </div>
+
+      <!-- STATS BAR -->
+      <div class="mx-8 mb-6 rounded-xl overflow-hidden bg-gradient-to-br from-[#2D1B4E] to-[#6B3FA0] flex text-center">
+        <div class="flex-1 py-4 border-r border-white/10">
+          <div class="text-3xl font-playfair text-amber-400">6</div>
+          <div class="text-xs uppercase tracking-wider text-purple-200 mt-1">Temas Centrais</div>
+        </div>
+        <div class="flex-1 py-4 border-r border-white/10">
+          <div class="text-3xl font-playfair text-amber-400">10+</div>
+          <div class="text-xs uppercase tracking-wider text-purple-200 mt-1">Oradores</div>
+        </div>
+        <div class="flex-1 py-4">
+          <div class="text-3xl font-playfair text-amber-400">2</div>
+          <div class="text-xs uppercase tracking-wider text-purple-200 mt-1">Dias</div>
+        </div>
+      </div>
+
+      <!-- SCHEDULE -->
+      <div class="px-8 pb-8">
+        <div class="flex items-center gap-3 mb-6">
+          <div class="flex-1 h-px bg-gradient-to-r from-purple-200 to-transparent"></div>
+          <h2 class="text-xs font-bold uppercase tracking-wider text-purple-600">Programa em Destaque</h2>
+          <div class="flex-1 h-px bg-gradient-to-l from-purple-200 to-transparent"></div>
+        </div>
+
+        <!-- Day 1 -->
+        <article class="bg-gray-50 rounded-lg p-6 mb-4 border-l-4 border-purple-400">
+          <h3 class="font-playfair text-xl text-purple-900">Dia 1 — Estratégia, Economia e Risco</h3>
+          <p class="text-xs font-semibold uppercase text-purple-500">Segunda-feira, 14 de abril</p>
+
+          <div class="mt-4 divide-y divide-purple-100">
+            <div class="flex py-4 gap-4">
+              <div class="w-20 text-sm font-semibold text-purple-600">10:30</div>
+              <div>
+                <h4 class="font-semibold text-gray-900">A Nova Fronteira da Consultoria: IA e Estratégia Corporativa</h4>
+                <div class="text-sm text-gray-500 mt-1"><strong>Fábio Neves</strong> · McKinsey & Company</div>
+                <span class="inline-block mt-2 text-xs font-bold uppercase px-2 py-1 rounded bg-amber-100 text-amber-700">Keynote</span>
+              </div>
+            </div>
+
+            <div class="flex py-4 gap-4">
+              <div class="w-20 text-sm font-semibold text-purple-600">11:45</div>
+              <div>
+                <h4 class="font-semibold text-gray-900">O Impacto Real da IA na Economia Portuguesa</h4>
+                <div class="text-sm text-gray-500 mt-1"><strong>TelePerformance · Sogrape · AWS</strong></div>
+                <span class="inline-block mt-2 text-xs font-bold uppercase px-2 py-1 rounded bg-green-100 text-green-700">Painel de Debate</span>
+              </div>
+            </div>
+
+            <div class="flex py-4 gap-4">
+              <div class="w-20 text-sm font-semibold text-purple-600">14:00</div>
+              <div>
+                <h4 class="font-semibold text-gray-900">IA, Pedagogia e Ética: Repensar o Futuro do Ensino</h4>
+                <span class="inline-block mt-2 text-xs font-bold uppercase px-2 py-1 rounded bg-green-100 text-green-700">Painel de Debate</span>
+              </div>
+            </div>
+
+            <div class="flex py-4 gap-4">
+              <div class="w-20 text-sm font-semibold text-purple-600">16:00</div>
+              <div>
+                <h4 class="font-semibold text-gray-900">IA Aplicada ao Negócio: Como Criar Soluções com Retorno</h4>
+                <div class="text-sm text-gray-500 mt-1"><strong>Luís Noronha</strong> · DareData</div>
+                <span class="inline-block mt-2 text-xs font-bold uppercase px-2 py-1 rounded bg-red-100 text-red-700">Workshop</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Day 2 -->
+        <article class="bg-gray-50 rounded-lg p-6 mb-4 border-l-4 border-purple-400">
+          <h3 class="font-playfair text-xl text-purple-900">Dia 2 — Rigor, Finanças e Futuro Profissional</h3>
+          <p class="text-xs font-semibold uppercase text-purple-500">Terça-feira, 15 de abril</p>
+
+          <div class="mt-4 divide-y divide-purple-100">
+            <div class="flex py-4 gap-4">
+              <div class="w-20 text-sm font-semibold text-purple-600">10:15</div>
+              <div>
+                <h4 class="font-semibold text-gray-900">Gestão de Marcas e Valor de Negócio na Era da IA</h4>
+                <span class="inline-block mt-2 text-xs font-bold uppercase px-2 py-1 rounded bg-amber-100 text-amber-700">Keynote</span>
+              </div>
+            </div>
+
+            <div class="flex py-4 gap-4">
+              <div class="w-20 text-sm font-semibold text-purple-600">11:30</div>
+              <div>
+                <h4 class="font-semibold text-gray-900">IA, Dados e Performance Desportiva</h4>
+                <div class="text-sm text-gray-500 mt-1"><strong>José Miguel do Carmo</strong> · FC Porto</div>
+                <span class="inline-block mt-2 text-xs font-bold uppercase px-2 py-1 rounded bg-amber-100 text-amber-700">Keynote</span>
+              </div>
+            </div>
+
+            <div class="flex py-4 gap-4">
+              <div class="w-20 text-sm font-semibold text-purple-600">14:30</div>
+              <div>
+                <h4 class="font-semibold text-gray-900">O Papel da IA na Gestão de Risco na Banca</h4>
+                <div class="text-sm text-gray-500 mt-1"><strong>José Miguel Pessanha</strong> · Millennium BCP</div>
+                <span class="inline-block mt-2 text-xs font-bold uppercase px-2 py-1 rounded bg-amber-100 text-amber-700">Keynote</span>
+              </div>
+            </div>
+
+            <div class="flex py-4 gap-4">
+              <div class="w-20 text-sm font-semibold text-purple-600">16:00</div>
+              <div>
+                <h4 class="font-semibold text-gray-900">Talento e Carreira: O Teu Perfil no Mercado</h4>
+                <div class="text-sm text-gray-500 mt-1"><strong>EY · BI4ALL</strong></div>
+                <span class="inline-block mt-2 text-xs font-bold uppercase px-2 py-1 rounded bg-green-100 text-green-700">Painel</span>
+              </div>
+            </div>
+
+            <div class="flex py-4 gap-4">
+              <div class="w-20 text-sm font-semibold text-purple-600">18:00</div>
+              <div>
+                <h4 class="font-semibold text-gray-900">Wine &amp; Networking — Porto de Honra Exclusivo</h4>
+                <div class="text-sm text-gray-500 mt-1">Limitado a <strong>50 participantes</strong></div>
+                <span class="inline-block mt-2 text-xs font-bold uppercase px-2 py-1 rounded bg-blue-100 text-blue-700">Networking</span>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <!-- SPEAKERS -->
+      <div class="px-8 py-6">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="flex-1 h-px bg-gradient-to-r from-purple-200 to-transparent"></div>
+          <h2 class="text-xs font-bold uppercase tracking-wider text-purple-600">Quem vais ouvir</h2>
+          <div class="flex-1 h-px bg-gradient-to-l from-purple-200 to-transparent"></div>
+        </div>
+
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+          <div class="flex items-center gap-3 bg-gray-50 border border-purple-100 rounded-full px-3 py-2">
+            <div class="w-7 h-7 rounded-full bg-gradient-to-br from-[#9B6DD7] to-[#6B3FA0] flex items-center justify-center text-white font-bold text-xs">FN</div>
+            <div>
+              <div class="text-sm font-semibold">Fábio Neves</div>
+              <div class="text-xs text-gray-500">McKinsey</div>
+            </div>
+          </div>
+
+          <div class="flex items-center gap-3 bg-gray-50 border border-purple-100 rounded-full px-3 py-2">
+            <div class="w-7 h-7 rounded-full bg-gradient-to-br from-[#9B6DD7] to-[#6B3FA0] flex items-center justify-center text-white font-bold text-xs">PG</div>
+            <div>
+              <div class="text-sm font-semibold">Pedro Gomes</div>
+              <div class="text-xs text-gray-500">TelePerformance</div>
+            </div>
+          </div>
+
+          <div class="flex items-center gap-3 bg-gray-50 border border-purple-100 rounded-full px-3 py-2">
+            <div class="w-7 h-7 rounded-full bg-gradient-to-br from-[#9B6DD7] to-[#6B3FA0] flex items-center justify-center text-white font-bold text-xs">TC</div>
+            <div>
+              <div class="text-sm font-semibold">Tiago Costa</div>
+              <div class="text-xs text-gray-500">Sogrape</div>
+            </div>
+          </div>
+
+          <div class="flex items-center gap-3 bg-gray-50 border border-purple-100 rounded-full px-3 py-2">
+            <div class="w-7 h-7 rounded-full bg-gradient-to-br from-[#9B6DD7] to-[#6B3FA0] flex items-center justify-center text-white font-bold text-xs">PL</div>
+            <div>
+              <div class="text-sm font-semibold">Pedro Lopes-Sousa</div>
+              <div class="text-xs text-gray-500">AWS</div>
+            </div>
+          </div>
+
+          <div class="flex items-center gap-3 bg-gray-50 border border-purple-100 rounded-full px-3 py-2">
+            <div class="w-7 h-7 rounded-full bg-gradient-to-br from-[#9B6DD7] to-[#6B3FA0] flex items-center justify-center text-white font-bold text-xs">JC</div>
+            <div>
+              <div class="text-sm font-semibold">José M. do Carmo</div>
+              <div class="text-xs text-gray-500">FC Porto</div>
+            </div>
+          </div>
+
+          <div class="flex items-center gap-3 bg-gray-50 border border-purple-100 rounded-full px-3 py-2">
+            <div class="w-7 h-7 rounded-full bg-gradient-to-br from-[#9B6DD7] to-[#6B3FA0] flex items-center justify-center text-white font-bold text-xs">JP</div>
+            <div>
+              <div class="text-sm font-semibold">José M. Pessanha</div>
+              <div class="text-xs text-gray-500">Millennium BCP</div>
+            </div>
+          </div>
+
+          <div class="flex items-center gap-3 bg-gray-50 border border-purple-100 rounded-full px-3 py-2">
+            <div class="w-7 h-7 rounded-full bg-gradient-to-br from-[#9B6DD7] to-[#6B3FA0] flex items-center justify-center text-white font-bold text-xs">LN</div>
+            <div>
+              <div class="text-sm font-semibold">Luís Noronha</div>
+              <div class="text-xs text-gray-500">DareData</div>
+            </div>
+          </div>
+
+          <div class="flex items-center gap-3 bg-gray-50 border border-purple-100 rounded-full px-3 py-2">
+            <div class="w-7 h-7 rounded-full bg-gradient-to-br from-[#9B6DD7] to-[#6B3FA0] flex items-center justify-center text-white font-bold text-xs">TT</div>
+            <div>
+              <div class="text-sm font-semibold">Telmo Teixeira</div>
+              <div class="text-xs text-gray-500">BI4ALL</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center text-purple-300 text-xl leading-none py-2">· · ·</div>
+
+      <!-- CTA -->
+      <div class="px-8 pb-10">
+        <div class="rounded-xl p-8 bg-gradient-to-br from-[#2D1B4E] to-[#4A2D7A] text-white text-center">
+          <h3 class="font-playfair text-2xl">Garante o teu lugar.</h3>
+          <p class="mt-2 text-purple-200">Inscrição gratuita · Aberto a todos os estudantes da U.Porto</p>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLScf398ydrxYg9ZKgWy_BGBFUO-f6cQp7j_ZGG0u2aKz-IUziQ/viewform" class="inline-block mt-6 bg-amber-400 text-[#2D1B4E] font-bold uppercase px-8 py-3 rounded-lg">Inscreve-te Agora →</a>
+          <p class="mt-3 text-xs text-white/70">Lugares limitados · Salão Nobre da FEP (500 lugares)</p>
+        </div>
+      </div>
+
+
+    </div>
+  </section>
+</Layout>

@@ -1,0 +1,293 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { Image } from 'astro:assets';
+import linkedinDarkIcon from '../assets/contato/icons/linkedin_dark_background_icon.svg';
+import instagramDarkIcon from '../assets/contato/icons/instagram_dark_background_icon.svg';
+---
+
+<Layout title="Contactos - SmartData FEP">
+    <section class="relative bg-[#1e1b4b] text-white pt-20 pb-20 md:pt-28 md:pb-32 px-6 overflow-hidden">
+        <div class="absolute inset-0 z-0">
+             <div class="absolute inset-0 bg-[url('/src/assets/home/images/smart_backgroud.png')] opacity-100 bg-cover bg-center mix-blend-overlay"></div>
+            <div class="absolute inset-0 bg-gradient-to-r from-[#1e1b4b] via-[#1e1b4b]/90 to-transparent"></div>
+        </div>
+        
+        <div class="relative z-10 mx-auto max-w-screen-xl px-4 md:px-10">
+            <div class="inline-block border-l-4 border-blue-400 pl-4 mb-8">
+                <span class="text-blue-200 uppercase tracking-widest text-sm font-semibold">Fale Connosco</span>
+            </div>
+            
+            <h1 class="text-4xl md:text-6xl lg:text-6xl font-medium leading-tight max-w-5xl">
+                Let's start your <br/>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-200 to-indigo-400">data journey</span>.
+            </h1>
+            
+            <p class="mt-8 text-xl md:text-2xl text-gray-300 font-light max-w-3xl leading-relaxed">
+                Tem um desafio complexo ou quer saber mais sobre a SmartData FEP? A nossa equipa está pronta para ajudar.
+            </p>
+        </div>
+    </section>
+
+    <section class="relative bg-gray-50 py-16 md:py-24 overflow-hidden">
+        <div class="mx-auto max-w-screen-xl px-6 md:px-10">
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+
+                <div class="bg-white rounded-3xl shadow-[0_20px_50px_rgba(30,27,75,0.08)] p-8 md:p-12 border border-indigo-50 relative z-10">
+                    <h2 class="text-3xl font-bold text-indigo-950 mb-2">Envie-nos uma mensagem</h2>
+                    <p class="text-gray-500 mb-10 font-light">Preencha o formulário abaixo e responderemos o mais breve possível.</p>
+
+                    <form id="contactForm" action="https://api.web3forms.com/submit" method="POST" class="space-y-8">
+                        
+                        <input type="hidden" name="access_key" value="419346ce-e385-4a72-a0f4-816c77f9b479">
+                        <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+                        <input type="hidden" name="subject" value="Novo Contacto - Site SmartData">
+                        
+                        <div class="relative">
+                            <input
+                                id="nome"
+                                name="name"
+                                type="text" 
+                                pattern="[a-zA-ZÀ-ÿ ]+" 
+                                class="peer w-full border-b-2 border-gray-200 bg-transparent py-2 text-indigo-950 placeholder-transparent focus:border-indigo-950 focus:outline-none transition-colors" 
+                                placeholder="Nome" 
+                                required 
+                                oninvalid="this.setCustomValidity('O nome deve conter apenas letras e espaços')"
+                                oninput="this.setCustomValidity('')"
+                            />
+                            <label for="nome" class="absolute left-0 -top-3.5 text-sm text-gray-500 transition-all cursor-text peer-placeholder-shown:top-2 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:-top-3.5 peer-focus:text-sm peer-focus:text-indigo-950">
+                                Nome
+                            </label>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                            <div class="relative">
+                                <input
+                                    id="contacto"
+                                    name="contact"
+                                    type="tel" 
+                                    pattern="[0-9]{9}" 
+                                    maxlength="9" 
+                                    class="peer w-full border-b-2 border-gray-200 bg-transparent py-2 text-indigo-950 placeholder-transparent focus:border-indigo-950 focus:outline-none transition-colors" 
+                                    placeholder="Contacto" 
+                                    required 
+                                    oninvalid="this.setCustomValidity('Por favor, insira um número de telefone válido com 9 dígitos')"
+                                    oninput="this.setCustomValidity('')"
+                                />
+                                <label for="contacto" class="absolute left-0 -top-3.5 text-sm text-gray-500 transition-all cursor-text peer-placeholder-shown:top-2 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:-top-3.5 peer-focus:text-sm peer-focus:text-indigo-950">
+                                    Contacto
+                                </label>
+                            </div>
+                            <div class="relative">
+                                <input
+                                    id="empresa"
+                                    name="company"
+                                    type="text" 
+                                    pattern="[a-zA-ZÀ-ÿ ]+" 
+                                    class="peer w-full border-b-2 border-gray-200 bg-transparent py-2 text-indigo-950 placeholder-transparent focus:border-indigo-950 focus:outline-none transition-colors" 
+                                    placeholder="Empresa"  
+                                    oninvalid="this.setCustomValidity('O nome deve conter apenas letras e espaços')"
+                                    oninput="this.setCustomValidity('')"
+                                />
+                                <label for="empresa" class="absolute left-0 -top-3.5 text-sm text-gray-500 transition-all cursor-text peer-placeholder-shown:top-2 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:-top-3.5 peer-focus:text-sm peer-focus:text-indigo-950">
+                                    Empresa <span class="text-xs font-light opacity-70">(opcional)</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="relative">
+                            <input
+                                id="email"
+                                name="email"
+                                type="email" 
+                                pattern="^[\w-\.]+@([\w-]+\.)+[\w-]{2,6}$"
+                                class="peer w-full border-b-2 border-gray-200 bg-transparent py-2 text-indigo-950 placeholder-transparent focus:border-indigo-950 focus:outline-none transition-colors" 
+                                placeholder="Email" 
+                                required 
+                                oninvalid="this.setCustomValidity('Insira um endereço de email válido')"
+                                oninput="this.setCustomValidity('')"
+                            />
+                            <label for="email" class="absolute left-0 -top-3.5 text-sm text-gray-500 transition-all cursor-text peer-placeholder-shown:top-2 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:-top-3.5 peer-focus:text-sm peer-focus:text-indigo-950">
+                                Email
+                            </label>
+                        </div>
+
+                        <div class="relative">
+                            <textarea 
+                                id="mensagem"
+                                name="message"
+                                class="peer w-full border-b-2 border-gray-200 bg-transparent py-2 text-indigo-950 placeholder-transparent focus:border-indigo-950 focus:outline-none min-h-[120px] resize-none transition-colors" 
+                                placeholder="Mensagem" 
+                                required
+                                maxlength="500"
+                                spellcheck="true"
+                                oninvalid="this.setCustomValidity('Por favor, escreva uma mensagem')"
+                                oninput="this.setCustomValidity('')"
+                            ></textarea>
+                            <label for="mensagem" class="absolute left-0 -top-3.5 text-sm text-gray-500 transition-all cursor-text peer-placeholder-shown:top-2 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:-top-3.5 peer-focus:text-sm peer-focus:text-indigo-950">
+                                Mensagem
+                            </label>
+                        </div>
+
+                        <div class="flex justify-end pt-4">
+                            <button type="submit" class="group relative px-8 py-4 bg-[#1e1b4b] text-white font-bold rounded-full overflow-hidden transition-all hover:shadow-lg hover:bg-blue-900 flex items-center gap-3">
+                                <span class="relative z-10">Enviar Mensagem</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                                </svg>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="flex flex-col justify-start h-full py-8 space-y-12">
+                    
+                    <div>
+                        <h2 class="text-3xl md:text-4xl font-bold text-indigo-950 mb-6">Estamos aqui para si</h2>
+                        <p class="text-lg text-gray-600 leading-relaxed text-justify">
+                            Quer seja um estudante interessado em juntar-se à equipa, uma empresa à procura de parceria, ou alguém curioso sobre o mundo dos dados, as nossas portas estão abertas.
+                        </p>
+                    </div>
+
+                    <div class="space-y-10">
+                        
+                        <div class="group">
+                            <h3 class="text-sm font-bold text-blue-500 uppercase tracking-widest mb-3">Localização</h3>
+                            <a href="https://www.google.com/maps/place/Faculdade+de+Economia+da+Universidade+do+Porto/@41.1752483,-8.6033509,17z/data=!3m2!4b1!5s0xd2464415dbd2009:0x97bd55a1784f38cb!4m6!3m5!1s0xd246440b861c0dd:0xe7e20cb197a6ebd0!8m2!3d41.1752444!4d-8.5987375!16s%2Fg%2F1223kj5b?entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="flex items-start gap-4">
+                                <div class="w-12 h-12 rounded-full bg-blue-50 flex items-center justify-center shrink-0 group-hover:bg-blue-100 transition-colors">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-indigo-900" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <p class="text-xl font-medium text-indigo-950 group-hover:text-blue-700 transition-colors">FEP - U.Porto</p>
+                                    <p class="text-gray-500 mt-1">Rua Dr. Roberto Frias, 4200-464<br>Paranhos, Porto</p>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="group">
+                            <h3 class="text-sm font-bold text-blue-500 uppercase tracking-widest mb-3">Email</h3>
+                            <a href="mailto:geral@smartdatafep.pt" class="flex items-center gap-4">
+                                <div class="w-12 h-12 rounded-full bg-blue-50 flex items-center justify-center shrink-0 group-hover:bg-blue-100 transition-colors">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-indigo-900" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                                    </svg>
+                                </div>
+                                <span class="text-xl font-medium text-indigo-950 group-hover:text-blue-700 transition-colors">geral@smartdatafep.pt</span>
+                            </a>
+                        </div>
+
+                        <div>
+                            <h3 class="text-sm font-bold text-blue-500 uppercase tracking-widest mb-6">Redes Sociais</h3>
+                            <div class="flex gap-6">
+                                <a href="https://pt.linkedin.com/company/smartdata-fep" target="_blank" class="group flex items-center gap-3 px-6 py-3 rounded-full border border-gray-200 bg-white hover:border-blue-700 hover:shadow-md transition-all">
+                                    <Image src={linkedinDarkIcon} alt="LinkedIn" class="w-6 h-6" />
+                                    <span class="font-semibold text-indigo-950 group-hover:text-blue-700">LinkedIn</span>
+                                </a>
+                                <a href="https://www.instagram.com/smartdatafep/" target="_blank" class="group flex items-center gap-3 px-6 py-3 rounded-full border border-gray-200 bg-white hover:border-pink-600 hover:shadow-md transition-all">
+                                    <Image src={instagramDarkIcon} alt="Instagram" class="w-6 h-6" />
+                                    <span class="font-semibold text-indigo-950 group-hover:text-pink-600">Instagram</span>
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="notification" class="fixed top-4 right-4 max-w-md bg-slate-900 text-white rounded-lg shadow-2xl p-6 transition-all duration-300 transform translate-x-full opacity-0 invisible z-[100] border-l-4 border-indigo-950">
+        <div class="flex items-start gap-4">
+            <div id="notificationIcon" class="flex-shrink-0"></div>
+            <div class="flex-1">
+                <h3 id="notificationTitle" class="text-lg font-bold mb-1 text-white"></h3>
+                <p id="notificationMessage" class="text-sm text-slate-300"></p>
+            </div>
+            <button onclick="hideNotification()" class="text-slate-400 hover:text-white transition-colors">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <script is:inline>
+        let notificationTimeout;
+        function showNotification(type, title, message) {
+            const notification = document.getElementById('notification');
+            const icon = document.getElementById('notificationIcon');
+            const titleEl = document.getElementById('notificationTitle');
+            const messageEl = document.getElementById('notificationMessage');
+            if (!notification || !icon || !titleEl || !messageEl) return;
+
+            if (notificationTimeout) clearTimeout(notificationTimeout);
+
+            titleEl.textContent = title;
+            messageEl.textContent = message;
+
+            if (type === 'success') {
+                notification.style.borderColor = '#10b981';
+                icon.innerHTML = `
+                    <svg class="w-6 h-6 text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                    </svg>`;
+            } else {
+                notification.style.borderColor = '#ef4444';
+                icon.innerHTML = `
+                    <svg class="w-6 h-6 text-red-400" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"></path>
+                    </svg>`;
+            }
+
+            notification.classList.remove('translate-x-full', 'opacity-0', 'invisible');
+            
+            notificationTimeout = setTimeout(() => {
+                hideNotification();
+            }, 5000);
+        }
+
+        function hideNotification() {
+            const notification = document.getElementById('notification');
+            if (!notification) return;
+            notification.classList.add('translate-x-full', 'opacity-0', 'invisible');
+        }
+
+        const contactForm = document.getElementById('contactForm');
+        if (contactForm) {
+            contactForm.addEventListener('submit', async function(e) {
+                e.preventDefault();
+
+                const submitButton = contactForm.querySelector('button[type="submit"]');
+                const originalBtnContent = submitButton.innerHTML;
+                
+                submitButton.disabled = true;
+                submitButton.innerHTML = '<svg class="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>';
+
+                const form = e.target;
+                const formData = new FormData(form);
+
+                try {
+                    const response = await fetch(form.action, {
+                        method: 'POST',
+                        body: formData,
+                        headers: { 'Accept': 'application/json' }
+                    });
+                    if (response.ok) {
+                        showNotification('success', 'Mensagem Enviada!', 'Obrigado pelo seu contacto. Responderemos em breve.');
+                        form.reset();
+                    } else {
+                        throw new Error('Failed');
+                    }
+                } catch (error) {
+                    showNotification('error', 'Erro ao Enviar', 'Ocorreu um erro ao enviar. Tente novamente.');
+                } finally {
+                    submitButton.disabled = false;
+                    submitButton.innerHTML = originalBtnContent;
+                }
+            });
+        }
+    </script>
+</Layout>

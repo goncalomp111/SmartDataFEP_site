@@ -1,0 +1,511 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { Image } from 'astro:assets';
+
+// Direção Geral
+import leonorSantos from '../assets/equipa/images/Leonor Santos.jpg';
+import mariaFontainhas from '../assets/equipa/images/Maria Fontainhas.jpg';
+
+// Recursos Humanos
+import anaMata from '../assets/equipa/images/Ana Mata.jpg';
+import carlotaPeres from '../assets/equipa/images/Carlota Peres.jpg';
+import inesPadrao from '../assets/equipa/images/Inês Padrão.jpg';
+import leonorAlmeida from '../assets/equipa/images/Leonor Almeida.jpg';
+import martaMartins from '../assets/equipa/images/Marta Martins.jpg';
+import tomasGomes from '../assets/equipa/images/Tomás Gomes.jpg';
+
+// Financeiro
+import martaCosta from '../assets/equipa/images/Marta Costa.jpg';
+import pedroCarneiro from '../assets/equipa/images/Pedro Carneiro.jpg';
+import tomasOliveira from '../assets/equipa/images/Tomás Oliveira.jpg';
+
+// Educação e Formação
+import joanaMartins from '../assets/equipa/images/Joana Martins.jpg';
+import catarinaMagalhaes from '../assets/equipa/images/Catarina Magalhães.jpg';
+import duarteSantos from '../assets/equipa/images/Duarte Santos.jpg';
+import eduardaPinheiro from '../assets/equipa/images/Eduarda Pinheiro.jpg';
+import filipaJose from '../assets/equipa/images/Filipa José.jpg';
+import lucasFigueiredo from '../assets/equipa/images/Lucas Figueiredo.jpg';
+
+// Projetos e Análise de Dados
+import franciscoRibeiro from '../assets/equipa/images/Francisco Ribeiro.jpg';
+import goncaloPereira from '../assets/equipa/images/Gonçalo Pereira.jpg';
+import sofiaLourosa from '../assets/equipa/images/Sofia Lourosa.jpg'
+
+// Marketing
+import antonioCaiano from '../assets/equipa/images/António Caiano.jpg';
+import beatrizCosta from '../assets/equipa/images/Beatriz Costa.jpg';
+import duarteAlpoim from '../assets/equipa/images/Duarte Alpoim.jpg';
+import lauraBastos from '../assets/equipa/images/Laura Bastos.jpg';
+import mariaMendes from '../assets/equipa/images/Maria Mendes.jpg';
+import sofiaLobo from '../assets/equipa/images/Sofia Lobo.jpg';
+import sofiaTumanova from '../assets/equipa/images/Sofia Tumanova.jpg';
+
+// Relações Externas
+import margaridaDamas from '../assets/equipa/images/Margarida Damas.jpg';
+---
+
+<Layout title="Equipa - SmartData FEP">
+	<section class="w-full bg-white py-12 md:py-24">
+		<div class="mx-auto max-w-screen-xl px-4 md:px-0">
+			<div class="text-center">
+				<h3 class="text-3xl md:text-5xl font-bold text-indigo-950 mb-8 md:mb-6">Direção Geral</h3>
+				<div class="flex flex-col md:flex-row items-center justify-center gap-10 md:gap-14">
+					<div class="flex flex-col items-center">
+						<div class="w-56 h-56 md:w-64 md:h-64 bg-gray-200 rounded-full overflow-hidden flex items-center justify-center">
+							<Image src={leonorSantos} alt="Diretor 1" class="object-cover object-center w-full h-full transform scale-120" />
+						</div>
+						<p class="mt-4 text-indigo-950 font-bold text-lg md:text-xl">Leonor Santos</p>
+						<p class="text-sm md:text-base text-gray-600 italic">Diretora-Geral Externa</p>
+					</div>
+					<div class="flex flex-col items-center">
+						<div class="w-56 h-56 md:w-64 md:h-64 bg-gray-200 rounded-full overflow-hidden flex items-center justify-center">
+							<Image src={mariaFontainhas} alt="Diretor 2" class="object-cover object-center w-full h-full transform scale-110" />
+						</div>
+						<p class="mt-4 text-indigo-950 font-bold text-lg md:text-xl">Maria Fontainhas</p>
+						<p class="text-sm md:text-base text-gray-600 italic">Diretora-Geral Interno</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+   <section id="recursos-humanos" class="w-full bg-white py-16 md:py-26">
+    <div class="mx-auto max-w-screen-xl px-4">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start mb-16 md:mb-24">
+            <div>
+                <h3 class="text-3xl md:text-5xl font-bold text-indigo-950 mb-4 md:mb-6">Recursos Humanos</h3>
+                <p class="text-base md:text-lg text-indigo-950 text-justify">Desde o recrutamento e integração até ao desenvolvimento pessoal e profissional, o nosso foco está em criar um ambiente saudável, colaborativo e motivador.</p>
+            </div>
+            <div class="flex flex-col items-center md:items-end">
+                <div class="w-56 h-56 md:w-64 md:h-64 bg-gray-200 rounded-full overflow-hidden flex items-center justify-center shadow-lg">
+                    <Image src={sofiaLourosa} alt="Diretor" class="object-cover object-center w-full h-full transform scale-140" />
+                </div>
+                <p class="mt-4 text-indigo-950 font-bold text-lg md:text-xl">Sofia Lourosa</p>
+                <p class="text-sm md:text-base text-gray-600 italic">Diretora Recursos Humanos</p>
+            </div>
+        </div>
+
+        <div class="relative group px-4 md:px-12">
+            
+            <button onclick="document.getElementById('RH-carousel').scrollBy({left: window.innerWidth < 768 ? -250 : -400, behavior: 'smooth'})" 
+                class="flex items-center justify-center absolute left-2 md:left-0 top-16 md:top-24 -translate-y-1/2 z-20 p-2 md:p-3 rounded-full border border-indigo-950 text-indigo-950 bg-white shadow-md hover:bg-indigo-950 hover:text-white transition-all">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-4 h-4 md:w-5 md:h-5"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" /></svg>
+            </button>
+
+            <button onclick="document.getElementById('RH-carousel').scrollBy({left: window.innerWidth < 768 ? 250 : 400, behavior: 'smooth'})" 
+                class="flex items-center justify-center absolute right-2 md:right-0 top-16 md:top-24 -translate-y-1/2 z-20 p-2 md:p-3 rounded-full border border-indigo-950 text-indigo-950 bg-white shadow-md hover:bg-indigo-950 hover:text-white transition-all">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-4 h-4 md:w-5 md:h-5"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" /></svg>
+            </button>
+
+            <div id="RH-carousel" class="flex overflow-x-auto gap-6 md:gap-8 pb-10 snap-x snap-mandatory scroll-smooth ">
+                
+                <div class="flex-none w-full sm:w-1/2 md:w-[calc((100%-6rem)/4)] snap-start flex flex-col items-center">
+                    <div class="w-40 h-40 md:w-48 md:h-48 rounded-full overflow-hidden bg-gray-100 mb-3 md:mb-4 shadow-md hover:shadow-xl duration-300">
+                        <Image src={anaMata} alt="Ana Mata" class="object-cover object-center w-full h-full transform scale-140" />
+                    </div>
+                    <h5 class="text-indigo-950 font-bold text-base md:text-lg">Ana Mata</h5>
+                </div>
+
+                <div class="flex-none w-full sm:w-1/2 md:w-[calc((100%-6rem)/4)] snap-start flex flex-col items-center">
+                    <div class="w-40 h-40 md:w-48 md:h-48 rounded-full overflow-hidden bg-gray-100 mb-3 md:mb-4 shadow-md hover:shadow-xl duration-300">
+                        <Image src={carlotaPeres} alt="Carlota Peres" class="object-cover object-center w-full h-full transform scale-140" />
+                    </div>
+                    <h5 class="text-indigo-950 font-bold text-base md:text-lg">Carlota Peres</h5>
+                </div>
+
+                <div class="flex-none w-full sm:w-1/2 md:w-[calc((100%-6rem)/4)] snap-start flex flex-col items-center">
+                    <div class="w-40 h-40 md:w-48 md:h-48 rounded-full overflow-hidden bg-gray-100 mb-3 md:mb-4 shadow-md hover:shadow-xl duration-300">
+                        <Image src={inesPadrao} alt="Inês Padrão" class="object-cover object-center w-full h-full transform scale-140" />
+                    </div>
+                    <h5 class="text-indigo-950 font-bold text-base md:text-lg">Inês Padrão</h5>
+                </div>
+
+                <div class="flex-none w-full sm:w-1/2 md:w-[calc((100%-6rem)/4)] snap-start flex flex-col items-center">
+                    <div class="w-40 h-40 md:w-48 md:h-48 rounded-full overflow-hidden bg-gray-100 mb-3 md:mb-4 shadow-md hover:shadow-xl duration-300">
+                        <Image src={leonorAlmeida} alt="Leonor Almeida" class="object-cover object-center w-full h-full transform scale-140" />
+                    </div>
+                    <h5 class="text-indigo-950 font-bold text-base md:text-lg">Leonor Almeida</h5>
+                </div>
+
+                <div class="flex-none w-full sm:w-1/2 md:w-[calc((100%-6rem)/4)] snap-start flex flex-col items-center">
+                    <div class="w-40 h-40 md:w-48 md:h-48 rounded-full overflow-hidden bg-gray-100 mb-3 md:mb-4 shadow-md hover:shadow-xl duration-300">
+                        <Image src={martaMartins} alt="Marta Martins" class="object-cover object-center w-full h-full transform scale-140" />
+                    </div>
+                    <h5 class="text-indigo-950 font-bold text-base md:text-lg">Marta Martins</h5>
+                </div>
+
+                <div class="flex-none w-full sm:w-1/2 md:w-[calc((100%-6rem)/4)] snap-start flex flex-col items-center">
+                    <div class="w-40 h-40 md:w-48 md:h-48 rounded-full overflow-hidden bg-gray-100 mb-3 md:mb-4 shadow-md hover:shadow-xl duration-300">
+                        <Image src={tomasGomes} alt="Tomás Gomes" class="object-cover object-center w-full h-full transform scale-140" />
+                    </div>
+                    <h5 class="text-indigo-950 font-bold text-base md:text-lg">Tomás Gomes</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+    </section>
+
+    <section id="financeiro" class="w-full bg-white py-16 md:py-26">
+        <div class="mx-auto max-w-screen-xl px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start mb-16 md:mb-24">
+                <div>
+                    <h3 class="text-3xl md:text-5xl font-bold text-indigo-950 mb-4 md:mb-6">Financeiro</h3>
+                    <p class="text-base md:text-lg text-indigo-950 text-justify">É responsável pelo planeamento, controlo financeiro e acompanhamento das atividades da organização, garantindo sustentabilidade e rigor em todas as decisões.</p>
+                </div>
+                <div class="flex flex-col items-center md:items-end">
+                    <div class="w-56 h-56 md:w-64 md:h-64 bg-gray-200 rounded-full overflow-hidden flex items-center justify-center shadow-lg">
+                        <Image src={catarinaMagalhaes} alt="Diretor" class="object-cover object-center w-full h-full transform scale-140" />
+                    </div>
+                    <p class="mt-4 text-indigo-950 font-bold text-lg md:text-xl">Catarina Magalhães</p>
+                    <p class="text-sm md:text-base text-gray-600 italic">Diretora Financeiro</p>
+                </div>
+            </div>
+
+            <div class="relative group px-4 md:px-12">
+                <button onclick="document.getElementById('financeiro-carousel').scrollBy({left: window.innerWidth < 768 ? -250 : -400, behavior: 'smooth'})" 
+                    class="flex items-center justify-center absolute left-2 md:left-0 top-16 md:top-24 -translate-y-1/2 z-20 p-2 md:p-3 rounded-full border border-indigo-950 text-indigo-950 bg-white shadow-md hover:bg-indigo-950 hover:text-white transition-all">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-4 h-4 md:w-5 md:h-5"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" /></svg>
+                </button>
+
+                <button onclick="document.getElementById('financeiro-carousel').scrollBy({left: window.innerWidth < 768 ? 250 : 400, behavior: 'smooth'})" 
+                    class="flex items-center justify-center absolute right-2 md:right-0 top-16 md:top-24 -translate-y-1/2 z-20 p-2 md:p-3 rounded-full border border-indigo-950 text-indigo-950 bg-white shadow-md hover:bg-indigo-950 hover:text-white transition-all">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-4 h-4 md:w-5 md:h-5"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" /></svg>
+                </button>
+
+                <div id="financeiro-carousel" class="flex overflow-x-auto gap-8 pb-10 snap-x snap-mandatory scroll-smooth ">
+                    
+            
+                    <div class="flex-none w-full sm:w-1/2 md:w-[calc((100%-6rem)/4)] snap-start flex flex-col items-center">
+                        <div class="w-40 h-40 md:w-48 md:h-48 rounded-full overflow-hidden bg-gray-100 mb-3 md:mb-4 shadow-md hover:shadow-xl duration-300">
+                            <Image src={martaCosta} alt="Marta Costa" class="object-cover object-center w-full h-full transform scale-140" />
+                        </div>
+                        <h5 class="text-indigo-950 font-bold text-base md:text-lg">Marta Costa</h5>
+                    </div>
+
+                    <div class="flex-none w-full sm:w-1/2 md:w-[calc((100%-6rem)/4)] snap-start flex flex-col items-center">
+                        <div class="w-40 h-40 md:w-48 md:h-48 rounded-full overflow-hidden bg-gray-100 mb-3 md:mb-4 shadow-md hover:shadow-xl duration-300">
+                            <Image src={pedroCarneiro} alt="Pedro Carneiro" class="object-cover object-center w-full h-full transform scale-140" />
+                        </div>
+                        <h5 class="text-indigo-950 font-bold text-base md:text-lg">Pedro Carneiro</h5>
+                    </div>
+
+                    <div class="flex-none w-full sm:w-1/2 md:w-[calc((100%-6rem)/4)] snap-start flex flex-col items-center">
+                        <div class="w-40 h-40 md:w-48 md:h-48 rounded-full overflow-hidden bg-gray-100 mb-3 md:mb-4 shadow-md hover:shadow-xl duration-300">
+                            <Image src={tomasOliveira} alt="Tomás Oliveira" class="object-cover object-center w-full h-full transform scale-140" />
+                        </div>
+                        <h5 class="text-indigo-950 font-bold text-base md:text-lg">Tomás Oliveira</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="educacao-formacao" class="w-full bg-white py-16 md:py-26">
+        <div class="mx-auto max-w-screen-xl px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start mb-16 md:mb-24">
+                <div>
+                    <h3 class="text-3xl md:text-5xl font-bold text-indigo-950 mb-4 md:mb-6">Educação e Formação</h3>
+                    <p class="text-base md:text-lg text-indigo-950 text-justify">Responsável pela organização e coordenação de iniciativas de formação internas e externas, de workshops, sessões formativas e parcerias.</p>
+                </div>
+                <div class="flex flex-col items-center md:items-end">
+                    <div class="w-56 h-56 md:w-64 md:h-64 bg-gray-200 rounded-full overflow-hidden flex items-center justify-center shadow-lg">
+                        <Image src={filipaJose} alt="Diretor" class="object-cover object-center w-full h-full transform scale-140" />
+                    </div>
+                    <p class="mt-4 text-indigo-950 font-bold text-lg md:text-xl">Filipa José</p>
+                    <p class="text-sm md:text-base text-gray-600 italic">Diretora Educação e Formação</p>
+                </div>
+            </div>
+
+            <div class="relative group px-4 md:px-12">
+                <button onclick="document.getElementById('Educação-carousel').scrollBy({left: window.innerWidth < 768 ? -250 : -400, behavior: 'smooth'})" 
+                    class="flex items-center justify-center absolute left-2 md:left-0 top-16 md:top-24 -translate-y-1/2 z-20 p-2 md:p-3 rounded-full border border-indigo-950 text-indigo-950 bg-white shadow-md hover:bg-indigo-950 hover:text-white transition-all">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-4 h-4 md:w-5 md:h-5"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" /></svg>
+                </button>
+
+                <button onclick="document.getElementById('Educação-carousel').scrollBy({left: window.innerWidth < 768 ? 250 : 400, behavior: 'smooth'})" 
+                    class="flex items-center justify-center absolute right-2 md:right-0 top-16 md:top-24 -translate-y-1/2 z-20 p-2 md:p-3 rounded-full border border-indigo-950 text-indigo-950 bg-white shadow-md hover:bg-indigo-950 hover:text-white transition-all">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-4 h-4 md:w-5 md:h-5"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" /></svg>
+                </button>
+
+                <div id="Educação-carousel" class="flex overflow-x-auto gap-8 pb-10 snap-x snap-mandatory scroll-smooth ">                    
+
+                    <div class="flex-none w-full sm:w-1/2 md:w-[calc((100%-6rem)/4)] snap-start flex flex-col items-center">
+                        <div class="w-40 h-40 md:w-48 md:h-48 rounded-full overflow-hidden bg-gray-100 mb-3 md:mb-4 shadow-md hover:shadow-xl duration-300">
+                            <Image src={duarteSantos} alt="Duarte Santos" class="object-cover object-center w-full h-full transform scale-140" />
+                        </div>
+                        <h5 class="text-indigo-950 font-bold text-base md:text-lg">Duarte Santos</h5>
+                    </div>
+
+                    <div class="flex-none w-full sm:w-1/2 md:w-[calc((100%-6rem)/4)] snap-start flex flex-col items-center">
+                        <div class="w-40 h-40 md:w-48 md:h-48 rounded-full overflow-hidden bg-gray-100 mb-3 md:mb-4 shadow-md hover:shadow-xl duration-300">
+                            <Image src={eduardaPinheiro} alt="Eduarda Pinheiro" class="object-cover object-center w-full h-full transform scale-140" />
+                        </div>
+                        <h5 class="text-indigo-950 font-bold text-base md:text-lg">Eduarda Pinheiro</h5>
+                    </div>                    
+                </div>
+            </div>
+        </div>
+    </section>
+     <section id="projetos-analise-dados" class="w-full bg-white py-16 md:py-26">
+        <div class="mx-auto max-w-screen-xl px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start mb-16 md:mb-24">
+                <div>
+                    <h3 class="text-2xl md:text-5xl font-bold text-indigo-950 mb-4 md:mb-6 md:whitespace-nowrap">Projetos e Análise de Dados</h3>
+                    <p class="text-base md:text-lg text-indigo-950 text-justify">Atua na análise, tratamento e interpretação de dados, transformando informação em soluções ajustadas às necessidades de cada desafio. Trabalha em estreita colaboração com clientes e parceiros.</p>
+                </div>
+                <div class="flex flex-col items-center md:items-end">
+                    <div class="w-56 h-56 md:w-64 md:h-64 bg-gray-200 rounded-full overflow-hidden flex items-center justify-center shadow-lg">
+                        <Image src={sofiaLourosa} alt="Diretor" class="object-cover object-center w-full h-full transform scale-140" />
+                    </div>
+                    <p class="mt-4 text-indigo-950 font-bold text-lg md:text-xl">Sofia Lourosa</p>
+                    <p class="text-sm md:text-base text-gray-600 italic">Diretor Projetos e Análise de Dados</p>
+                </div>
+            </div>
+
+            <div class="relative group px-4 md:px-12">
+                <button onclick="document.getElementById('PAD-carousel').scrollBy({left: window.innerWidth < 768 ? -250 : -400, behavior: 'smooth'})" 
+                    class="flex items-center justify-center absolute left-2 md:left-0 top-16 md:top-24 -translate-y-1/2 z-20 p-2 md:p-3 rounded-full border border-indigo-950 text-indigo-950 bg-white shadow-md hover:bg-indigo-950 hover:text-white transition-all">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-4 h-4 md:w-5 md:h-5"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" /></svg>
+                </button>
+
+                <button onclick="document.getElementById('PAD-carousel').scrollBy({left: window.innerWidth < 768 ? 250 : 400, behavior: 'smooth'})" 
+                    class="flex items-center justify-center absolute right-2 md:right-0 top-16 md:top-24 -translate-y-1/2 z-20 p-2 md:p-3 rounded-full border border-indigo-950 text-indigo-950 bg-white shadow-md hover:bg-indigo-950 hover:text-white transition-all">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-4 h-4 md:w-5 md:h-5"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" /></svg>
+                </button>
+
+                <div id="PAD-carousel" class="flex overflow-x-auto gap-8 pb-10 snap-x snap-mandatory scroll-smooth ">
+                    
+                    <div class="flex-none w-full sm:w-1/2 md:w-[calc((100%-6rem)/4)] snap-start flex flex-col items-center">
+                        <div class="w-40 h-40 md:w-48 md:h-48 rounded-full overflow-hidden bg-gray-100 mb-3 md:mb-4 shadow-md hover:shadow-xl duration-300">
+                            <Image src={franciscoRibeiro} alt="Francisco Ribeiro" class="object-cover object-center w-full h-full transform scale-140" />
+                        </div>
+                        <h5 class="text-indigo-950 font-bold text-base md:text-lg">Francisco Ribeiro</h5>
+                    </div>
+
+                    <div class="flex-none w-full sm:w-1/2 md:w-[calc((100%-6rem)/4)] snap-start flex flex-col items-center">
+                        <div class="w-40 h-40 md:w-48 md:h-48 rounded-full overflow-hidden bg-gray-100 mb-3 md:mb-4 shadow-md hover:shadow-xl duration-300">
+                            <Image src={goncaloPereira} alt="Gonçalo Pereira" class="object-cover object-center w-full h-full transform scale-140" />
+                        </div>
+                        <h5 class="text-indigo-950 font-bold text-base md:text-lg">Gonçalo Pereira</h5>
+                    </div>
+                    <div class="flex-none w-full sm:w-1/2 md:w-[calc((100%-6rem)/4)] snap-start flex flex-col items-center">
+                        <div class="w-48 h-48 rounded-full overflow-hidden bg-gray-100 mb-4 shadow-md hover:shadow-xl duration-300">
+                            <Image src={sofiaLourosa} alt="Sofia Lourosa" class="object-cover object-center w-full h-full transform scale-140" />
+                        </div>
+                        <h5 class="text-indigo-950 font-bold text-lg">Sofia Lourosa</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="marketing" class="w-full bg-white py-16 md:py-26">
+        <div class="mx-auto max-w-screen-xl px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start mb-16 md:mb-24">
+                <div>
+                    <h3 class="text-3xl md:text-5xl font-bold text-indigo-950 mb-4 md:mb-6">Marketing</h3>
+                    <p class="text-base md:text-lg text-indigo-950 text-justify">O departamento de Marketing é responsável pela comunicação e imagem. Atua na definição da identidade da organização, na gestão dos canais digitais e na criação de conteúdos.</p>
+                </div>
+                <div class="flex flex-col items-center md:items-end">
+                    <div class="w-56 h-56 md:w-64 md:h-64 bg-gray-200 rounded-full overflow-hidden flex items-center justify-center shadow-lg">
+                        <Image src={sofiaLourosa} alt="Diretor" class="object-cover object-center w-full h-full transform scale-140" />
+                    </div>
+                    <p class="mt-4 text-indigo-950 font-bold text-lg md:text-xl">Sofia Lourosa</p>
+                    <p class="text-sm md:text-base text-gray-600 italic">Diretora Marketing</p>
+                </div>
+            </div>
+
+            <div class="relative group px-4 md:px-12">
+                <button onclick="document.getElementById('Mark-carousel').scrollBy({left: window.innerWidth < 768 ? -250 : -400, behavior: 'smooth'})" 
+                    class="flex items-center justify-center absolute left-2 md:left-0 top-16 md:top-24 -translate-y-1/2 z-20 p-2 md:p-3 rounded-full border border-indigo-950 text-indigo-950 bg-white shadow-md hover:bg-indigo-950 hover:text-white transition-all">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-4 h-4 md:w-5 md:h-5"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" /></svg>
+                </button>
+
+                <button onclick="document.getElementById('Mark-carousel').scrollBy({left: window.innerWidth < 768 ? 250 : 400, behavior: 'smooth'})" 
+                    class="flex items-center justify-center absolute right-2 md:right-0 top-16 md:top-24 -translate-y-1/2 z-20 p-2 md:p-3 rounded-full border border-indigo-950 text-indigo-950 bg-white shadow-md hover:bg-indigo-950 hover:text-white transition-all">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-4 h-4 md:w-5 md:h-5"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" /></svg>
+                </button>
+
+                <div id="Mark-carousel" class="flex overflow-x-auto gap-8 pb-10 snap-x snap-mandatory scroll-smooth ">
+                    
+                    <div class="flex-none w-full sm:w-1/2 md:w-[calc((100%-6rem)/4)] snap-start flex flex-col items-center">
+                        <div class="w-40 h-40 md:w-48 md:h-48 rounded-full overflow-hidden bg-gray-100 mb-3 md:mb-4 shadow-md hover:shadow-xl duration-300">
+                            <Image src={antonioCaiano} alt="António Caiano" class="object-cover object-center w-full h-full transform scale-140" />
+                        </div>
+                        <h5 class="text-indigo-950 font-bold text-base md:text-lg">António Caiano</h5>
+                    </div>
+
+                    <div class="flex-none w-full sm:w-1/2 md:w-[calc((100%-6rem)/4)] snap-start flex flex-col items-center">
+                        <div class="w-40 h-40 md:w-48 md:h-48 rounded-full overflow-hidden bg-gray-100 mb-3 md:mb-4 shadow-md hover:shadow-xl duration-300">
+                            <Image src={beatrizCosta} alt="Beatriz Costa" class="object-cover object-center w-full h-full transform scale-140" />
+                        </div>
+                        <h5 class="text-indigo-950 font-bold text-base md:text-lg">Beatriz Costa</h5>
+                    </div>
+
+                    <div class="flex-none w-full sm:w-1/2 md:w-[calc((100%-6rem)/4)] snap-start flex flex-col items-center">
+                        <div class="w-40 h-40 md:w-48 md:h-48 rounded-full overflow-hidden bg-gray-100 mb-3 md:mb-4 shadow-md hover:shadow-xl duration-300">
+                            <Image src={duarteAlpoim} alt="Duarte Alpoim" class="object-cover object-center w-full h-full transform scale-140" />
+                        </div>
+                        <h5 class="text-indigo-950 font-bold text-base md:text-lg">Duarte Alpoim</h5>
+                    </div>
+
+                    <div class="flex-none w-full sm:w-1/2 md:w-[calc((100%-6rem)/4)] snap-start flex flex-col items-center">
+                        <div class="w-40 h-40 md:w-48 md:h-48 rounded-full overflow-hidden bg-gray-100 mb-3 md:mb-4 shadow-md hover:shadow-xl duration-300">
+                            <Image src={lauraBastos} alt="Laura Bastos" class="object-cover object-center w-full h-full transform scale-140" />
+                        </div>
+                        <h5 class="text-indigo-950 font-bold text-base md:text-lg">Laura Bastos</h5>
+                    </div>
+                    <div class="flex-none w-full sm:w-1/2 md:w-[calc((100%-6rem)/4)] snap-start flex flex-col items-center">
+                        <div class="w-40 h-40 md:w-48 md:h-48 rounded-full overflow-hidden bg-gray-100 mb-3 md:mb-4 shadow-md hover:shadow-xl duration-300">
+                            <Image src={mariaMendes} alt="Maria Mendes" class="object-cover object-center w-full h-full transform scale-140" />
+                        </div>
+                        <h5 class="text-indigo-950 font-bold text-base md:text-lg">Maria Mendes</h5>
+                    </div>
+                    <div class="flex-none w-full sm:w-1/2 md:w-[calc((100%-6rem)/4)] snap-start flex flex-col items-center">
+                        <div class="w-40 h-40 md:w-48 md:h-48 rounded-full overflow-hidden bg-gray-100 mb-3 md:mb-4 shadow-md hover:shadow-xl duration-300">
+                            <Image src={sofiaLobo} alt="Sofia Lobo" class="object-cover object-center w-full h-full transform scale-140" />
+                        </div>
+                        <h5 class="text-indigo-950 font-bold text-base md:text-lg">Sofia Lobo</h5>
+                    </div>
+                    <div class="flex-none w-full sm:w-1/2 md:w-[calc((100%-6rem)/4)] snap-start flex flex-col items-center">
+                        <div class="w-40 h-40 md:w-48 md:h-48 rounded-full overflow-hidden bg-gray-100 mb-3 md:mb-4 shadow-md hover:shadow-xl duration-300">
+                            <Image src={sofiaTumanova} alt="Sofia Tumanova" class="object-cover object-center w-full h-full transform scale-140" />
+                        </div>
+                        <h5 class="text-indigo-950 font-bold text-base md:text-lg">Sofia Tumanova</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="relacoes-externas" class="w-full bg-white py-16 md:py-26">
+        <div class="mx-auto max-w-screen-xl px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start mb-16 md:mb-24">
+                <div>
+                    <h3 class="text-3xl md:text-5xl font-bold text-indigo-950 mb-4 md:mb-6">Relações Externas</h3>
+                    <p class="text-base md:text-lg text-indigo-950 text-justify">Atua no desenvolvimento de parcerias, na representação institucional e na criação de oportunidades de colaboração com entidades externas e outras organizações.</p>
+                </div>
+                <div class="flex flex-col items-center md:items-end">
+                    <div class="w-56 h-56 md:w-64 md:h-64 bg-gray-200 rounded-full overflow-hidden flex items-center justify-center shadow-lg">
+                        <Image src={margaridaDamas} alt="Diretor" class="object-cover object-center w-full h-full transform scale-140" />
+                    </div>
+                    <p class="mt-4 text-indigo-950 font-bold text-lg md:text-xl">Margarida Damas</p>
+                    <p class="text-sm md:text-base text-gray-600 italic">Diretora Relações Externas</p>
+                </div>
+            </div>
+
+            <div class="relative group px-4 md:px-12">
+               
+                <div class="flex overflow-x-auto gap-8 pb-10 snap-x snap-mandatory scroll-smooth ">
+                    
+                    <div class="flex-none w-full sm:w-1/2 md:w-[calc((100%-6rem)/4)] snap-start flex flex-col items-center">
+                        <div class="w-40 h-40 md:w-48 md:h-48 rounded-full overflow-hidden bg-gray-100 mb-3 md:mb-4 shadow-md hover:shadow-xl duration-300">
+                            <Image src={margaridaDamas} alt="Margarida Damas" class="object-cover object-center w-full h-full transform scale-140" />
+                        </div>
+                        <h5 class="text-indigo-950 font-bold text-base md:text-lg">Margarida Damas</h5>
+                    </div>
+                    
+                
+                </div>
+            </div>
+        </div>
+    </section>
+
+<style>
+    /* Custom scrollbar for team carousel */
+
+/* Firefox scrollbar styling (modern standard) */
+#RH-carousel, #financeiro-carousel, #Educação-carousel, #PAD-carousel, #Mark-carousel{
+    scrollbar-color: #17184B transparent;
+}
+
+/* Webkit scrollbar styling (Chrome/Edge/Safari) */
+#RH-carousel::-webkit-scrollbar, #financeiro-carousel::-webkit-scrollbar, 
+#Educação-carousel::-webkit-scrollbar, #PAD-carousel::-webkit-scrollbar, #Mark-carousel::-webkit-scrollbar{
+    height: 4px;
+    background: transparent;
+}
+
+/* Hide scrollbar arrows/buttons */
+#RH-carousel::-webkit-scrollbar-button, #financeiro-carousel::-webkit-scrollbar-button,
+#Educação-carousel::-webkit-scrollbar-button, #PAD-carousel::-webkit-scrollbar-button, #Mark-carousel::-webkit-scrollbar-button{
+    display: none;
+}
+
+/* Scrollbar track */
+#RH-carousel::-webkit-scrollbar-track, #financeiro-carousel::-webkit-scrollbar-track,
+#Educação-carousel::-webkit-scrollbar-track, #PAD-carousel::-webkit-scrollbar-track, #Mark-carousel::-webkit-scrollbar-track{
+    background: transparent;
+}
+
+#RH-carousel::-webkit-scrollbar-thumb, #financeiro-carousel::-webkit-scrollbar-thumb,
+#Educação-carousel::-webkit-scrollbar-thumb, #PAD-carousel::-webkit-scrollbar-thumb, #Mark-carousel::-webkit-scrollbar-thumb{
+    background: rgba(23, 24, 75, 0.4);
+    border-radius: 10px;
+    transition: background 0.3s ease;
+}
+
+#RH-carousel::-webkit-scrollbar-thumb:hover, #financeiro-carousel::-webkit-scrollbar-thumb:hover,
+#Educação-carousel::-webkit-scrollbar-thumb:hover, #PAD-carousel::-webkit-scrollbar-thumb:hover, #Mark-carousel::-webkit-scrollbar-thumb:hover{
+    background: rgba(23, 24, 75, 0.7);
+}
+
+#RH-carousel::-webkit-scrollbar-thumb:active, #financeiro-carousel::-webkit-scrollbar-thumb:active, 
+#Educação-carousel::-webkit-scrollbar-thumb:active, #PAD-carousel::-webkit-scrollbar-thumb:active, #Mark-carousel::-webkit-scrollbar-thumb:active{
+    background: #17184B;
+}
+</style>
+
+<script>
+    // Smooth scroll elevator effect with custom easing
+    document.addEventListener('DOMContentLoaded', () => {
+        const urlParams = new URLSearchParams(window.location.search);
+        const scrollTo = urlParams.get('scrollTo');
+        
+        const validSections = ['recursos-humanos', 'financeiro', 'educacao-formacao', 'projetos-analise-dados', 'marketing', 'relacoes-externas'];
+        
+        if (scrollTo && validSections.includes(scrollTo)) {
+            // Start at top - use direct property assignment for better Chrome compatibility
+            document.documentElement.scrollTop = 0;
+            document.body.scrollTop = 0;
+            
+            // Remove query parameter from URL
+            const newUrl = window.location.pathname;
+            history.replaceState(null, '', newUrl);
+            
+            // Wait, then smooth scroll to section with custom easing
+            setTimeout(() => {
+                const section = document.getElementById(scrollTo);
+                if (section) {
+                    const targetPosition = section.offsetTop;
+                    const startPosition = 0;
+                    const distance = targetPosition;
+                    const duration = 2000; // 2 seconds for smooth elevator effect
+                    let startTime: number | null = null;
+                    
+                    // Easing function: ease-in-out cubic for smooth acceleration and deceleration
+                    const easeInOutCubic = (t: number): number => {
+                        return t < 0.5 ? 4 * t * t * t : (t - 1) * (2 * t - 2) * (2 * t - 2) + 1;
+                    };
+                    
+                    const animation = (currentTime: number): void => {
+                        if (startTime === null) startTime = currentTime;
+                        const timeElapsed = currentTime - startTime;
+                        const progress = Math.min(timeElapsed / duration, 1);
+                        const ease = easeInOutCubic(progress);
+                        
+                        const currentPosition = startPosition + distance * ease;
+                        document.documentElement.scrollTop = currentPosition;
+                        document.body.scrollTop = currentPosition;
+                        
+                        if (progress < 1) {
+                            requestAnimationFrame(animation);
+                        }
+                    };
+                    
+                    requestAnimationFrame(animation);
+                }
+            }, 50);
+        }
+    });
+</script>
+
+</Layout>
+

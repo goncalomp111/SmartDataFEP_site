@@ -1,0 +1,16 @@
+@import "tailwindcss";
+
+
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 100 900; /* variable font supports range */
+  font-display: swap;
+  src: url('/fonts/Montserrat-VariableFont_wght.ttf') format('truetype');
+}
+
+body {
+  font-family: 'Montserrat', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  color: #17184b;
+  background-color: #ffffff;
+}

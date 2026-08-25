@@ -1,0 +1,336 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { Image } from 'astro:assets';
+import fepLogo from '../assets/home/images/fep_logo_image.png';
+import microsoftLogo from '../assets/home/images/microsoft_logo_image.png';
+import apbiLogo from '../assets/home/images/apbi_logo_image.png';
+import servicosImage from '../assets/home/images/home_servicos_image.jpg';
+---
+
+<Layout title="SmartData FEP - Shaping the Future">
+    <section class="relative bg-[#1e1b4b] text-white pt-20 pb-20 md:pt-28 md:pb-32 px-6 overflow-hidden">
+        <div class="absolute inset-0 z-0">
+             <div class="absolute inset-0 bg-[url('/src/assets/home/images/smart_backgroud.png')] opacity-100 bg-cover bg-center mix-blend-overlay"></div>
+            <div class="absolute inset-0 bg-gradient-to-r from-[#1e1b4b] via-[#1e1b4b]/90 to-transparent"></div>
+        </div>
+
+        <div class="relative z-10 mx-auto max-w-screen-xl px-6 md:px-10 w-full grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div class="space-y-8">
+                <div class="inline-block border-l-4 border-blue-400 pl-4">
+                    <span class="text-blue-200 uppercase tracking-widest text-sm font-semibold">AI & BI</span>
+                </div>
+                <h1 class="text-5xl md:text-6xl font-bold leading-tight tracking-tight">
+                    What is your next <br/>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-200 to-indigo-400">data-driven</span> move?
+                </h1>
+                <p class="text-xl text-gray-300 max-w-lg font-light leading-relaxed">
+                    A SmartData FEP transforma o potencial académico em impacto nos negócios. Moldamos a próxima geração de líderes em Inteligência Artificial e Análise de Dados.
+                </p>
+                <div class="flex flex-wrap gap-4 pt-4">
+                    <a href="/serviços" class="group relative px-8 py-4 bg-white text-[#1e1b4b] font-bold rounded-full overflow-hidden transition-all hover:shadow-[0_0_20px_rgba(255,255,255,0.3)] text-center">
+                        <span class="relative z-10">Explora os nossos Serviços</span>
+                        <div class="absolute inset-0 bg-blue-100 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    </a>
+                    <a href="/contactos" class="px-8 py-4 border border-white/30 text-white font-medium rounded-full hover:bg-white/10 transition-colors backdrop-blur-sm text-center">
+                        Contactar
+                    </a>
+                </div>
+            </div>
+            
+            <div class="hidden md:block relative">
+                <div class="bg-white/5 backdrop-blur-md rounded-2xl p-8 border border-white/10 shadow-2xl">
+                    <h3 class="text-2xl mb-6 border-b border-white/20 pb-4">O Nosso Impacto</h3>
+                    <div class="grid grid-cols-2 gap-8">
+                        <div>
+                            <span class="block text-4xl font-bold text-blue-300">40+</span>
+                            <span class="text-sm text-gray-400">Membros Ativos</span>
+                        </div>
+                        <div>
+                            <span class="block text-4xl font-bold text-blue-300">3+</span>
+                            <span class="text-sm text-gray-400">Parceiros</span>
+                        </div>
+                        <div>
+                            <span class="block text-4xl font-bold text-blue-300">100%</span>
+                            <span class="text-sm text-gray-400">Liderada por Estudantes</span>
+                        </div>
+                         <div>
+                            <span class="block text-4xl font-bold text-blue-300">U.Porto</span>
+                            <span class="text-sm text-gray-400">FEP | FCUP | FEUP</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<section class="relative bg-gray-50 py-24 overflow-hidden" id="navigation-map">
+        <div class="mx-auto max-w-screen-xl px-6 md:px-10 mb-12 text-center">
+             <h2 class="text-4xl font-bold text-[#1e1b4b] mb-4">Mapa de Navegação</h2>
+             <p class="text-gray-600 max-w-2xl mx-auto">Explore o ecossistema da SmartData FEP através da nossa rede interativa.</p>
+        </div>
+
+        <div class="md:hidden px-6 pb-12">
+            <div class="grid grid-cols-2 gap-4">
+                <a href="/serviços" class="bg-white p-4 rounded-xl shadow-md border-l-4 border-[#1e1b4b]">
+                    <div class="font-bold text-[#1e1b4b] text-sm">Serviços</div>
+                </a>
+                <a href="/contactos" class="bg-white p-4 rounded-xl shadow-md border-l-4 border-[#1e1b4b]">
+                    <div class="font-bold text-[#1e1b4b] text-sm">Contactos</div>
+                </a>
+                <a href="/equipa" class="bg-white p-4 rounded-xl shadow-md border-l-4 border-[#1e1b4b]">
+                    <div class="font-bold text-[#1e1b4b] text-sm">Equipa</div>
+                </a>
+                <a href="/sobre" class="bg-white p-4 rounded-xl shadow-md border-l-4 border-[#1e1b4b]">
+                    <div class="font-bold text-[#1e1b4b] text-sm">Sobre</div>
+                </a>
+                <div class="col-span-2 text-center text-xs text-gray-400 mt-2">Visite no desktop para a experiência completa</div>
+            </div>
+        </div>
+
+        <div class="hidden md:block relative w-full max-w-[1000px] aspect-[16/9] mx-auto bg-white rounded-[3rem] shadow-[0_20px_60px_rgba(30,27,75,0.06)] border border-gray-100">
+            
+            <svg class="absolute inset-0 w-full h-full pointer-events-none z-0" viewBox="0 0 100 100" preserveAspectRatio="none">
+                
+                <path d="M50 50 L30 50" class="stroke-[#1e1b4b] stroke-[0.8]" fill="none" />
+                <path d="M50 50 L70 35" class="stroke-[#1e1b4b] stroke-[0.8]" fill="none" />
+                <path d="M50 50 L70 65" class="stroke-[#1e1b4b] stroke-[0.8]" fill="none" />
+
+                <path d="M30 50 L20 20" class="stroke-[#1e1b4b]/20 stroke-[0.5] vector-line" fill="none" />
+                <path d="M30 50 L10 35" class="stroke-[#1e1b4b]/20 stroke-[0.5] vector-line" fill="none" />
+                <path d="M30 50 L5 50" class="stroke-[#1e1b4b]/20 stroke-[0.5] vector-line" fill="none" />
+                <path d="M30 50 L10 65" class="stroke-[#1e1b4b]/20 stroke-[0.5] vector-line" fill="none" />
+                <path d="M30 50 L20 80" class="stroke-[#1e1b4b]/20 stroke-[0.5] vector-line" fill="none" />
+                 <path d="M30 50 L40 80" class="stroke-[#1e1b4b]/20 stroke-[0.5] vector-line" fill="none" />
+
+                <path d="M70 35 L60 15" class="stroke-[#1e1b4b]/20 stroke-[0.5] vector-line" fill="none" />
+                <path d="M70 35 L85 15" class="stroke-[#1e1b4b]/20 stroke-[0.5] vector-line" fill="none" />
+                <path d="M70 35 L90 40" class="stroke-[#1e1b4b]/20 stroke-[0.5] vector-line" fill="none" />
+
+                <path d="M70 65 L90 60" class="stroke-[#1e1b4b]/20 stroke-[0.5] vector-line" fill="none" />
+                <path d="M70 65 L85 85" class="stroke-[#1e1b4b]/20 stroke-[0.5] vector-line" fill="none" />
+            </svg>
+
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-30 group cursor-default">
+                <div class="w-24 h-24 bg-[#1e1b4b] rounded-full flex items-center justify-center shadow-2xl transition-transform duration-500 group-hover:scale-110 border-4 border-white">
+                    <img src="/favicon.svg" alt="SmartData" class="w-12 h-12 drop-shadow-md" />
+                </div>
+            </div>
+
+            <div class="absolute top-[50%] left-[30%] -translate-x-1/2 -translate-y-1/2 z-20">
+                <div class="w-12 h-12 bg-white border-4 border-[#1e1b4b] rounded-full shadow-lg"></div>
+                <div class="absolute top-full mt-2 left-1/2 -translate-x-1/2 text-[10px] font-bold uppercase tracking-wider text-gray-400">Departamentos</div>
+            </div>
+
+            <div class="absolute top-[35%] left-[70%] -translate-x-1/2 -translate-y-1/2 z-20">
+                <div class="w-12 h-12 bg-white border-4 border-[#1e1b4b] rounded-full shadow-lg"></div>
+                <div class="absolute bottom-full mb-2 left-1/2 -translate-x-1/2 text-[10px] font-bold uppercase tracking-wider text-gray-400">Externo</div>
+            </div>
+
+             <div class="absolute top-[65%] left-[70%] -translate-x-1/2 -translate-y-1/2 z-20">
+                <div class="w-12 h-12 bg-white border-4 border-[#1e1b4b] rounded-full shadow-lg"></div>
+                <div class="absolute top-full mt-2 left-1/2 -translate-x-1/2 text-[10px] font-bold uppercase tracking-wider text-gray-400">Institucional</div>
+            </div>
+
+            <a href="/equipa?scrollTo=educacao-formacao" class="absolute top-[20%] left-[20%] -translate-x-1/2 -translate-y-1/2 group z-10">
+                <div class="relative flex flex-col items-center">
+                    <div class="w-10 h-10 bg-white border-2 border-[#1e1b4b] rounded-full flex items-center justify-center shadow-md transition-all duration-300 group-hover:bg-[#1e1b4b] group-hover:scale-125">
+                        <span class="text-[10px] font-bold text-[#1e1b4b] group-hover:text-white">EF</span>
+                    </div>
+                    <span class="mt-2 text-xs font-medium text-[#1e1b4b] opacity-0 group-hover:opacity-100 transition-opacity absolute top-8 w-max">Formação</span>
+                </div>
+            </a>
+            <a href="/equipa?scrollTo=recursos-humanos" class="absolute top-[35%] left-[10%] -translate-x-1/2 -translate-y-1/2 group z-10">
+                <div class="relative flex flex-col items-center">
+                    <div class="w-10 h-10 bg-white border-2 border-[#1e1b4b] rounded-full flex items-center justify-center shadow-md transition-all duration-300 group-hover:bg-[#1e1b4b] group-hover:scale-125">
+                        <span class="text-[10px] font-bold text-[#1e1b4b] group-hover:text-white">RH</span>
+                    </div>
+                    <span class="mt-2 text-xs font-medium text-[#1e1b4b] opacity-0 group-hover:opacity-100 transition-opacity absolute top-8 w-max">Recursos Humanos</span>
+                </div>
+            </a>
+            <a href="/equipa?scrollTo=projetos-analise-dados" class="absolute top-[50%] left-[5%] -translate-x-1/2 -translate-y-1/2 group z-10">
+                <div class="relative flex flex-col items-center">
+                    <div class="w-10 h-10 bg-white border-2 border-[#1e1b4b] rounded-full flex items-center justify-center shadow-md transition-all duration-300 group-hover:bg-[#1e1b4b] group-hover:scale-125">
+                        <span class="text-[10px] font-bold text-[#1e1b4b] group-hover:text-white">PAD</span>
+                    </div>
+                    <span class="mt-2 text-xs font-medium text-[#1e1b4b] opacity-0 group-hover:opacity-100 transition-opacity absolute top-8 w-max">Projetos</span>
+                </div>
+            </a>
+            <a href="/equipa?scrollTo=marketing" class="absolute top-[65%] left-[10%] -translate-x-1/2 -translate-y-1/2 group z-10">
+                <div class="relative flex flex-col items-center">
+                    <div class="w-10 h-10 bg-white border-2 border-[#1e1b4b] rounded-full flex items-center justify-center shadow-md transition-all duration-300 group-hover:bg-[#1e1b4b] group-hover:scale-125">
+                        <span class="text-[10px] font-bold text-[#1e1b4b] group-hover:text-white">MK</span>
+                    </div>
+                    <span class="mt-2 text-xs font-medium text-[#1e1b4b] opacity-0 group-hover:opacity-100 transition-opacity absolute top-8 w-max">Marketing</span>
+                </div>
+            </a>
+             <a href="/equipa?scrollTo=financeiro" class="absolute top-[80%] left-[20%] -translate-x-1/2 -translate-y-1/2 group z-10">
+                <div class="relative flex flex-col items-center">
+                    <div class="w-10 h-10 bg-white border-2 border-[#1e1b4b] rounded-full flex items-center justify-center shadow-md transition-all duration-300 group-hover:bg-[#1e1b4b] group-hover:scale-125">
+                        <span class="text-[10px] font-bold text-[#1e1b4b] group-hover:text-white">FIN</span>
+                    </div>
+                    <span class="mt-2 text-xs font-medium text-[#1e1b4b] opacity-0 group-hover:opacity-100 transition-opacity absolute top-8 w-max">Financeiro</span>
+                </div>
+            </a>
+             <a href="/equipa?scrollTo=relacoes-externas" class="absolute top-[80%] left-[40%] -translate-x-1/2 -translate-y-1/2 group z-10">
+                <div class="relative flex flex-col items-center">
+                    <div class="w-10 h-10 bg-white border-2 border-[#1e1b4b] rounded-full flex items-center justify-center shadow-md transition-all duration-300 group-hover:bg-[#1e1b4b] group-hover:scale-125">
+                        <span class="text-[10px] font-bold text-[#1e1b4b] group-hover:text-white">RE</span>
+                    </div>
+                    <span class="mt-2 text-xs font-medium text-[#1e1b4b] opacity-0 group-hover:opacity-100 transition-opacity absolute top-8 w-max">Relações Externas</span>
+                </div>
+            </a>
+
+            <a href="#" class="absolute top-[15%] left-[60%] -translate-x-1/2 -translate-y-1/2 group z-10">
+                <div class="relative flex flex-col items-center">
+                    <div class="w-12 h-12 bg-white border-2 border-[#1e1b4b] rounded-full flex items-center justify-center shadow-md transition-all duration-300 group-hover:bg-[#1e1b4b] group-hover:scale-125">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-[#1e1b4b] group-hover:text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
+                    </div>
+                    <span class="mt-2 text-sm font-bold text-[#1e1b4b] absolute top-10 w-max">Eventos</span>
+                </div>
+            </a>
+            <a href="/serviços" class="absolute top-[15%] left-[85%] -translate-x-1/2 -translate-y-1/2 group z-10">
+                <div class="relative flex flex-col items-center">
+                    <div class="w-12 h-12 bg-white border-2 border-[#1e1b4b] rounded-full flex items-center justify-center shadow-md transition-all duration-300 group-hover:bg-[#1e1b4b] group-hover:scale-125">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-[#1e1b4b] group-hover:text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
+                    </div>
+                    <span class="mt-2 text-sm font-bold text-[#1e1b4b] absolute top-10 w-max">Serviços</span>
+                </div>
+            </a>
+             <a href="/contactos" class="absolute top-[40%] left-[90%] -translate-x-1/2 -translate-y-1/2 group z-10">
+                <div class="relative flex flex-col items-center">
+                    <div class="w-12 h-12 bg-white border-2 border-[#1e1b4b] rounded-full flex items-center justify-center shadow-md transition-all duration-300 group-hover:bg-[#1e1b4b] group-hover:scale-125">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-[#1e1b4b] group-hover:text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
+                    </div>
+                    <span class="mt-2 text-sm font-bold text-[#1e1b4b] absolute top-10 w-max">Contactos</span>
+                </div>
+            </a>
+
+            <a href="/sobre" class="absolute top-[60%] left-[90%] -translate-x-1/2 -translate-y-1/2 group z-10">
+                <div class="relative flex flex-col items-center">
+                    <div class="w-12 h-12 bg-white border-2 border-[#1e1b4b] rounded-full flex items-center justify-center shadow-md transition-all duration-300 group-hover:bg-[#1e1b4b] group-hover:scale-125">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-[#1e1b4b] group-hover:text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                    </div>
+                    <span class="mt-2 text-sm font-bold text-[#1e1b4b] absolute top-10 w-max">Sobre</span>
+                </div>
+            </a>
+            <a href="/equipa" class="absolute top-[85%] left-[85%] -translate-x-1/2 -translate-y-1/2 group z-10">
+                <div class="relative flex flex-col items-center">
+                    <div class="w-12 h-12 bg-white border-2 border-[#1e1b4b] rounded-full flex items-center justify-center shadow-md transition-all duration-300 group-hover:bg-[#1e1b4b] group-hover:scale-125">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-[#1e1b4b] group-hover:text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" /></svg>
+                    </div>
+                    <span class="mt-2 text-sm font-bold text-[#1e1b4b] absolute top-10 w-max">Equipa</span>
+                </div>
+            </a>
+            
+        </div>
+    </section>
+    <section class="py-24 bg-white relative">
+        <div class="mx-auto max-w-screen-xl px-6 md:px-10">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+                <div class="relative">
+                     <div class="absolute -top-4 -left-4 w-24 h-24 bg-blue-100 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div>
+                     <div class="absolute -bottom-8 -right-4 w-24 h-24 bg-indigo-100 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000"></div>
+                    <Image 
+                        src={servicosImage} 
+                        alt="SmartData Team Working" 
+                        class="relative rounded-2xl shadow-2xl object-cover h-[500px] w-full z-10"
+                    />
+                </div>
+                <div>
+                    <h2 class="text-4xl font-bold text-[#1e1b4b] mb-6">Bridging Academia <br/>and Business</h2>
+                    <p class="text-lg text-gray-700 leading-relaxed mb-6 text-justify">
+                        A SmartData FEP existe para transformar a maneira como alunos e organizações interagem com dados e tecnologia.
+                    </p>
+                    <p class="text-lg text-gray-700 leading-relaxed mb-8 text-justify">
+                        Capacitamos talentos com habilidades essenciais para o futuro e promovemos o uso de dados como um fator impulsionador para decisões mais informadas, éticas e sustentáveis. 
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="/serviços" class="px-8 py-3 bg-[#1e1b4b] border border-[#1e1b4b]/30 text-[#ffffff] font-medium rounded-full hover:bg-[#1e1b4b]/90 transition-colors backdrop-blur-sm text-center">
+                            Os nossos Serviços
+                        </a>
+                        <a href="/sobre" class="group relative px-8 py-3 bg-white text-[#1e1b4b] font-bold rounded-full overflow-hidden transition-all hover:shadow-[0_0_20px_rgba(255,255,255,0.3)] border border-[#1e1b4b] text-center">
+                            <span class="relative z-10">Sobre Nós</span>
+                            <div class="absolute inset-0 bg-blue-100 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="relative overflow-hidden bg-[#1e1b4b] py-20 md:py-24 text-white">
+        <div class="absolute inset-0 z-0">
+            <div class="absolute inset-0 bg-[url('/src/assets/home/images/smart_backgroud.png')] bg-cover bg-center mix-blend-overlay"></div>
+            <div class="absolute inset-0 bg-gradient-to-l from-[#1e1b4b] via-[#1e1b4b]/90 to-transparent"></div>
+        </div>
+
+        <div class="relative z-10 mx-auto max-w-screen-xl px-6 md:px-10 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div>
+                <div class="inline-block border-l-4 border-blue-400 pl-4 mb-6">
+                    <span class="text-blue-200 uppercase tracking-widest text-sm font-semibold">Recrutamento</span>
+                </div>
+                <h2 class="text-3xl md:text-5xl font-bold leading-tight mb-6">
+                    Seis departamentos.<br/>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-200 to-indigo-400">Qual é o teu?</span>
+                </h2>
+                <p class="text-lg text-gray-300 font-light leading-relaxed mb-8 max-w-lg">
+                    Um questionário curto sobre a tua forma de trabalhar, não sobre o que sabes fazer. Em menos de cinco minutos ficas com uma ideia de por onde começar.
+                </p>
+                <a href="/questionario" class="group relative inline-flex items-center gap-2 px-8 py-4 bg-white text-[#1e1b4b] font-bold rounded-full overflow-hidden transition-all hover:shadow-[0_0_20px_rgba(255,255,255,0.3)]">
+                    <span class="relative z-10">Descobre o teu departamento</span>
+                    <svg class="relative z-10 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+                    <div class="absolute inset-0 bg-blue-100 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                </a>
+            </div>
+
+            <div class="hidden md:grid grid-cols-3 gap-4">
+                <a href="/questionario" class="aspect-square flex items-center justify-center rounded-2xl border border-white/15 bg-white/5 backdrop-blur-md text-lg font-bold text-blue-200 transition-all hover:bg-white/15 hover:-translate-y-1">MK</a>
+                <a href="/questionario" class="aspect-square flex items-center justify-center rounded-2xl border border-white/15 bg-white/5 backdrop-blur-md text-lg font-bold text-blue-200 transition-all hover:bg-white/15 hover:-translate-y-1">PAD</a>
+                <a href="/questionario" class="aspect-square flex items-center justify-center rounded-2xl border border-white/15 bg-white/5 backdrop-blur-md text-lg font-bold text-blue-200 transition-all hover:bg-white/15 hover:-translate-y-1">EF</a>
+                <a href="/questionario" class="aspect-square flex items-center justify-center rounded-2xl border border-white/15 bg-white/5 backdrop-blur-md text-lg font-bold text-blue-200 transition-all hover:bg-white/15 hover:-translate-y-1">RH</a>
+                <a href="/questionario" class="aspect-square flex items-center justify-center rounded-2xl border border-white/15 bg-white/5 backdrop-blur-md text-lg font-bold text-blue-200 transition-all hover:bg-white/15 hover:-translate-y-1">RE</a>
+                <a href="/questionario" class="aspect-square flex items-center justify-center rounded-2xl border border-white/15 bg-white/5 backdrop-blur-md text-lg font-bold text-blue-200 transition-all hover:bg-white/15 hover:-translate-y-1">FIN</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-gray-50 border-y border-gray-200">
+        <div class="mx-auto max-w-screen-xl px-6 py-12">
+            <p class="text-center text-sm font-semibold text-gray-400 uppercase tracking-widest mb-8">Parceiros</p>
+            <div class="flex flex-wrap justify-center items-center gap-12 md:gap-24 opacity-80">
+                <Image class="h-16 w-auto opacity-100" src={fepLogo} alt="FEP Logo" />
+                <Image class="h-16 w-auto opacity-100" src={microsoftLogo} alt="Microsoft Logo" />
+                <Image class="h-16 w-auto opacity-100" src={apbiLogo} alt="APBI Logo" />
+            </div>
+        </div>
+	</section>
+
+</Layout>
+
+<style>
+    /* Subtle pulsing animation for map lines */
+    .vector-line {
+        stroke-dasharray: 10;
+        animation: dash 3s linear infinite;
+    }
+
+    @keyframes dash {
+        to {
+            stroke-dashoffset: -20;
+        }
+    }
+
+    /* Blob background animation */
+    @keyframes blob {
+        0% { transform: translate(0px, 0px) scale(1); }
+        33% { transform: translate(30px, -50px) scale(1.1); }
+        66% { transform: translate(-20px, 20px) scale(0.9); }
+        100% { transform: translate(0px, 0px) scale(1); }
+    }
+    .animate-blob {
+        animation: blob 7s infinite;
+    }
+    .animation-delay-2000 {
+        animation-delay: 2s;
+    }
+</style>
