@@ -1,7 +1,7 @@
 export interface DiretorInfo {
   nome: string;
   cargo: string;
-  fotoUrl?: string; // Caminho em /public ou /src/assets
+  fotoUrl?: string; // Caminho em /public 
 }
 
 export interface DepartamentoInfo {
@@ -22,7 +22,7 @@ export const DEPARTAMENTOS_INFO: Record<string, DepartamentoInfo> = {
     diretor: {
       nome: 'Marta Martins',
       cargo: 'Diretora de Recursos Humanos',
-      fotoUrl: '/src/assets/equipa/images/Marta Martins.jpg',
+      fotoUrl: '/assets/equipa/images/Marta Martins.jpg',
     },
     dicasEntrevista: [
       'Prepara exemplos práticos de como geres conflitos e promoves um bom ambiente de equipa.',
@@ -38,7 +38,7 @@ export const DEPARTAMENTOS_INFO: Record<string, DepartamentoInfo> = {
     diretor: {
       nome: 'Catarina Magalhães',
       cargo: 'Diretora Financeira',
-      fotoUrl: '/src/assets/equipa/images/Catarina Magalhães.jpg',
+      fotoUrl: '/assets/equipa/images/Catarina Magalhães.jpg',
     },
     dicasEntrevista: [
       'Revê conceitos base de orçamentação, tesouraria e análise de viabilidade.',
@@ -54,7 +54,7 @@ export const DEPARTAMENTOS_INFO: Record<string, DepartamentoInfo> = {
     diretor: {
       nome: 'Filipa José',
       cargo: 'Diretora de Educação & Formação',
-      fotoUrl: '/src/assets/equipa/images/Filipa José.jpg',
+      fotoUrl: '/assets/equipa/images/Filipa José.jpg',
     },
     dicasEntrevista: [
       'Pensa em tópicos de tecnologia e dados que seriam interessantes para novos workshops.',
@@ -70,7 +70,7 @@ export const DEPARTAMENTOS_INFO: Record<string, DepartamentoInfo> = {
     diretor: {
       nome: 'Sofia Lourosa',
       cargo: 'Diretora de Projetos & Análise de Dados',
-      fotoUrl: '/src/assets/equipa/images/Sofia Lourosa.jpg',
+      fotoUrl: '/assets/equipa/images/Sofia Lourosa.jpg',
     },
     dicasEntrevista: [
       'Prepara-te para falar sobre ferramentas analíticas que usas (Python, R, SQL, Power BI, Excel).',
@@ -86,7 +86,7 @@ export const DEPARTAMENTOS_INFO: Record<string, DepartamentoInfo> = {
     diretor: {
       nome: 'Sofia Tumanova',
       cargo: 'Diretora de Marketing',
-      fotoUrl: '/src/assets/equipa/images/Sofia Tumanova.jpg',
+      fotoUrl: '/assets/equipa/images/Sofia Tumanova.jpg',
     },
     dicasEntrevista: [
       'Traz ideias sobre como comunicar os eventos da SmartData de forma visual e apelativa.',
@@ -102,7 +102,7 @@ export const DEPARTAMENTOS_INFO: Record<string, DepartamentoInfo> = {
     diretor: {
       nome: 'Margarida Damas',
       cargo: 'Diretora de Relações Externas',
-      fotoUrl: '/src/assets/equipa/images/Margarida Damas.jpg',
+      fotoUrl: '/assets/equipa/images/Margarida Damas.jpg',
     },
     dicasEntrevista: [
       'Mostra facilidade na comunicação formal, postura profissional e capacidade de negociação.',
