@@ -1,0 +1,493 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { supabase } from '../lib/supabase';
+import { DEPARTAMENTOS_INFO } from '../data/departamentos';
+import { Image } from 'astro:assets';
+import partyPopper from '../assets/outros_icons/party_popper_light.svg';
+import infoIcon from '../assets/outros_icons/information_smartColor.svg';
+---
+
+<Layout title="Portal do Candidato — SmartData FEP">
+  
+  <!-- Loading State -->
+  <div id="loadingState" class="relative flex min-h-screen flex-col items-center justify-center bg-[#1e1b4b] text-white">
+    <div class="h-10 w-10 animate-spin rounded-full border-4 border-blue-400 border-t-transparent"></div>
+    <p class="mt-4 text-sm font-light text-gray-300">A carregar a tua candidatura...</p>
+  </div>
+
+  <div id="portalWrapper" class="hidden">
+    
+    <!-- ===================== HERO DA CANDIDATURA ===================== -->
+    <section class="relative overflow-hidden bg-[#1e1b4b] px-4 pt-12 pb-16 text-white md:px-6 md:pt-20 md:pb-24">
+      <div class="absolute inset-0 z-0">
+        <div class="absolute inset-0 bg-[url('/src/assets/home/images/smart_backgroud.png')] bg-cover bg-center opacity-100 mix-blend-overlay"></div>
+        <div class="absolute inset-0 bg-gradient-to-r from-[#1e1b4b] via-[#1e1b4b]/90 to-transparent"></div>
+      </div>
+
+      <div class="relative z-10 mx-auto max-w-screen-xl px-4 md:px-10">
+        
+        <!-- Top Bar -->
+        <div class="flex flex-col gap-6 md:flex-row md:items-start md:justify-between">
+          <div>
+            <div class="mb-4 inline-block border-l-4 border-blue-400 pl-4">
+              <span class="text-xs font-semibold uppercase tracking-widest text-blue-200 md:text-sm">Área do Candidato</span>
+            </div>
+
+            <h1 class="text-3xl font-medium leading-tight md:text-5xl lg:text-6xl">
+              Olá, <span id="candidateName" class="bg-gradient-to-r from-blue-200 to-indigo-400 bg-clip-text text-transparent">Candidato</span>
+            </h1>
+
+            <div class="mt-4 flex flex-wrap items-center gap-4 text-sm font-light text-gray-300 md:text-base">
+              <span>Número UP: <strong id="candidateUP" class="font-semibold text-white">---</strong></span>
+              <span class="text-white/30">•</span>
+              <span id="statusBadge" class="rounded-full bg-white/10 px-3 py-1 text-xs font-bold uppercase tracking-wider text-white">---</span>
+            </div>
+          </div>
+
+          <button
+            id="logoutBtn"
+            class="self-start cursor-pointer rounded-full border border-white/20 bg-white/10 px-6 py-2.5 text-sm font-semibold text-white backdrop-blur-sm transition-all hover:bg-white/20 active:scale-95 md:self-auto"
+          >
+            Terminar Sessão
+          </button>
+        </div>
+
+        <!-- Recruitment Stepper (4 Fases) -->
+        <div class="mt-12">
+          <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            
+            <div class="step-card rounded-2xl border border-white/15 bg-white/5 p-5 backdrop-blur-md transition-all" data-step="Preenchimento das candidaturas">
+              <div class="flex items-center gap-3">
+                <div class="step-num flex h-8 w-8 items-center justify-center rounded-full border border-white/20 text-xs font-bold">1ª</div>
+                <span class="text-sm font-bold text-white">Candidatura</span>
+              </div>
+              <p class="mt-2 text-xs text-gray-300">Inscrição concluída com sucesso.</p>
+            </div>
+
+            <div class="step-card rounded-2xl border border-white/15 bg-white/5 p-5 backdrop-blur-md transition-all" data-step="Dinâmicas de grupo">
+              <div class="flex items-center gap-3">
+                <div class="step-num flex h-8 w-8 items-center justify-center rounded-full border border-white/20 text-xs font-bold">2ª</div>
+                <span class="text-sm font-bold text-white">Dinâmicas de grupo</span>
+              </div>
+              <p class="mt-2 text-xs text-gray-300">Desafios práticos em equipa.</p>
+            </div>
+
+            <div class="step-card rounded-2xl border border-white/15 bg-white/5 p-5 backdrop-blur-md transition-all" data-step="Entrevistas Individuais">
+              <div class="flex items-center gap-3">
+                <div class="step-num flex h-8 w-8 items-center justify-center rounded-full border border-white/20 text-xs font-bold">3ª</div>
+                <span class="text-sm font-bold text-white">Entrevistas Individuais</span>
+              </div>
+              <p class="mt-2 text-xs text-gray-300">Conversa com a Direção.</p>
+            </div>
+
+            <div class="step-card rounded-2xl border border-white/15 bg-white/5 p-5 backdrop-blur-md transition-all" data-step="Dinâmicas finais">
+              <div class="flex items-center gap-3">
+                <div class="step-num flex h-8 w-8 items-center justify-center rounded-full border border-white/20 text-xs font-bold">4ª</div>
+                <span class="text-sm font-bold text-white">Dinâmicas finais</span>
+              </div>
+              <p class="mt-2 text-xs text-gray-300">Integração departamental.</p>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===================== CORPO PRINCIPAL ===================== -->
+    <section class="bg-gray-50 py-16 md:py-24">
+      <div class="mx-auto max-w-screen-xl px-6 md:px-10">
+        
+        <div class="grid grid-cols-1 gap-8 lg:grid-cols-3">
+          
+          <!-- Coluna Principal (2 colunas) -->
+          <div class="space-y-8 lg:col-span-2">
+            
+            <!-- Mensagem dos Recursos Humanos -->
+            <article class="rounded-2xl border border-gray-100 bg-white p-8 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)]">
+              <div class="mb-4 flex items-center gap-3">
+                <div class="flex h-10 w-10 items-center justify-center rounded-full bg-[#1e1b4b] text-white shrink-0">
+                  <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
+                  </svg>
+                </div>
+                <div>
+                  <h2 class="text-xl font-bold text-[#1e1b4b]">Mensagem dos Recursos Humanos</h2>
+                  <span class="text-xs text-gray-400">Comunicação oficial</span>
+                </div>
+              </div>
+              
+              <p id="personalizedMessage" class="text-base leading-relaxed text-gray-700">
+                ---
+              </p>
+            </article>
+
+            <!-- Card Contextual: Fase 2 (Dicas Gerais de Dinâmica de Grupo) -->
+            <article id="tipsCard" class="hidden rounded-2xl border border-gray-100 bg-white p-8 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)]">
+              <div class="mb-4 flex items-center gap-3">
+                <div class="flex h-10 w-10 items-center justify-center rounded-full border-2 border-[#1e1b4b] shrink-0">
+                  <Image 
+                    src={infoIcon} 
+                    alt="Dicas" 
+                    class="h-8 w-8 object-contain" 
+                  />
+                </div>
+                <div>
+                  <h2 id="tipsTitle" class="text-xl font-bold text-[#1e1b4b]">Dicas de Preparação</h2>
+                  <span class="text-xs text-gray-400">Recomendações para a etapa prática</span>
+                </div>
+              </div>
+              <div id="tipsContent" class="rounded-xl bg-blue-50/50 p-4 text-sm leading-relaxed text-gray-700 border border-blue-100/60">
+              </div>
+            </article>
+
+            <!-- Card Contextual: Fase 3 (Departamento Atribuído, Diretor & Dicas de Entrevista) -->
+            <article id="interviewCard" class="hidden rounded-2xl border border-gray-100 bg-white p-8 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] space-y-6">
+              <div class="flex items-center gap-3 border-b border-gray-100 pb-4">
+                <div class="flex h-10 w-10 items-center justify-center rounded-full bg-[#1e1b4b] text-white shrink-0">
+                  <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                  </svg>
+                </div>
+                <div>
+                  <h2 class="text-xl font-bold text-[#1e1b4b]">Departamento Atribuído</h2>
+                  <span class="text-xs text-gray-400">Alocação para a fase de entrevistas</span>
+                </div>
+              </div>
+
+              <div class="grid grid-cols-1 gap-6 sm:grid-cols-2">
+                <div class="rounded-2xl border border-gray-100 bg-gray-50 p-6">
+                  <span class="text-[11px] font-bold uppercase tracking-wider text-purple-700">Departamento</span>
+                  <h4 id="deptName" class="text-lg font-bold text-[#1e1b4b] mt-1">---</h4>
+                  <p id="deptDesc" class="text-xs text-gray-600 mt-2 leading-relaxed">---</p>
+                </div>
+
+                <div class="rounded-2xl border border-gray-100 bg-gray-50 p-6 flex items-center gap-4">
+                  <div id="directorAvatar" class="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-[#1e1b4b] font-bold text-sm text-white overflow-hidden shadow-sm">
+                    <span id="directorInitials">DIR</span>
+                    <img id="directorImg" src="" alt="" class="hidden h-full w-full object-cover" />
+                  </div>
+                  <div>
+                    <span class="text-[11px] font-bold uppercase tracking-wider text-purple-700">Entrevistador</span>
+                    <h4 id="directorName" class="text-base font-bold text-gray-900 leading-snug mt-0.5">---</h4>
+                    <span id="directorRole" class="text-xs text-gray-500 block mt-0.5">---</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="rounded-2xl border border-purple-100 bg-purple-50/50 p-6">
+                <h4 class="text-xs font-bold uppercase tracking-wider text-purple-900 mb-3">
+                  Dicas do Diretor para a tua Entrevista
+                </h4>
+                <ul id="deptTipsList" class="space-y-2 text-xs leading-relaxed text-gray-700 list-disc pl-4">
+                </ul>
+              </div>
+            </article>
+
+            <!-- Card Contextual: Decisão Final -->
+            <article id="finalDecisionCard" class="hidden rounded-2xl p-8 border transition-all">
+              <h3 id="decisionTitle" class="text-2xl font-bold mb-2">---</h3>
+              <p id="decisionText" class="text-sm leading-relaxed">---</p>
+            </article>
+
+            <!-- Relatório de Avaliação & Feedback (Exclusivo: Fase 4, Conclusão de Fase 3 ou Decisão Final) -->
+            <article id="reportCard" class="hidden rounded-2xl border border-gray-100 bg-white p-8 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)]">
+              <div class="mb-6 flex items-center gap-3 border-b border-gray-100 pb-4">
+                <div class="flex h-10 w-10 items-center justify-center rounded-full border-2 border-[#1e1b4b] text-[#1e1b4b] shrink-0">
+                  <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                  </svg>
+                </div>
+                <div>
+                  <h2 class="text-xl font-bold text-[#1e1b4b]">Relatório de Avaliação & Feedback</h2>
+                  <span class="text-xs text-gray-400">Avaliação consolidada da Direção</span>
+                </div>
+              </div>
+
+              <div class="space-y-6">
+                <div>
+                  <span class="text-xs font-bold uppercase tracking-wider text-gray-400">Resumo da Análise</span>
+                  <div id="reportSummary" class="mt-2 rounded-xl bg-gray-50 p-4 text-sm leading-relaxed text-gray-700">
+                    ---
+                  </div>
+                </div>
+
+                <div>
+                  <span class="text-xs font-bold uppercase tracking-wider text-gray-400">Pontos Fortes Demonstrados</span>
+                  <div id="reportStrengths" class="mt-2 rounded-xl bg-gray-50 p-4 text-sm leading-relaxed text-gray-700">
+                    ---
+                  </div>
+                </div>
+
+                <div>
+                  <span class="text-xs font-bold uppercase tracking-wider text-gray-400">Notas de Desenvolvimento</span>
+                  <div id="reportNotes" class="mt-2 rounded-xl bg-gray-50 p-4 text-sm leading-relaxed text-gray-700">
+                    ---
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- Card Informativo Padronizado -->
+            <article id="noFeedbackNotice" class="hidden rounded-2xl border border-gray-100 bg-white p-8 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)]">
+              <div class="mb-4 flex items-center gap-3">
+                <div class="flex h-10 w-10 items-center justify-center rounded-full border-2 border-[#1e1b4b] shrink-0">
+                  <Image 
+                    src={infoIcon} 
+                    alt="Informação" 
+                    class="h-8 w-8 object-contain" 
+                  />
+                </div>
+                <div>
+                  <h2 class="text-xl font-bold text-[#1e1b4b]">Informação sobre a Avaliação</h2>
+                  <span class="text-xs text-gray-400">Critérios de acompanhamento</span>
+                </div>
+              </div>
+              <p class="text-base leading-relaxed text-gray-700">
+                O teu relatório consolidado de avaliação e feedback individual ficará disponível assim que concluíres as etapas de entrevistas departamentais e dinâmicas finais.
+              </p>
+            </article>
+
+          </div>
+
+          <!-- Coluna Lateral (1 coluna) -->
+          <div class="space-y-8">
+            <div class="rounded-2xl border border-gray-100 bg-white p-8 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)]">
+              <h3 class="mb-4 text-xs font-bold uppercase tracking-widest text-[#1e1b4b]">Fase Atual</h3>
+              <p id="currentPhaseLabel" class="text-2xl font-bold text-indigo-950">---</p>
+              <p class="mt-2 text-sm text-gray-500">
+                O processo é atualizado em tempo real pelos Recursos Humanos.
+              </p>
+            </div>
+
+            <div class="rounded-2xl border border-gray-100 bg-white p-8 text-center shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)]">
+              <h3 class="mb-2 text-lg font-bold text-[#1e1b4b]">Precisas de ajuda?</h3>
+              <p class="mb-6 text-sm text-gray-600">
+                Tens alguma questão sobre o recrutamento ou pretendes esclarecer dúvidas?
+              </p>
+              <a
+                href="/contactos"
+                class="inline-flex w-full items-center justify-center rounded-full border border-[#1e1b4b] bg-[#1e1b4b] px-6 py-3 text-sm font-bold text-white transition-all hover:bg-[#1e1b4b]/90 active:scale-95"
+              >
+                Falar com os RH
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </div>
+
+  <script>
+    import { supabase } from '../lib/supabase'; 
+    import { DEPARTAMENTOS_INFO } from '../data/departamentos';
+    import partyPopper from '../assets/outros_icons/party_popper_light.svg';
+
+    function normalizarChaveDept(nomeDept: string): string {
+      const normalizado = (nomeDept || '')
+        .toLowerCase()
+        .normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+        .replace(/[^a-z0-9]/g, '-')
+        .replace(/-+/g, '-')
+        .replace(/^-|-$/g, '');
+
+      if (normalizado.includes('recursos') || normalizado.includes('rh')) return 'recursos-humanos';
+      if (normalizado.includes('finan')) return 'financeiro';
+      if (normalizado.includes('educa') || normalizado.includes('formacao')) return 'educacao-formacao';
+      if (normalizado.includes('projeto') || normalizado.includes('dados') || normalizado.includes('pad')) return 'projetos-analise-dados';
+      if (normalizado.includes('market')) return 'marketing';
+      if (normalizado.includes('relaco') || normalizado.includes('extern')) return 'relacoes-externas';
+
+      return normalizado;
+    }
+
+    async function initPortal() {
+      const loading = document.getElementById('loadingState') as HTMLDivElement;
+      const wrapper = document.getElementById('portalWrapper') as HTMLDivElement;
+
+      const { data: { session } } = await supabase.auth.getSession();
+
+      if (!session) {
+        window.location.href = '/login';
+        return;
+      }
+
+      const { data: candidate, error } = await supabase
+        .from('candidate_portal')
+        .select('*')
+        .single();
+
+      if (error || !candidate) {
+        loading.innerHTML = `
+          <p class="text-red-400 font-medium">Erro ao carregar dados da candidatura.</p>
+          <a href="/login" class="mt-4 text-sm text-blue-300 underline">Voltar ao Login</a>
+        `;
+        return;
+      }
+
+      // 1. Dados Pessoais & Top Bar
+      document.getElementById('candidateName')!.innerText = candidate.candidate_name || 'Candidato';
+      document.getElementById('candidateUP')!.innerText = candidate.up_number || '---';
+      document.getElementById('currentPhaseLabel')!.innerText = candidate.current_phase || 'Preenchimento das candidaturas';
+      document.getElementById('personalizedMessage')!.innerText = candidate.personalized_message || 'A tua candidatura está a ser acompanhada pela equipa de Recursos Humanos.';
+
+      // 2. Badge de Estado
+      const badge = document.getElementById('statusBadge')!;
+      badge.innerText = candidate.status || 'Em Análise';
+
+      if (candidate.status === 'Aprovado' || candidate.status === 'Convocado') {
+        badge.className = 'rounded-full bg-emerald-500/20 border border-emerald-400/30 text-emerald-200 px-3 py-1 text-xs font-bold uppercase';
+      } else if (candidate.status === 'Não Selecionado') {
+        badge.className = 'rounded-full bg-slate-500/20 border border-slate-400/30 text-slate-300 px-3 py-1 text-xs font-bold uppercase';
+      } else {
+        badge.className = 'rounded-full bg-blue-500/20 border border-blue-400/30 text-blue-200 px-3 py-1 text-xs font-bold uppercase';
+      }
+
+      // 3. Stepper Highlight
+      document.querySelectorAll('.step-card').forEach((card) => {
+        const stepName = card.getAttribute('data-step');
+        if (stepName === candidate.current_phase) {
+          card.classList.add('border-blue-400', 'bg-blue-500/20', 'shadow-[0_0_20px_rgba(56,189,248,0.2)]');
+          const num = card.querySelector('.step-num');
+          if (num) num.classList.add('bg-white', 'text-[#1e1b4b]', 'border-white');
+        }
+      });
+
+      const phase = candidate.current_phase;
+      const status = candidate.status;
+      const report = candidate.performance_report || {};
+
+      // Regra de Exibição do Relatório
+      const concluiuEntrevista = candidate.reached_interview || Boolean(candidate.target_department);
+      
+      const podeVerRelatorio = (
+        phase === 'Dinâmicas finais' ||
+        (status === 'Não Selecionado' && concluiuEntrevista) ||
+        (phase === 'Decisão Final' && concluiuEntrevista)
+      );
+
+      const reportCard = document.getElementById('reportCard');
+      const noFeedbackNotice = document.getElementById('noFeedbackNotice');
+
+      if (podeVerRelatorio && (report.summary || report.strengths || report.feedback_notes)) {
+        document.getElementById('reportSummary')!.innerText = report.summary || 'Análise de desempenho registada.';
+        document.getElementById('reportStrengths')!.innerText = report.strengths || 'Competências demonstradas durante as etapas de avaliação.';
+        document.getElementById('reportNotes')!.innerText = report.feedback_notes || 'Recomendações e feedback recolhido.';
+        reportCard?.classList.remove('hidden');
+        noFeedbackNotice?.classList.add('hidden');
+      } else {
+        reportCard?.classList.add('hidden');
+        noFeedbackNotice?.classList.remove('hidden');
+      }
+
+      // 4. Módulos Dinâmicos por Fase
+
+      // Fase 2: Dicas para a Dinâmica de Grupo
+      if (phase === 'Dinâmicas de grupo' || phase === 'Preenchimento das candidaturas') {
+        const tipsCard = document.getElementById('tipsCard');
+        const tipsTitle = document.getElementById('tipsTitle');
+        const tipsContent = document.getElementById('tipsContent');
+        if (tipsCard && tipsTitle && tipsContent) {
+          tipsTitle.innerText = 'Preparação para as Dinâmicas de Grupo';
+          tipsContent.innerHTML = `
+            <ul class="list-disc pl-5 space-y-1.5">
+              <li>Todos os candidatos inscritos realizam esta etapa prática.</li>
+              <li>Foca-te na <strong>comunicação clara</strong> e na escuta ativa dos colegas.</li>
+              <li>Apresenta raciocínios estruturados e promove o espírito de equipa.</li>
+            </ul>
+          `;
+          tipsCard.classList.remove('hidden');
+        }
+      }
+
+      // Fase 3: Departamento Atribuído & Dicas de Entrevista
+      if (phase === 'Entrevistas Individuais') {
+        const interviewCard = document.getElementById('interviewCard');
+        const deptName = document.getElementById('deptName');
+        const deptDesc = document.getElementById('deptDesc');
+        const directorName = document.getElementById('directorName');
+        const directorRole = document.getElementById('directorRole');
+        const directorImg = document.getElementById('directorImg') as HTMLImageElement;
+        const directorInitials = document.getElementById('directorInitials');
+        const deptTipsList = document.getElementById('deptTipsList');
+
+        if (interviewCard && deptName && deptDesc && directorName && directorRole && deptTipsList) {
+          const deptKey = normalizarChaveDept(candidate.target_department || '');
+          const info = DEPARTAMENTOS_INFO[deptKey] || DEPARTAMENTOS_INFO['projetos-analise-dados'];
+
+          deptName.innerText = info.nome;
+          deptDesc.innerText = info.descricao;
+          directorName.innerText = info.diretor.nome;
+          directorRole.innerText = info.diretor.cargo;
+
+          if (info.diretor.fotoUrl && directorImg) {
+            directorImg.src = info.diretor.fotoUrl;
+            directorImg.alt = info.diretor.nome;
+            directorImg.classList.remove('hidden');
+            directorInitials?.classList.add('hidden');
+          }
+
+          deptTipsList.innerHTML = info.dicasEntrevista.map(dica => `<li>${dica}</li>`).join('');
+          interviewCard.classList.remove('hidden');
+        }
+      }
+
+      // Fase 4: Dicas para a Dinâmica Final
+      if (phase === 'Dinâmicas finais') {
+        const tipsCard = document.getElementById('tipsCard');
+        const tipsTitle = document.getElementById('tipsTitle');
+        const tipsContent = document.getElementById('tipsContent');
+        if (tipsCard && tipsTitle && tipsContent) {
+          tipsTitle.innerText = 'Dicas para a Dinâmica Final';
+          tipsContent.innerHTML = `
+            <p class="leading-relaxed">
+              Nesta fase trabalharás diretamente com os membros da equipa do teu departamento. Demonstra iniciativa, capacidade de integração e rigor técnico nos desafios propostos.
+            </p>
+          `;
+          tipsCard.classList.remove('hidden');
+        }
+      }
+
+      // Decisão Final
+      if (phase === 'Decisão Final' || status === 'Aprovado' || status === 'Não Selecionado') {
+        const finalCard = document.getElementById('finalDecisionCard');
+        const title = document.getElementById('decisionTitle');
+        const text = document.getElementById('decisionText');
+
+        if (finalCard && title && text) {
+          if (status === 'Aprovado') {
+            finalCard.className = 'rounded-2xl p-8 bg-[#1e1b4b] text-white border border-blue-400/30 shadow-[0_4px_25px_rgba(30,27,75,0.25)]';
+            title.innerHTML = `
+              <span class="inline-flex items-center gap-2">
+                <img src="${partyPopper.src}" alt="Festa" class="w-6 h-6 object-contain inline-block shrink-0" />
+                <span>Parabéns! Foste admitido na SmartData FEP</span>
+              </span>
+            `;
+            text.innerText = 'É com enorme entusiasmo que te damos as boas-vindas à nossa equipa. Prepara-te para uma experiência única de crescimento e impacto.';
+            finalCard.classList.remove('hidden');
+          } else if (status === 'Não Selecionado') {
+            finalCard.className = 'rounded-2xl p-8 bg-gray-100 text-gray-800 border border-gray-200';
+            title.innerText = 'Processo de Recrutamento Concluído';
+            text.innerText = podeVerRelatorio
+              ? 'Agradecemos todo o empenho que demonstraste ao longo das entrevistas e etapas práticas. Podes consultar o teu feedback detalhado no relatório abaixo.'
+              : 'Agradecemos a tua participação no processo de recrutamento da SmartData FEP. Desejamos-te o maior sucesso no teu percurso académico.';
+            finalCard.classList.remove('hidden');
+          }
+        }
+      }
+
+      loading.classList.add('hidden');
+      wrapper.classList.remove('hidden');
+    }
+
+    document.getElementById('logoutBtn')?.addEventListener('click', async () => {
+      await supabase.auth.signOut();
+      window.location.href = '/login';
+    });
+
+    initPortal();
+  </script>
+</Layout>
