@@ -133,12 +133,21 @@ export const EVENTOS: Evento[] = [
         ],
       },
       {
-        titulo: 'Apresentação de Oradores',
+        titulo: 'Oradores - Dia 1',
         imagens: [
           '/eventos/aiSummit2526/aiSummitPapper3.jpg',
           '/eventos/aiSummit2526/aiSummitPapper4.jpg',
           '/eventos/aiSummit2526/aiSummitPapper5.jpg',
           '/eventos/aiSummit2526/aiSummitPapper6.jpg',
+        ],
+      },
+      {
+        titulo: 'Oradores - Dia 2',
+        imagens: [
+          '/eventos/aiSummit2526/aiSummitPapper9.jpg',
+          '/eventos/aiSummit2526/aiSummitPapper10.jpg',
+          '/eventos/aiSummit2526/aiSummitPapper11.jpg',
+          '/eventos/aiSummit2526/aiSummitPapper12.jpg',
         ],
       },
       {
