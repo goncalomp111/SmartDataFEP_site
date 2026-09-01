@@ -61,7 +61,7 @@ export const EVENTOS: Evento[] = [
     dataTexto: '14 & 15 de abril de 2026',
     local: 'Salão Nobre da FEP',
     corDestaque: 'from-[#2D1B4E] via-[#4A2D7A] to-[#6B3FA0]',
-    logoUrl: '/assets/eventos/aiSummit2526/Logo_AISUMMIT_fundobranco.png', // Guarda a imagem do logo aqui
+    logoUrl: '/eventos/aiSummit2526/Logo_AISUMMIT_fundobranco.png', // Guarda a imagem do logo aqui
     estado: 'passado', // 'proximo' é o estado default. Mudar para 'passado' quando terminar o evento
     linkInscricao: 'https://docs.google.com/forms/d/e/1FAIpQLScf398ydrxYg9ZKgWy_BGBFUO-f6cQp7j_ZGG0u2aKz-IUziQ/viewform',
     linkRecap: 'https://linktr.ee/aisummit_', // Linktree para quando passar a data do evento. Pode ser para Drive, YouTube, etc.
