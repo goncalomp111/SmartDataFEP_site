@@ -7,50 +7,68 @@ import leonorSantos from '../assets/equipa/images/Leonor Santos.jpg';
 import mariaFontainhas from '../assets/equipa/images/Maria Fontainhas.jpg';
 
 // Recursos Humanos
-import anaMata from '../assets/equipa/images/Ana Mata.jpg';
-import carlotaPeres from '../assets/equipa/images/Carlota Peres.jpg';
-import inesPadrao from '../assets/equipa/images/Inês Padrão.jpg';
 import leonorAlmeida from '../assets/equipa/images/Leonor Almeida.jpg';
 import martaMartins from '../assets/equipa/images/Marta Martins.jpg';
 import tomasGomes from '../assets/equipa/images/Tomás Gomes.jpg';
+//Beatriz Ventura
 
 // Financeiro
-import martaCosta from '../assets/equipa/images/Marta Costa.jpg';
 import pedroCarneiro from '../assets/equipa/images/Pedro Carneiro.jpg';
-import tomasOliveira from '../assets/equipa/images/Tomás Oliveira.jpg';
+import catarinaMagalhaes from '../assets/equipa/images/Catarina Magalhães.jpg';
+//Igor
 
 // Educação e Formação
-import joanaMartins from '../assets/equipa/images/Joana Martins.jpg';
-import catarinaMagalhaes from '../assets/equipa/images/Catarina Magalhães.jpg';
-import duarteSantos from '../assets/equipa/images/Duarte Santos.jpg';
-import eduardaPinheiro from '../assets/equipa/images/Eduarda Pinheiro.jpg';
 import filipaJose from '../assets/equipa/images/Filipa José.jpg';
-import lucasFigueiredo from '../assets/equipa/images/Lucas Figueiredo.jpg';
+//Cátia Ribeiro
+//Filipa Canto
 
 // Projetos e Análise de Dados
 import franciscoRibeiro from '../assets/equipa/images/Francisco Ribeiro.jpg';
 import goncaloPereira from '../assets/equipa/images/Gonçalo Pereira.jpg';
 import sofiaLourosa from '../assets/equipa/images/Sofia Lourosa.jpg'
+//Pedro Vilaça
 
 // Marketing
-import antonioCaiano from '../assets/equipa/images/António Caiano.jpg';
 import beatrizCosta from '../assets/equipa/images/Beatriz Costa.jpg';
 import duarteAlpoim from '../assets/equipa/images/Duarte Alpoim.jpg';
 import lauraBastos from '../assets/equipa/images/Laura Bastos.jpg';
-import mariaMendes from '../assets/equipa/images/Maria Mendes.jpg';
-import sofiaLobo from '../assets/equipa/images/Sofia Lobo.jpg';
 import sofiaTumanova from '../assets/equipa/images/Sofia Tumanova.jpg';
+//Rafael Mendes
 
 // Relações Externas
+import mariaMendes from '../assets/equipa/images/Maria Mendes.jpg';
 import margaridaDamas from '../assets/equipa/images/Margarida Damas.jpg';
 ---
 
 <Layout title="Equipa - SmartData FEP">
+
+    <section class="relative bg-[#1e1b4b] text-white pt-12 pb-12 md:pt-28 md:pb-32 px-4 md:px-6 overflow-hidden" id="team-hero">
+        <div class="absolute inset-0 z-0">
+             <div class="absolute inset-0 bg-[url('/src/assets/home/images/smart_backgroud.png')] opacity-100 bg-cover bg-center mix-blend-overlay"></div>
+            <div class="absolute inset-0 bg-gradient-to-r from-[#1e1b4b] via-[#1e1b4b]/90 to-transparent"></div>
+        </div>
+        
+        <div class="relative z-10 mx-auto max-w-screen-xl px-4 md:px-10">
+            <div class="inline-block border-l-4 border-blue-400 pl-4 mb-6 md:mb-8">
+                <span class="text-blue-200 uppercase tracking-widest text-xs md:text-sm font-semibold">Equipa</span>
+            </div>
+            
+            <h1 class="text-3xl md:text-6xl lg:text-6xl font-medium leading-tight max-w-5xl">
+                The team shaping <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-200 to-indigo-400">the future</span>.
+            </h1>
+            
+            <p class="mt-6 md:mt-8 text-lg md:text-2xl text-gray-300 font-light max-w-3xl leading-relaxed">
+                Conhece a equipa que todos os dias trabalha para aproximar o meio académico do mundo empresarial. Dedicada a Criar impacto, Desenvolver competências e Liderar a próxima geração em AI & BI na U.Porto.            
+            </p>
+        </div>
+    </section>
+
 	<section class="w-full bg-white py-12 md:py-24">
 		<div class="mx-auto max-w-screen-xl px-4 md:px-0">
 			<div class="text-center">
 				<h3 class="text-3xl md:text-5xl font-bold text-indigo-950 mb-8 md:mb-6">Direção Geral</h3>
 				<div class="flex flex-col md:flex-row items-center justify-center gap-10 md:gap-14">
+
 					<div class="flex flex-col items-center">
 						<div class="w-56 h-56 md:w-64 md:h-64 bg-gray-200 rounded-full overflow-hidden flex items-center justify-center">
 							<Image src={leonorSantos} alt="Diretor 1" class="object-cover object-center w-full h-full transform scale-120" />
@@ -58,18 +76,21 @@ import margaridaDamas from '../assets/equipa/images/Margarida Damas.jpg';
 						<p class="mt-4 text-indigo-950 font-bold text-lg md:text-xl">Leonor Santos</p>
 						<p class="text-sm md:text-base text-gray-600 italic">Diretora-Geral Externa</p>
 					</div>
+
 					<div class="flex flex-col items-center">
 						<div class="w-56 h-56 md:w-64 md:h-64 bg-gray-200 rounded-full overflow-hidden flex items-center justify-center">
-							<Image src={mariaFontainhas} alt="Diretor 2" class="object-cover object-center w-full h-full transform scale-110" />
+							<Image src={mariaFontainhas} alt="Diretor 2" class="object-cover object-center w-full h-full transform scale-120" />
 						</div>
 						<p class="mt-4 text-indigo-950 font-bold text-lg md:text-xl">Maria Fontainhas</p>
-						<p class="text-sm md:text-base text-gray-600 italic">Diretora-Geral Interno</p>
+						<p class="text-sm md:text-base text-gray-600 italic">Diretora-Geral Interna</p>
 					</div>
+
 				</div>
 			</div>
 		</div>
 	</section>
-   <section id="recursos-humanos" class="w-full bg-white py-16 md:py-26">
+
+    <section id="recursos-humanos" class="w-full bg-white py-16 md:py-26">
     <div class="mx-auto max-w-screen-xl px-4">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start mb-16 md:mb-24">
             <div>
@@ -78,9 +99,9 @@ import margaridaDamas from '../assets/equipa/images/Margarida Damas.jpg';
             </div>
             <div class="flex flex-col items-center md:items-end">
                 <div class="w-56 h-56 md:w-64 md:h-64 bg-gray-200 rounded-full overflow-hidden flex items-center justify-center shadow-lg">
-                    <Image src={sofiaLourosa} alt="Diretor" class="object-cover object-center w-full h-full transform scale-140" />
+                    <Image src={martaMartins} alt="Diretor" class="object-cover object-center w-full h-full transform scale-140" />
                 </div>
-                <p class="mt-4 text-indigo-950 font-bold text-lg md:text-xl">Sofia Lourosa</p>
+                <p class="mt-4 text-indigo-950 font-bold text-lg md:text-xl">Marta Martins</p>
                 <p class="text-sm md:text-base text-gray-600 italic">Diretora Recursos Humanos</p>
             </div>
         </div>
@@ -101,23 +122,9 @@ import margaridaDamas from '../assets/equipa/images/Margarida Damas.jpg';
                 
                 <div class="flex-none w-full sm:w-1/2 md:w-[calc((100%-6rem)/4)] snap-start flex flex-col items-center">
                     <div class="w-40 h-40 md:w-48 md:h-48 rounded-full overflow-hidden bg-gray-100 mb-3 md:mb-4 shadow-md hover:shadow-xl duration-300">
-                        <Image src={anaMata} alt="Ana Mata" class="object-cover object-center w-full h-full transform scale-140" />
+                        <Image src={martaMartins} alt="Marta Martins" class="object-cover object-center w-full h-full transform scale-140" />
                     </div>
-                    <h5 class="text-indigo-950 font-bold text-base md:text-lg">Ana Mata</h5>
-                </div>
-
-                <div class="flex-none w-full sm:w-1/2 md:w-[calc((100%-6rem)/4)] snap-start flex flex-col items-center">
-                    <div class="w-40 h-40 md:w-48 md:h-48 rounded-full overflow-hidden bg-gray-100 mb-3 md:mb-4 shadow-md hover:shadow-xl duration-300">
-                        <Image src={carlotaPeres} alt="Carlota Peres" class="object-cover object-center w-full h-full transform scale-140" />
-                    </div>
-                    <h5 class="text-indigo-950 font-bold text-base md:text-lg">Carlota Peres</h5>
-                </div>
-
-                <div class="flex-none w-full sm:w-1/2 md:w-[calc((100%-6rem)/4)] snap-start flex flex-col items-center">
-                    <div class="w-40 h-40 md:w-48 md:h-48 rounded-full overflow-hidden bg-gray-100 mb-3 md:mb-4 shadow-md hover:shadow-xl duration-300">
-                        <Image src={inesPadrao} alt="Inês Padrão" class="object-cover object-center w-full h-full transform scale-140" />
-                    </div>
-                    <h5 class="text-indigo-950 font-bold text-base md:text-lg">Inês Padrão</h5>
+                    <h5 class="text-indigo-950 font-bold text-base md:text-lg">Marta Martins</h5>
                 </div>
 
                 <div class="flex-none w-full sm:w-1/2 md:w-[calc((100%-6rem)/4)] snap-start flex flex-col items-center">
@@ -129,17 +136,11 @@ import margaridaDamas from '../assets/equipa/images/Margarida Damas.jpg';
 
                 <div class="flex-none w-full sm:w-1/2 md:w-[calc((100%-6rem)/4)] snap-start flex flex-col items-center">
                     <div class="w-40 h-40 md:w-48 md:h-48 rounded-full overflow-hidden bg-gray-100 mb-3 md:mb-4 shadow-md hover:shadow-xl duration-300">
-                        <Image src={martaMartins} alt="Marta Martins" class="object-cover object-center w-full h-full transform scale-140" />
-                    </div>
-                    <h5 class="text-indigo-950 font-bold text-base md:text-lg">Marta Martins</h5>
-                </div>
-
-                <div class="flex-none w-full sm:w-1/2 md:w-[calc((100%-6rem)/4)] snap-start flex flex-col items-center">
-                    <div class="w-40 h-40 md:w-48 md:h-48 rounded-full overflow-hidden bg-gray-100 mb-3 md:mb-4 shadow-md hover:shadow-xl duration-300">
                         <Image src={tomasGomes} alt="Tomás Gomes" class="object-cover object-center w-full h-full transform scale-140" />
                     </div>
                     <h5 class="text-indigo-950 font-bold text-base md:text-lg">Tomás Gomes</h5>
                 </div>
+
             </div>
         </div>
     </div>
@@ -174,12 +175,11 @@ import margaridaDamas from '../assets/equipa/images/Margarida Damas.jpg';
 
                 <div id="financeiro-carousel" class="flex overflow-x-auto gap-8 pb-10 snap-x snap-mandatory scroll-smooth ">
                     
-            
                     <div class="flex-none w-full sm:w-1/2 md:w-[calc((100%-6rem)/4)] snap-start flex flex-col items-center">
                         <div class="w-40 h-40 md:w-48 md:h-48 rounded-full overflow-hidden bg-gray-100 mb-3 md:mb-4 shadow-md hover:shadow-xl duration-300">
-                            <Image src={martaCosta} alt="Marta Costa" class="object-cover object-center w-full h-full transform scale-140" />
+                            <Image src={catarinaMagalhaes} alt="Catarina Magalhães" class="object-cover object-center w-full h-full transform scale-140" />
                         </div>
-                        <h5 class="text-indigo-950 font-bold text-base md:text-lg">Marta Costa</h5>
+                        <h5 class="text-indigo-950 font-bold text-base md:text-lg">Catarina Magalhães</h5>
                     </div>
 
                     <div class="flex-none w-full sm:w-1/2 md:w-[calc((100%-6rem)/4)] snap-start flex flex-col items-center">
@@ -189,16 +189,11 @@ import margaridaDamas from '../assets/equipa/images/Margarida Damas.jpg';
                         <h5 class="text-indigo-950 font-bold text-base md:text-lg">Pedro Carneiro</h5>
                     </div>
 
-                    <div class="flex-none w-full sm:w-1/2 md:w-[calc((100%-6rem)/4)] snap-start flex flex-col items-center">
-                        <div class="w-40 h-40 md:w-48 md:h-48 rounded-full overflow-hidden bg-gray-100 mb-3 md:mb-4 shadow-md hover:shadow-xl duration-300">
-                            <Image src={tomasOliveira} alt="Tomás Oliveira" class="object-cover object-center w-full h-full transform scale-140" />
-                        </div>
-                        <h5 class="text-indigo-950 font-bold text-base md:text-lg">Tomás Oliveira</h5>
-                    </div>
                 </div>
             </div>
         </div>
     </section>
+
     <section id="educacao-formacao" class="w-full bg-white py-16 md:py-26">
         <div class="mx-auto max-w-screen-xl px-4">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start mb-16 md:mb-24">
@@ -230,22 +225,17 @@ import margaridaDamas from '../assets/equipa/images/Margarida Damas.jpg';
 
                     <div class="flex-none w-full sm:w-1/2 md:w-[calc((100%-6rem)/4)] snap-start flex flex-col items-center">
                         <div class="w-40 h-40 md:w-48 md:h-48 rounded-full overflow-hidden bg-gray-100 mb-3 md:mb-4 shadow-md hover:shadow-xl duration-300">
-                            <Image src={duarteSantos} alt="Duarte Santos" class="object-cover object-center w-full h-full transform scale-140" />
+                            <Image src={filipaJose} alt="Filipa José" class="object-cover object-center w-full h-full transform scale-140" />
                         </div>
-                        <h5 class="text-indigo-950 font-bold text-base md:text-lg">Duarte Santos</h5>
+                        <h5 class="text-indigo-950 font-bold text-base md:text-lg">Filipa José</h5>
                     </div>
 
-                    <div class="flex-none w-full sm:w-1/2 md:w-[calc((100%-6rem)/4)] snap-start flex flex-col items-center">
-                        <div class="w-40 h-40 md:w-48 md:h-48 rounded-full overflow-hidden bg-gray-100 mb-3 md:mb-4 shadow-md hover:shadow-xl duration-300">
-                            <Image src={eduardaPinheiro} alt="Eduarda Pinheiro" class="object-cover object-center w-full h-full transform scale-140" />
-                        </div>
-                        <h5 class="text-indigo-950 font-bold text-base md:text-lg">Eduarda Pinheiro</h5>
-                    </div>                    
                 </div>
             </div>
         </div>
     </section>
-     <section id="projetos-analise-dados" class="w-full bg-white py-16 md:py-26">
+
+    <section id="projetos-analise-dados" class="w-full bg-white py-16 md:py-26">
         <div class="mx-auto max-w-screen-xl px-4">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start mb-16 md:mb-24">
                 <div>
@@ -257,7 +247,7 @@ import margaridaDamas from '../assets/equipa/images/Margarida Damas.jpg';
                         <Image src={sofiaLourosa} alt="Diretor" class="object-cover object-center w-full h-full transform scale-140" />
                     </div>
                     <p class="mt-4 text-indigo-950 font-bold text-lg md:text-xl">Sofia Lourosa</p>
-                    <p class="text-sm md:text-base text-gray-600 italic">Diretor Projetos e Análise de Dados</p>
+                    <p class="text-sm md:text-base text-gray-600 italic">Diretora Projetos e Análise de Dados</p>
                 </div>
             </div>
 
@@ -275,6 +265,13 @@ import margaridaDamas from '../assets/equipa/images/Margarida Damas.jpg';
                 <div id="PAD-carousel" class="flex overflow-x-auto gap-8 pb-10 snap-x snap-mandatory scroll-smooth ">
                     
                     <div class="flex-none w-full sm:w-1/2 md:w-[calc((100%-6rem)/4)] snap-start flex flex-col items-center">
+                        <div class="w-48 h-48 rounded-full overflow-hidden bg-gray-100 mb-4 shadow-md hover:shadow-xl duration-300">
+                            <Image src={sofiaLourosa} alt="Sofia Lourosa" class="object-cover object-center w-full h-full transform scale-140" />
+                        </div>
+                        <h5 class="text-indigo-950 font-bold text-lg">Sofia Lourosa</h5>
+                    </div>
+
+                    <div class="flex-none w-full sm:w-1/2 md:w-[calc((100%-6rem)/4)] snap-start flex flex-col items-center">
                         <div class="w-40 h-40 md:w-48 md:h-48 rounded-full overflow-hidden bg-gray-100 mb-3 md:mb-4 shadow-md hover:shadow-xl duration-300">
                             <Image src={franciscoRibeiro} alt="Francisco Ribeiro" class="object-cover object-center w-full h-full transform scale-140" />
                         </div>
@@ -287,16 +284,12 @@ import margaridaDamas from '../assets/equipa/images/Margarida Damas.jpg';
                         </div>
                         <h5 class="text-indigo-950 font-bold text-base md:text-lg">Gonçalo Pereira</h5>
                     </div>
-                    <div class="flex-none w-full sm:w-1/2 md:w-[calc((100%-6rem)/4)] snap-start flex flex-col items-center">
-                        <div class="w-48 h-48 rounded-full overflow-hidden bg-gray-100 mb-4 shadow-md hover:shadow-xl duration-300">
-                            <Image src={sofiaLourosa} alt="Sofia Lourosa" class="object-cover object-center w-full h-full transform scale-140" />
-                        </div>
-                        <h5 class="text-indigo-950 font-bold text-lg">Sofia Lourosa</h5>
-                    </div>
+
                 </div>
             </div>
         </div>
     </section>
+
     <section id="marketing" class="w-full bg-white py-16 md:py-26">
         <div class="mx-auto max-w-screen-xl px-4">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start mb-16 md:mb-24">
@@ -306,9 +299,9 @@ import margaridaDamas from '../assets/equipa/images/Margarida Damas.jpg';
                 </div>
                 <div class="flex flex-col items-center md:items-end">
                     <div class="w-56 h-56 md:w-64 md:h-64 bg-gray-200 rounded-full overflow-hidden flex items-center justify-center shadow-lg">
-                        <Image src={sofiaLourosa} alt="Diretor" class="object-cover object-center w-full h-full transform scale-140" />
+                        <Image src={sofiaTumanova} alt="Diretor" class="object-cover object-center w-full h-full transform scale-140" />
                     </div>
-                    <p class="mt-4 text-indigo-950 font-bold text-lg md:text-xl">Sofia Lourosa</p>
+                    <p class="mt-4 text-indigo-950 font-bold text-lg md:text-xl">Sofia Tumanova</p>
                     <p class="text-sm md:text-base text-gray-600 italic">Diretora Marketing</p>
                 </div>
             </div>
@@ -328,9 +321,9 @@ import margaridaDamas from '../assets/equipa/images/Margarida Damas.jpg';
                     
                     <div class="flex-none w-full sm:w-1/2 md:w-[calc((100%-6rem)/4)] snap-start flex flex-col items-center">
                         <div class="w-40 h-40 md:w-48 md:h-48 rounded-full overflow-hidden bg-gray-100 mb-3 md:mb-4 shadow-md hover:shadow-xl duration-300">
-                            <Image src={antonioCaiano} alt="António Caiano" class="object-cover object-center w-full h-full transform scale-140" />
+                            <Image src={sofiaTumanova} alt="Sofia Tumanova" class="object-cover object-center w-full h-full transform scale-140" />
                         </div>
-                        <h5 class="text-indigo-950 font-bold text-base md:text-lg">António Caiano</h5>
+                        <h5 class="text-indigo-950 font-bold text-base md:text-lg">Sofia Tumanova</h5>
                     </div>
 
                     <div class="flex-none w-full sm:w-1/2 md:w-[calc((100%-6rem)/4)] snap-start flex flex-col items-center">
@@ -353,28 +346,12 @@ import margaridaDamas from '../assets/equipa/images/Margarida Damas.jpg';
                         </div>
                         <h5 class="text-indigo-950 font-bold text-base md:text-lg">Laura Bastos</h5>
                     </div>
-                    <div class="flex-none w-full sm:w-1/2 md:w-[calc((100%-6rem)/4)] snap-start flex flex-col items-center">
-                        <div class="w-40 h-40 md:w-48 md:h-48 rounded-full overflow-hidden bg-gray-100 mb-3 md:mb-4 shadow-md hover:shadow-xl duration-300">
-                            <Image src={mariaMendes} alt="Maria Mendes" class="object-cover object-center w-full h-full transform scale-140" />
-                        </div>
-                        <h5 class="text-indigo-950 font-bold text-base md:text-lg">Maria Mendes</h5>
-                    </div>
-                    <div class="flex-none w-full sm:w-1/2 md:w-[calc((100%-6rem)/4)] snap-start flex flex-col items-center">
-                        <div class="w-40 h-40 md:w-48 md:h-48 rounded-full overflow-hidden bg-gray-100 mb-3 md:mb-4 shadow-md hover:shadow-xl duration-300">
-                            <Image src={sofiaLobo} alt="Sofia Lobo" class="object-cover object-center w-full h-full transform scale-140" />
-                        </div>
-                        <h5 class="text-indigo-950 font-bold text-base md:text-lg">Sofia Lobo</h5>
-                    </div>
-                    <div class="flex-none w-full sm:w-1/2 md:w-[calc((100%-6rem)/4)] snap-start flex flex-col items-center">
-                        <div class="w-40 h-40 md:w-48 md:h-48 rounded-full overflow-hidden bg-gray-100 mb-3 md:mb-4 shadow-md hover:shadow-xl duration-300">
-                            <Image src={sofiaTumanova} alt="Sofia Tumanova" class="object-cover object-center w-full h-full transform scale-140" />
-                        </div>
-                        <h5 class="text-indigo-950 font-bold text-base md:text-lg">Sofia Tumanova</h5>
-                    </div>
+
                 </div>
             </div>
         </div>
     </section>
+
     <section id="relacoes-externas" class="w-full bg-white py-16 md:py-26">
         <div class="mx-auto max-w-screen-xl px-4">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start mb-16 md:mb-24">
@@ -401,8 +378,14 @@ import margaridaDamas from '../assets/equipa/images/Margarida Damas.jpg';
                         </div>
                         <h5 class="text-indigo-950 font-bold text-base md:text-lg">Margarida Damas</h5>
                     </div>
+
+                    <div class="flex-none w-full sm:w-1/2 md:w-[calc((100%-6rem)/4)] snap-start flex flex-col items-center">
+                        <div class="w-40 h-40 md:w-48 md:h-48 rounded-full overflow-hidden bg-gray-100 mb-3 md:mb-4 shadow-md hover:shadow-xl duration-300">
+                            <Image src={mariaMendes} alt="Maria Mendes" class="object-cover object-center w-full h-full transform scale-140" />
+                        </div>
+                        <h5 class="text-indigo-950 font-bold text-base md:text-lg">Maria Mendes</h5>
+                    </div>
                     
-                
                 </div>
             </div>
         </div>
@@ -508,4 +491,3 @@ import margaridaDamas from '../assets/equipa/images/Margarida Damas.jpg';
 </script>
 
 </Layout>
-

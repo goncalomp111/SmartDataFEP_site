@@ -1,0 +1,1203 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Dashboard de Membros — SmartData FEP">
+  
+  <!-- ===================================================================== -->
+  <!-- 1. HERO INSTITUCIONAL SMARTDATA                                       -->
+  <!-- ===================================================================== -->
+  <section class="relative overflow-hidden bg-[#1e1b4b] px-4 pt-12 pb-16 text-white md:px-6 md:pt-24 md:pb-20">
+    <div class="absolute inset-0 z-0">
+      <div class="absolute inset-0 bg-[url('/src/assets/home/images/smart_backgroud.png')] bg-cover bg-center opacity-100 mix-blend-overlay"></div>
+      <div class="absolute inset-0 bg-gradient-to-r from-[#1e1b4b] via-[#1e1b4b]/90 to-transparent"></div>
+    </div>
+
+    <div class="relative z-10 mx-auto max-w-screen-xl px-4 md:px-10">
+      <div class="grid grid-cols-1 md:grid-cols-5 gap-8 items-end">
+        
+        <!-- Lado Esquerdo (3 Colunas) -->
+        <div class="space-y-6 md:col-span-3">
+          <div class="inline-block border-l-4 border-blue-400 pl-4">
+            <span class="text-xs font-semibold uppercase tracking-widest text-blue-200 md:text-sm">
+              Portal Interno
+            </span>
+          </div>
+
+          <h1 class="text-3xl md:text-5xl font-medium leading-tight max-w-4xl">
+            Welcome to the <br/>
+            <span class="bg-gradient-to-r from-blue-200 to-indigo-400 bg-clip-text text-transparent">Smart Workspace</span>.
+          </h1>
+
+          <p class="text-base md:text-xl text-gray-300 font-light leading-relaxed max-w-2xl">
+            Acompanha o teu progresso, explora o SmartKit e colabora com a equipa na governação e atividades da organização.
+          </p>
+
+          <!-- Abas com Underline Ativo -->
+          <div class="pt-4 flex flex-wrap items-center gap-6 border-b border-white/10 pb-1 text-sm font-semibold">
+            <button class="nav-tab-btn active relative pb-3 text-white transition-all after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-full after:bg-blue-400 cursor-pointer" data-tab="smartkit">
+              SmartKit
+            </button>
+            <button class="nav-tab-btn relative pb-3 text-gray-400 hover:text-white transition-all cursor-pointer" data-tab="percurso">
+              O Meu Percurso
+            </button>
+            <button class="nav-tab-btn relative pb-3 text-gray-400 hover:text-white transition-all cursor-pointer" data-tab="calendario">
+              Calendário
+            </button>
+            <button class="nav-tab-btn relative pb-3 text-gray-400 hover:text-white transition-all cursor-pointer" data-tab="meu-pr">
+              O Meu PR
+            </button>
+            
+            <!-- Abas Dinâmicas de Gestão -->
+            <button id="nav-btn-ef" class="nav-tab-btn hidden relative pb-3 text-blue-300 hover:text-white transition-all cursor-pointer" data-tab="gestao-ef">
+              Gestão EF
+            </button>
+            <button id="nav-btn-rh" class="nav-tab-btn hidden relative pb-3 text-indigo-300 hover:text-white transition-all cursor-pointer" data-tab="gestao-rh">
+              Recrutamento RH
+            </button>
+            <button id="nav-btn-direcao" class="nav-tab-btn hidden relative pb-3 text-purple-300 hover:text-white transition-all cursor-pointer" data-tab="painel-lideranca">
+              Liderança & Governação
+            </button>
+          </div>
+        </div>
+
+        <!-- Lado Direito: Perfil Institucional (2 Colunas) -->
+        <div class="md:col-span-2">
+          <div class="w-full rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-md shadow-2xl space-y-4">
+            <div class="flex items-center justify-between border-b border-white/10 pb-4">
+              <div class="flex items-center gap-3">
+                <div class="h-12 w-12 rounded-full border-2 border-white/30 bg-[#1e1b4b] flex items-center justify-center font-bold text-sm text-blue-200" id="user-avatar-initials">
+                  SD
+                </div>
+                <div>
+                  <h3 class="text-base font-bold text-white leading-tight" id="user-display-name">A carregar...</h3>
+                  <span class="text-xs text-blue-200 font-mono" id="user-display-up">up2026xxxxx</span>
+                </div>
+              </div>
+              <button id="btnLogout" class="p-2 rounded-xl text-gray-400 hover:text-red-300 hover:bg-red-500/10 transition-colors" title="Terminar Sessão">
+                <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"/></svg>
+              </button>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4 text-xs pt-1">
+              <div>
+                <span class="block text-[10px] font-bold uppercase tracking-wider text-gray-400">Departamento</span>
+                <span class="font-semibold text-blue-200 capitalize mt-0.5 block truncate" id="user-display-dept">--</span>
+              </div>
+              <div>
+                <span class="block text-[10px] font-bold uppercase tracking-wider text-gray-400">Cargo & Nível</span>
+                <span class="font-semibold text-white capitalize mt-0.5 block truncate" id="user-display-tier">--</span>
+              </div>
+            </div>
+
+            <div class="pt-2">
+              <button data-tab="perfil" class="nav-tab-btn w-full py-2.5 rounded-full border border-white/20 bg-white/10 hover:bg-white hover:text-[#1e1b4b] text-xs font-bold text-white transition-all text-center cursor-pointer">
+                Ver e Editar Perfil
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================================== -->
+  <!-- 2. CORPO PRINCIPAL COM CONTEÚDOS DAS ABAS                             -->
+  <!-- ===================================================================== -->
+  <section class="bg-gray-50 py-12 md:py-20 min-h-[500px]">
+    <div class="mx-auto max-w-screen-xl px-4 md:px-10">
+
+      <!-- ================================================================= -->
+      <!-- ABA 1: SMARTKIT                                                   -->
+      <!-- ================================================================= -->
+      <div id="tab-smartkit" class="tab-pane space-y-12">
+        
+        <!-- HUB INICIAL -->
+        <div id="smartkit-hub" class="space-y-8">
+          <div class="text-center max-w-2xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold text-[#1e1b4b]">SmartKit</h2>
+            <p class="text-gray-600 mt-2 text-sm md:text-base">
+              A plataforma interna de capacitação técnica, boas práticas e ferramentas departamentais da SmartData FEP.
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <article class="group relative flex h-full flex-col justify-between rounded-2xl border border-gray-100 bg-white p-8 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07)] transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl">
+              <div class="absolute top-0 left-0 h-1.5 w-full rounded-t-2xl bg-[#1e1b4b] opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
+              <div>
+                <div class="mb-5 flex h-12 w-12 items-center justify-center rounded-full border-2 border-[#1e1b4b] text-sm font-bold text-[#1e1b4b] transition-all duration-300 group-hover:bg-[#1e1b4b] group-hover:text-white">
+                  01
+                </div>
+                <h3 class="mb-3 text-2xl font-bold text-indigo-950">Aprende os fundamentos essenciais</h3>
+                <p class="text-sm leading-relaxed text-gray-600">
+                  Conteúdos e boas práticas recomendadas a todos os membros da SmartData.
+                </p>
+              </div>
+              <button id="btn-open-fundamentos" class="mt-8 group relative inline-flex items-center gap-2 overflow-hidden rounded-full bg-[#1e1b4b] px-6 py-3 font-bold text-white transition-all hover:bg-[#1e1b4b]/90 text-xs cursor-pointer">
+                <span>Explorar Fundamentos</span>
+                <span class="group-hover:translate-x-1 transition-transform">→</span>
+              </button>
+            </article>
+
+            <article class="group relative flex h-full flex-col justify-between rounded-2xl border border-gray-100 bg-white p-8 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07)] transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl">
+              <div class="absolute top-0 left-0 h-1.5 w-full rounded-t-2xl bg-[#1e1b4b] opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
+              <div>
+                <div class="mb-5 flex h-12 w-12 items-center justify-center rounded-full border-2 border-[#1e1b4b] text-sm font-bold text-[#1e1b4b] transition-all duration-300 group-hover:bg-[#1e1b4b] group-hover:text-white">
+                  02
+                </div>
+                <h3 class="mb-3 text-2xl font-bold text-indigo-950">Revê as formações gravadas</h3>
+                <p class="text-sm leading-relaxed text-gray-600">
+                  Gravações e materiais das formações internas dinamizadas por EF.
+                </p>
+              </div>
+              <button id="btn-open-formacoes" class="mt-8 group relative inline-flex items-center gap-2 overflow-hidden rounded-full bg-[#1e1b4b] px-6 py-3 font-bold text-white transition-all hover:bg-[#1e1b4b]/90 text-xs cursor-pointer">
+                <span>Explorar Formações</span>
+                <span class="group-hover:translate-x-1 transition-transform">→</span>
+              </button>
+            </article>
+
+            <article class="group relative flex h-full flex-col justify-between rounded-2xl border border-gray-100 bg-white p-8 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07)] transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl">
+              <div class="absolute top-0 left-0 h-1.5 w-full rounded-t-2xl bg-[#1e1b4b] opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
+              <div>
+                <div class="mb-5 flex h-12 w-12 items-center justify-center rounded-full border-2 border-[#1e1b4b] text-sm font-bold text-[#1e1b4b] transition-all duration-300 group-hover:bg-[#1e1b4b] group-hover:text-white">
+                  03
+                </div>
+                <h3 class="mb-3 text-2xl font-bold text-indigo-950">Explora ferramentas departamentais</h3>
+                <p class="text-sm leading-relaxed text-gray-600">
+                  Instrumentos e templates dedicados às atividades do teu departamento.
+                </p>
+              </div>
+              <button id="btn-open-ferramentas" class="mt-8 group relative inline-flex items-center gap-2 overflow-hidden rounded-full bg-[#1e1b4b] px-6 py-3 font-bold text-white transition-all hover:bg-[#1e1b4b]/90 text-xs cursor-pointer">
+                <span>Explorar Ferramentas</span>
+                <span class="group-hover:translate-x-1 transition-transform">→</span>
+              </button>
+            </article>
+          </div>
+        </div>
+
+        <!-- SUB-ECRÃ DETALHADO DO SMARTKIT -->
+        <div id="smartkit-details" class="hidden space-y-8">
+          <div class="flex items-center justify-between border-b border-gray-200 pb-4">
+            <button id="btn-back-hub" class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#1e1b4b] hover:text-blue-700 transition-colors cursor-pointer">
+              ← Voltar ao SmartKit Hub
+            </button>
+            <span class="text-xs text-gray-500 font-medium" id="details-view-indicator">Secção Ativa</span>
+          </div>
+
+          <div class="text-center max-w-2xl mx-auto mb-8">
+            <h3 class="text-2xl md:text-3xl font-bold text-[#1e1b4b]" id="details-category-title">--</h3>
+            <p class="text-gray-600 text-sm mt-1" id="details-category-subtitle">--</p>
+          </div>
+
+          <div id="smartkit-items-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+        </div>
+
+      </div>
+
+      <!-- ================================================================= -->
+      <!-- ABA 2: O MEU PERCURSO & PROGRESSO INTERATIVO                      -->
+      <!-- ================================================================= -->
+      <div id="tab-percurso" class="tab-pane hidden space-y-12">
+        <div class="text-center max-w-2xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-bold text-[#1e1b4b]">O Meu Percurso</h2>
+          <p class="text-gray-600 mt-2 text-sm md:text-base">
+            Métricas de formação e checklist interativa de conclusão de competências.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="md:col-span-2 rounded-2xl border border-gray-100 bg-white p-8 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07)] space-y-6">
+            <div class="flex items-center justify-between">
+              <div>
+                <span class="text-xs font-semibold uppercase tracking-widest text-blue-700">Plano Formativo</span>
+                <h3 class="text-xl font-bold text-indigo-950 mt-1">Conclusão de Módulos</h3>
+              </div>
+              <span class="text-3xl font-bold text-[#1e1b4b]" id="stat-progress-pct">0%</span>
+            </div>
+
+            <div class="w-full h-3 rounded-full bg-gray-100 overflow-hidden">
+              <div id="progress-bar-element" class="h-full bg-gradient-to-r from-blue-600 to-indigo-600 rounded-full transition-all duration-700" style="width: 0%;"></div>
+            </div>
+
+            <div class="grid grid-cols-3 gap-4 pt-4 border-t border-gray-100 text-center">
+              <div>
+                <span class="block text-2xl font-bold text-[#1e1b4b]" id="stat-done-count">0</span>
+                <span class="text-xs text-gray-500 font-medium">Completados</span>
+              </div>
+              <div>
+                <span class="block text-2xl font-bold text-gray-400" id="stat-pending-count">0</span>
+                <span class="text-xs text-gray-500 font-medium">Por Concluir</span>
+              </div>
+              <div>
+                <span class="block text-2xl font-bold text-emerald-600">Ativo</span>
+                <span class="text-xs text-gray-500 font-medium">Estatuto</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Próximo Encontro -->
+          <div class="rounded-2xl border border-gray-100 bg-white p-8 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07)] flex flex-col justify-between">
+            <div>
+              <span class="text-xs font-semibold uppercase tracking-widest text-blue-700">Próxima Formação</span>
+              <h3 class="text-lg font-bold text-indigo-950 mt-2" id="next-event-name">A carregar sessões...</h3>
+              <p class="text-xs text-gray-500 mt-2 leading-relaxed" id="next-event-details">Consulta a data e liga-te à sessão em direto.</p>
+            </div>
+            <button data-tab="calendario" class="nav-tab-btn mt-6 w-full py-3 rounded-full border border-[#1e1b4b] text-[#1e1b4b] hover:bg-[#1e1b4b] hover:text-white text-xs font-bold transition-all text-center cursor-pointer">
+              Ver Calendário
+            </button>
+          </div>
+        </div>
+
+        <!-- Checklist de Módulos para o Membro Concluir -->
+        <div class="rounded-2xl border border-gray-100 bg-white p-8 shadow-sm space-y-4">
+          <h3 class="text-base font-bold text-indigo-950">Checklist de Aprendizagem (SmartKit)</h3>
+          <p class="text-xs text-gray-500">Marca os módulos do SmartKit que já exploraste e concluíste.</p>
+          <div id="checklist-modules" class="divide-y divide-gray-100 space-y-2"></div>
+        </div>
+      </div>
+
+      <!-- ================================================================= -->
+      <!-- ABA 3: CALENDÁRIO DE FORMAÇÕES                                    -->
+      <!-- ================================================================= -->
+      <div id="tab-calendario" class="tab-pane hidden space-y-8">
+        <div class="text-center max-w-2xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-bold text-[#1e1b4b]">Calendário de Formações</h2>
+          <p class="text-gray-600 mt-2 text-sm md:text-base">
+            Workshops e sessões práticas agendadas pelo departamento de Educação & Formação (EF).
+          </p>
+        </div>
+
+        <div id="formacoes-container" class="max-w-4xl mx-auto space-y-4"></div>
+      </div>
+
+      <!-- ================================================================= -->
+      <!-- ABA 4: O MEU PR (PERSONAL REVIEW)                                 -->
+      <!-- ================================================================= -->
+      <div id="tab-meu-pr" class="tab-pane hidden space-y-8">
+        <div class="text-center max-w-2xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-bold text-[#1e1b4b]">O Meu Personal Review</h2>
+          <p class="text-gray-600 mt-2 text-sm md:text-base">
+            Acompanha o teu feedback mensal e metas acordadas com a tua Direção.
+          </p>
+        </div>
+
+        <div id="prs-container" class="max-w-3xl mx-auto space-y-6"></div>
+      </div>
+
+      <!-- ================================================================= -->
+      <!-- ABA 5: GESTÃO OPERACIONAL EF (FORMAÇÕES & SMARTKIT)               -->
+      <!-- ================================================================= -->
+      <div id="tab-gestao-ef" class="tab-pane hidden space-y-8">
+        <div class="text-center max-w-2xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-bold text-[#1e1b4b]">Gestão de Educação & Formação</h2>
+          <p class="text-gray-600 mt-2 text-sm md:text-base">
+            Agendamento de formações no calendário e gestão de novos recursos no SmartKit.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+          
+          <!-- Formulário Formações -->
+          <div class="rounded-2xl border border-gray-100 bg-white p-8 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07)]">
+            <form id="createFormacaoForm" class="space-y-4 text-xs">
+              <h3 class="text-sm font-bold uppercase tracking-wider text-indigo-950 mb-2">Publicar Nova Formação</h3>
+              <div>
+                <label class="block font-semibold text-gray-700 mb-1">Título da Formação</label>
+                <input type="text" id="inputFormacaoTitulo" required placeholder="Ex: Workshop Avançado de SQL & DAX" class="w-full rounded-xl border border-gray-300 px-4 py-2.5 bg-white text-gray-900 focus:outline-none focus:border-[#1e1b4b]" />
+              </div>
+              <div class="grid grid-cols-2 gap-4">
+                <div>
+                  <label class="block font-semibold text-gray-700 mb-1">Formador</label>
+                  <input type="text" id="inputFormacaoFormador" required placeholder="Ex: Maria Santos" class="w-full rounded-xl border border-gray-300 px-4 py-2.5 bg-white text-gray-900 focus:outline-none focus:border-[#1e1b4b]" />
+                </div>
+                <div>
+                  <label class="block font-semibold text-gray-700 mb-1">Data & Hora</label>
+                  <input type="datetime-local" id="inputFormacaoData" required class="w-full rounded-xl border border-gray-300 px-4 py-2.5 bg-white text-gray-900 focus:outline-none focus:border-[#1e1b4b]" />
+                </div>
+              </div>
+              <div>
+                <label class="block font-semibold text-gray-700 mb-1">Local / Link Teams</label>
+                <input type="text" id="inputFormacaoLocal" required placeholder="Ex: Sala 120 FEP ou Link Teams" class="w-full rounded-xl border border-gray-300 px-4 py-2.5 bg-white text-gray-900 focus:outline-none focus:border-[#1e1b4b]" />
+              </div>
+              <div>
+                <label class="block font-semibold text-gray-700 mb-1">Descrição</label>
+                <textarea id="inputFormacaoDesc" rows="2" placeholder="Tópicos abordados..." class="w-full rounded-xl border border-gray-300 px-4 py-2.5 bg-white text-gray-900 focus:outline-none focus:border-[#1e1b4b]"></textarea>
+              </div>
+              <button type="submit" class="w-full py-3.5 rounded-full bg-[#1e1b4b] text-white font-bold text-xs hover:bg-[#1e1b4b]/90 transition-all cursor-pointer">
+                Publicar no Calendário
+              </button>
+            </form>
+          </div>
+
+          <!-- Formulário SmartKit Item -->
+          <div class="rounded-2xl border border-gray-100 bg-white p-8 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07)]">
+            <form id="createSmartkitItemForm" class="space-y-4 text-xs">
+              <h3 class="text-sm font-bold uppercase tracking-wider text-blue-700 mb-2">Adicionar Recurso ao SmartKit</h3>
+              <div>
+                <label class="block font-semibold text-gray-700 mb-1">Secção de Destino</label>
+                <select id="inputKitSecao" required class="w-full rounded-xl border border-gray-300 px-4 py-2.5 bg-white text-gray-900 focus:outline-none focus:border-[#1e1b4b]">
+                  <option value="fundamentos">1. Fundamentos Essenciais</option>
+                  <option value="formacoes">2. Gravações & Materiais</option>
+                  <option value="ferramentas">3. Ferramentas Departamentais</option>
+                </select>
+              </div>
+              <div>
+                <label class="block font-semibold text-gray-700 mb-1">Título do Recurso</label>
+                <input type="text" id="inputKitTitulo" required placeholder="Ex: Gravação Workshop Machine Learning" class="w-full rounded-xl border border-gray-300 px-4 py-2.5 bg-white text-gray-900 focus:outline-none focus:border-[#1e1b4b]" />
+              </div>
+              <div>
+                <label class="block font-semibold text-gray-700 mb-1">Link de Acesso (URL)</label>
+                <input type="url" id="inputKitLink" required placeholder="https://youtube.com/... ou https://notion.so/..." class="w-full rounded-xl border border-gray-300 px-4 py-2.5 bg-white text-gray-900 focus:outline-none focus:border-[#1e1b4b]" />
+              </div>
+              <div>
+                <label class="block font-semibold text-gray-700 mb-1">Departamento (Opcional se for ferramenta)</label>
+                <select id="inputKitDept" class="w-full rounded-xl border border-gray-300 px-4 py-2.5 bg-white text-gray-900 focus:outline-none focus:border-[#1e1b4b]">
+                  <option value="">Geral / Aberto a Todos</option>
+                  <option value="projetos-analise-dados">Projetos & Análise de Dados</option>
+                  <option value="recursos-humanos">Recursos Humanos</option>
+                  <option value="marketing">Marketing</option>
+                  <option value="financeiro">Financeiro</option>
+                  <option value="educacao-formacao">Educação & Formação</option>
+                  <option value="relacoes-externas">Relações Externas</option>
+                </select>
+              </div>
+              <button type="submit" class="w-full py-3.5 rounded-full bg-blue-600 text-white font-bold text-xs hover:bg-blue-700 transition-all cursor-pointer">
+                Disponibilizar no SmartKit
+              </button>
+            </form>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ================================================================= -->
+      <!-- ABA 6: GESTÃO OPERACIONAL RH (TABELA + MODAL DE EDIÇÃO)           -->
+      <!-- ================================================================= -->
+      <div id="tab-gestao-rh" class="tab-pane hidden space-y-8">
+        <div class="text-center max-w-2xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-bold text-[#1e1b4b]">Gestão de Recrutamento</h2>
+          <p class="text-gray-600 mt-2 text-sm md:text-base">
+            Atualização em tempo real das fases, convocatórias e feedbacks dos candidatos.
+          </p>
+        </div>
+
+        <div class="rounded-2xl border border-gray-100 bg-white p-6 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07)] overflow-x-auto">
+          <table class="w-full text-left text-xs text-gray-600">
+            <thead class="border-b border-gray-100 text-[10px] font-bold uppercase tracking-wider text-gray-400">
+              <tr>
+                <th class="py-3 px-4">Candidato</th>
+                <th class="py-3 px-4">Fase Atual</th>
+                <th class="py-3 px-4">Departamento</th>
+                <th class="py-3 px-4">Estado</th>
+                <th class="py-3 px-4 text-right">Ação</th>
+              </tr>
+            </thead>
+            <tbody id="rh-candidates-table" class="divide-y divide-gray-100"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- ================================================================= -->
+      <!-- ABA 7: LIDERANÇA, DIREÇÃO & WORKFLOWS DE APROVAÇÃO               -->
+      <!-- ================================================================= -->
+      <div id="tab-painel-lideranca" class="tab-pane hidden space-y-12">
+        <div class="text-center max-w-2xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-bold text-[#1e1b4b]">Liderança & Governação</h2>
+          <p class="text-gray-600 mt-2 text-sm md:text-base">
+            Submissão de PRs mensais, alteração de departamentos e resolução de pedidos de aprovação.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
+          
+          <!-- Submissão de PR -->
+          <div class="rounded-2xl border border-gray-100 bg-white p-8 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07)]">
+            <h3 class="text-base font-bold text-indigo-950 mb-4">Submeter Personal Review (PR)</h3>
+            <form id="submitPRForm" class="space-y-4 text-xs">
+              <div>
+                <label class="block font-semibold text-gray-700 mb-1">Membro</label>
+                <select id="selectMemberPR" required class="w-full rounded-xl border border-gray-300 px-4 py-2.5 bg-white text-gray-900 focus:outline-none focus:border-[#1e1b4b]">
+                  <option value="">A carregar membros...</option>
+                </select>
+              </div>
+              <div>
+                <label class="block font-semibold text-gray-700 mb-1">Nota Geral (1 a 5)</label>
+                <input type="number" id="inputNotaPR" min="1" max="5" value="5" required class="w-full rounded-xl border border-gray-300 px-4 py-2.5 bg-white text-gray-900 focus:outline-none focus:border-[#1e1b4b]" />
+              </div>
+              <div>
+                <label class="block font-semibold text-gray-700 mb-1">Pontos Fortes</label>
+                <textarea id="inputFortesPR" rows="2" required placeholder="Proatividade, rigor analítico..." class="w-full rounded-xl border border-gray-300 px-4 py-2.5 bg-white text-gray-900 focus:outline-none focus:border-[#1e1b4b]"></textarea>
+              </div>
+              <div>
+                <label class="block font-semibold text-gray-700 mb-1">Pontos a Melhorar</label>
+                <textarea id="inputMelhoriaPR" rows="2" required placeholder="Gestão de prazos..." class="w-full rounded-xl border border-gray-300 px-4 py-2.5 bg-white text-gray-900 focus:outline-none focus:border-[#1e1b4b]"></textarea>
+              </div>
+              <button type="submit" class="w-full py-3.5 rounded-full bg-[#1e1b4b] text-white font-bold text-xs hover:bg-[#1e1b4b]/90 transition-all cursor-pointer">
+                Gravar Review Mensal
+              </button>
+            </form>
+          </div>
+
+          <!-- Transferência Direta de Departamento (Aba Smart) -->
+          <div class="rounded-2xl border border-gray-100 bg-white p-8 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07)]">
+            <h3 class="text-base font-bold text-indigo-950 mb-2">Transferência de Departamento</h3>
+            <p class="text-xs text-gray-500 mb-4">Ação direta disponível para o corpo de liderança.</p>
+            <form id="transferDeptForm" class="space-y-4 text-xs">
+              <div>
+                <label class="block font-semibold text-gray-700 mb-1">Membro a Transferir</label>
+                <select id="selectTransferMember" required class="w-full rounded-xl border border-gray-300 px-4 py-2.5 bg-white text-gray-900 focus:outline-none focus:border-[#1e1b4b]">
+                  <option value="">A carregar membros...</option>
+                </select>
+              </div>
+              <div>
+                <label class="block font-semibold text-gray-700 mb-1">Novo Departamento</label>
+                <select id="selectNewDept" required class="w-full rounded-xl border border-gray-300 px-4 py-2.5 bg-white text-gray-900 focus:outline-none focus:border-[#1e1b4b]">
+                  <option value="projetos-analise-dados">Projetos & Análise de Dados</option>
+                  <option value="recursos-humanos">Recursos Humanos</option>
+                  <option value="marketing">Marketing</option>
+                  <option value="financeiro">Financeiro</option>
+                  <option value="educacao-formacao">Educação & Formação</option>
+                  <option value="relacoes-externas">Relações Externas</option>
+                  <option value="direcao-executiva">Direção Executiva</option>
+                </select>
+              </div>
+              <button type="submit" class="w-full py-3.5 rounded-full bg-blue-600 text-white font-bold text-xs hover:bg-blue-700 transition-all cursor-pointer">
+                Executar Transferência
+              </button>
+            </form>
+          </div>
+
+        </div>
+
+        <!-- Fila de Aprovações Pendentes -->
+        <div class="max-w-5xl mx-auto rounded-2xl border border-gray-100 bg-white p-8 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07)] space-y-4">
+          <div class="flex items-center justify-between border-b border-gray-100 pb-3">
+            <h3 class="text-base font-bold text-indigo-950">Fila de Aprovações Pendentes</h3>
+            <span class="text-xs text-purple-700 font-bold uppercase tracking-wider">Governação & Validações</span>
+          </div>
+          <div id="approvals-container" class="divide-y divide-gray-100">
+            <p class="text-xs text-gray-400 py-4 italic">A carregar pedidos de aprovação...</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- ================================================================= -->
+      <!-- ABA 8: O MEU PERFIL (IDENTIDADE & CONTACTOS)                      -->
+      <!-- ================================================================= -->
+      <div id="tab-perfil" class="tab-pane hidden space-y-8">
+        <div class="text-center max-w-2xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-bold text-[#1e1b4b]">O Meu Perfil</h2>
+          <p class="text-gray-600 mt-2 text-sm md:text-base">
+            Informações institucionais atribuídas e gestão dos teus contactos pessoais.
+          </p>
+        </div>
+
+        <div class="max-w-2xl mx-auto space-y-6">
+          <div class="rounded-2xl border border-gray-100 bg-white p-8 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07)] space-y-4">
+            <h3 class="text-xs font-bold uppercase tracking-wider text-blue-700 border-b border-gray-100 pb-3">Identidade Institucional (Bloqueada)</h3>
+            <div class="grid grid-cols-2 gap-4 text-xs">
+              <div>
+                <span class="text-gray-400 block text-[10px] font-bold uppercase">Nome Completo</span>
+                <span id="profile-static-name" class="font-bold text-sm text-indigo-950 mt-1 block">--</span>
+              </div>
+              <div>
+                <span class="text-gray-400 block text-[10px] font-bold uppercase">Número UP</span>
+                <span id="profile-static-up" class="font-bold text-sm text-indigo-950 mt-1 block">--</span>
+              </div>
+              <div>
+                <span class="text-gray-400 block text-[10px] font-bold uppercase">Departamento</span>
+                <span id="profile-static-dept" class="font-bold text-sm text-indigo-950 capitalize mt-1 block">--</span>
+              </div>
+              <div>
+                <span class="text-gray-400 block text-[10px] font-bold uppercase">Cargo</span>
+                <span id="profile-static-role" class="font-bold text-sm text-indigo-950 capitalize mt-1 block">--</span>
+              </div>
+            </div>
+          </div>
+
+          <form id="profileEditForm" class="rounded-2xl border border-gray-100 bg-white p-8 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07)] space-y-4 text-xs">
+            <h3 class="text-xs font-bold uppercase tracking-wider text-indigo-950 border-b border-gray-100 pb-3">Contactos Pessoais (Editáveis)</h3>
+            <div>
+              <label class="block font-semibold text-gray-700 mb-1">Contacto Telefónico</label>
+              <input type="text" id="inputTelefone" placeholder="+351 912 345 678" class="w-full rounded-xl border border-gray-300 px-4 py-2.5 bg-white text-gray-900 focus:outline-none focus:border-[#1e1b4b]" />
+            </div>
+            <div>
+              <label class="block font-semibold text-gray-700 mb-1">LinkedIn (URL)</label>
+              <input type="url" id="inputLinkedin" placeholder="https://linkedin.com/in/perfil" class="w-full rounded-xl border border-gray-300 px-4 py-2.5 bg-white text-gray-900 focus:outline-none focus:border-[#1e1b4b]" />
+            </div>
+            <div>
+              <label class="block font-semibold text-gray-700 mb-1">Biografia Curta</label>
+              <textarea id="inputBio" rows="3" placeholder="Interesses, percurso ou áreas de especialização..." class="w-full rounded-xl border border-gray-300 px-4 py-2.5 bg-white text-gray-900 focus:outline-none focus:border-[#1e1b4b]"></textarea>
+            </div>
+            <button type="submit" class="w-full py-3.5 rounded-full bg-[#1e1b4b] text-white font-bold text-xs hover:bg-[#1e1b4b]/90 transition-all cursor-pointer">
+              Guardar Contactos
+            </button>
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===================================================================== -->
+  <!-- 3. MODAL INTERATIVO: GESTÃO DE CANDIDATO (RH)                         -->
+  <!-- ===================================================================== -->
+  <div id="modalCandidate" class="fixed inset-0 z-50 hidden bg-black/60 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="bg-white rounded-3xl max-w-xl w-full p-8 shadow-2xl space-y-6 max-h-[90vh] overflow-y-auto">
+      <div class="flex items-center justify-between border-b border-gray-100 pb-3">
+        <div>
+          <h3 class="text-lg font-bold text-indigo-950" id="modalCandidateName">Gerir Candidato</h3>
+          <span class="text-xs text-gray-400 font-mono" id="modalCandidateUP">up202300000</span>
+        </div>
+        <button id="btnCloseModal" class="text-gray-400 hover:text-black text-xl font-bold cursor-pointer">✕</button>
+      </div>
+
+      <form id="candidateManageForm" class="space-y-4 text-xs">
+        <input type="hidden" id="modalTargetUP" />
+        
+        <div class="grid grid-cols-2 gap-4">
+          <div>
+            <label class="block font-semibold text-gray-700 mb-1">Fase do Recrutamento</label>
+            <select id="modalCurrentPhase" required class="w-full rounded-xl border border-gray-300 px-3 py-2 bg-white text-gray-900">
+              <option value="Preenchimento das candidaturas">1ª Fase: Preenchimento</option>
+              <option value="Dinâmicas de grupo">2ª Fase: Dinâmicas de Grupo</option>
+              <option value="Entrevistas Individuais">3ª Fase: Entrevistas</option>
+              <option value="Dinâmicas finais">4ª Fase: Dinâmicas Finais</option>
+              <option value="Decisão Final">Decisão Final</option>
+            </select>
+          </div>
+          <div>
+            <label class="block font-semibold text-gray-700 mb-1">Estado / Badge</label>
+            <select id="modalStatusBadge" required class="w-full rounded-xl border border-gray-300 px-3 py-2 bg-white text-gray-900">
+              <option value="pending">Em Análise (pending)</option>
+              <option value="active">Convocado (active)</option>
+              <option value="accepted">Aprovado (accepted)</option>
+              <option value="rejected">Não Selecionado (rejected)</option>
+            </select>
+          </div>
+        </div>
+
+        <div>
+          <label class="block font-semibold text-gray-700 mb-1">Departamento Alocado</label>
+          <select id="modalTargetDept" class="w-full rounded-xl border border-gray-300 px-3 py-2 bg-white text-gray-900">
+            <option value="">Nenhum (Triagem Geral)</option>
+            <option value="projetos-analise-dados">Projetos & Análise de Dados</option>
+            <option value="recursos-humanos">Recursos Humanos</option>
+            <option value="marketing">Marketing</option>
+            <option value="financeiro">Financeiro</option>
+            <option value="educacao-formacao">Educação & Formação</option>
+            <option value="relacoes-externas">Relações Externas</option>
+          </select>
+        </div>
+
+        <div>
+          <label class="block font-semibold text-gray-700 mb-1">Mensagem Personalizada do Portal</label>
+          <textarea id="modalPersonalizedMsg" rows="2" class="w-full rounded-xl border border-gray-300 px-3 py-2 bg-white text-gray-900"></textarea>
+        </div>
+
+        <!-- Relatório de Performance (JSON) -->
+        <div class="space-y-3 pt-2 border-t border-gray-100">
+          <div class="flex items-center justify-between">
+            <span class="font-bold text-indigo-950 uppercase text-[10px] tracking-wider">Relatório de Avaliação (Entrevista/Final)</span>
+            <label class="flex items-center gap-1.5 cursor-pointer text-[11px] text-gray-600">
+              <input type="checkbox" id="modalReachedInterview" class="rounded text-blue-600" />
+              <span>Concluiu Fase 3 (Liberta Feedback)</span>
+            </label>
+          </div>
+          <div>
+            <label class="block text-gray-500 mb-0.5">Resumo da Avaliação</label>
+            <input type="text" id="modalFeedbackSummary" placeholder="Ex: Excelente clareza na exposição de ideias..." class="w-full rounded-xl border border-gray-300 px-3 py-2 bg-white text-gray-900" />
+          </div>
+          <div>
+            <label class="block text-gray-500 mb-0.5">Pontos Fortes</label>
+            <input type="text" id="modalFeedbackStrengths" placeholder="Ex: Pensamento analítico apurado..." class="w-full rounded-xl border border-gray-300 px-3 py-2 bg-white text-gray-900" />
+          </div>
+          <div>
+            <label class="block text-gray-500 mb-0.5">Notas de Melhoria</label>
+            <input type="text" id="modalFeedbackNotes" placeholder="Ex: Aprofundar ferramentas em Power BI..." class="w-full rounded-xl border border-gray-300 px-3 py-2 bg-white text-gray-900" />
+          </div>
+        </div>
+
+        <button type="submit" class="w-full py-3.5 rounded-full bg-[#1e1b4b] text-white font-bold text-xs hover:bg-[#1e1b4b]/90 transition-all cursor-pointer">
+          Guardar Alterações do Candidato
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ===================================================================== -->
+  <!-- 4. SCRIPT CLIENT-SIDE (SUPABASE, DADOS & WORKFLOWS)                   -->
+  <!-- ===================================================================== -->
+  <script>
+    import { supabase } from '../lib/supabase';
+
+    let currentProfile: any = null;
+    let smartKitItems: any[] = [];
+    let myCompletedItemIds: string[] = [];
+    let rhCandidatesList: any[] = [];
+
+    async function init() {
+      const { data: { session } } = await supabase.auth.getSession();
+      if (!session) {
+        window.location.href = '/login';
+        return;
+      }
+
+      const { data: profile } = await supabase
+        .from('profiles')
+        .select('*')
+        .eq('id', session.user.id)
+        .maybeSingle();
+
+      if (!profile) {
+        window.location.href = '/portal';
+        return;
+      }
+
+      currentProfile = profile;
+      setupHeroAndProfile(profile);
+      applyRBAC(profile);
+      
+      await fetchSmartKit(profile);
+      await fetchFormacoes();
+      await fetchProgress(profile);
+      await fetchPRs(profile);
+
+      if (profile.department === 'recursos-humanos' || ['diretor_executivo', 'smart_admin'].includes(profile.role)) {
+        await fetchRHCandidates();
+      }
+      if (['diretor_dept', 'diretor_executivo', 'smart_admin'].includes(profile.role)) {
+        await fetchDeptMembersForPR(profile);
+        await fetchApprovals();
+      }
+    }
+
+    function setupHeroAndProfile(p: any) {
+      const initials = document.getElementById('user-avatar-initials');
+      const dName = document.getElementById('user-display-name');
+      const dUp = document.getElementById('user-display-up');
+      const dDept = document.getElementById('user-display-dept');
+      const dTier = document.getElementById('user-display-tier');
+
+      if (initials) initials.innerText = p.nome.split(' ').map((n: string) => n[0]).slice(0, 2).join('');
+      if (dName) dName.innerText = p.nome;
+      if (dUp) dUp.innerText = `${p.up_number} (${p.email})`;
+      if (dDept) dDept.innerText = p.department ? p.department.replace(/-/g, ' ') : 'Geral';
+      if (dTier) dTier.innerText = `${p.role.replace('_', ' ')} • ${p.tier}`;
+
+      const pName = document.getElementById('profile-static-name');
+      const pUp = document.getElementById('profile-static-up');
+      const pDept = document.getElementById('profile-static-dept');
+      const pRole = document.getElementById('profile-static-role');
+
+      if (pName) pName.innerText = p.nome;
+      if (pUp) pUp.innerText = `${p.up_number} (${p.email})`;
+      if (pDept) pDept.innerText = p.department ? p.department.replace(/-/g, ' ') : 'Geral';
+      if (pRole) pRole.innerText = `${p.role.replace('_', ' ')} (${p.tier})`;
+
+      const tel = document.getElementById('inputTelefone') as HTMLInputElement;
+      const lk = document.getElementById('inputLinkedin') as HTMLInputElement;
+      const bio = document.getElementById('inputBio') as HTMLTextAreaElement;
+      if (tel && p.telefone) tel.value = p.telefone;
+      if (lk && p.linkedin_url) lk.value = p.linkedin_url;
+      if (bio && p.bio) bio.value = p.bio;
+    }
+
+    function applyRBAC(p: any) {
+      if (p.department === 'educacao-formacao' || ['diretor_executivo', 'smart_admin'].includes(p.role)) {
+        document.getElementById('nav-btn-ef')?.classList.remove('hidden');
+      }
+      if (p.department === 'recursos-humanos' || ['diretor_executivo', 'smart_admin'].includes(p.role)) {
+        document.getElementById('nav-btn-rh')?.classList.remove('hidden');
+      }
+      if (['diretor_dept', 'diretor_executivo', 'smart_admin'].includes(p.role)) {
+        document.getElementById('nav-btn-direcao')?.classList.remove('hidden');
+      }
+    }
+
+    // --- SMARTKIT & PROGRESSO ---
+    async function fetchSmartKit(p: any) {
+      const { data } = await supabase
+        .from('smartkit_items')
+        .select('*')
+        .or(`department.is.null,department.eq.${p.department}`)
+        .order('ordem', { ascending: true });
+
+      smartKitItems = data || [];
+    }
+
+    const hub = document.getElementById('smartkit-hub');
+    const details = document.getElementById('smartkit-details');
+    const itemsGrid = document.getElementById('smartkit-items-grid');
+    const dTitle = document.getElementById('details-category-title');
+    const dSubtitle = document.getElementById('details-category-subtitle');
+    const dIndicator = document.getElementById('details-view-indicator');
+
+    function openSmartKitSection(seccao: string, title: string, subtitle: string) {
+      if (!hub || !details || !itemsGrid || !dTitle || !dSubtitle || !dIndicator) return;
+
+      dTitle.innerText = title;
+      dSubtitle.innerText = subtitle;
+      dIndicator.innerText = title;
+      hub.classList.add('hidden');
+      details.classList.remove('hidden');
+
+      const filtered = smartKitItems.filter(i => i.seccao === seccao);
+
+      if (filtered.length === 0) {
+        itemsGrid.innerHTML = `<p class="col-span-3 text-center text-xs text-gray-400 py-12">Não existem recursos disponíveis de momento.</p>`;
+        return;
+      }
+
+      itemsGrid.innerHTML = filtered.map(item => `
+        <article class="group relative flex h-full flex-col justify-between rounded-2xl border border-gray-100 bg-white p-6 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07)] transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+          <div class="absolute top-0 left-0 h-1.5 w-full rounded-t-2xl bg-[#1e1b4b] opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
+          <div>
+            <span class="text-[10px] font-bold uppercase tracking-wider text-blue-700">${item.seccao}</span>
+            <h4 class="text-lg font-bold text-indigo-950 mt-1 mb-2">${item.titulo}</h4>
+            <p class="text-xs text-gray-600 leading-relaxed font-light">${item.descricao || ''}</p>
+          </div>
+          <div class="pt-6 mt-4 border-t border-gray-100 flex items-center justify-between">
+            <span class="text-[11px] font-medium text-gray-400">Recurso Oficial</span>
+            <a href="${item.link_recurso}" target="_blank" rel="noopener noreferrer" class="text-xs font-bold text-[#1e1b4b] hover:text-blue-700 transition-colors">
+              Aceder ↗
+            </a>
+          </div>
+        </article>
+      `).join('');
+    }
+
+    document.getElementById('btn-open-fundamentos')?.addEventListener('click', () => openSmartKitSection('fundamentos', 'Aprende os Fundamentos Essenciais', 'Módulos e diretrizes recomendadas.'));
+    document.getElementById('btn-open-formacoes')?.addEventListener('click', () => openSmartKitSection('formacoes', 'Gravações de Formações Internas', 'Workshops e formações passadas.'));
+    document.getElementById('btn-open-ferramentas')?.addEventListener('click', () => openSmartKitSection('ferramentas', 'Ferramentas do Teu Departamento', 'Recursos operacionais dedicados.'));
+    document.getElementById('btn-back-hub')?.addEventListener('click', () => { details?.classList.add('hidden'); hub?.classList.remove('hidden'); });
+
+    // Progresso & Checklist
+    async function fetchProgress(p: any) {
+      const { data: progress } = await supabase.from('member_progress').select('smartkit_item_id').eq('membro_id', p.id);
+      myCompletedItemIds = progress ? progress.map(item => item.smartkit_item_id).filter(Boolean) : [];
+
+      const total = smartKitItems.length || 1;
+      const count = myCompletedItemIds.length;
+      const pct = Math.min(100, Math.round((count / total) * 100));
+
+      const dCount = document.getElementById('stat-done-count');
+      const pCount = document.getElementById('stat-pending-count');
+      const pText = document.getElementById('stat-progress-pct');
+      const bar = document.getElementById('progress-bar-element');
+
+      if (dCount) dCount.innerText = count.toString();
+      if (pCount) pCount.innerText = Math.max(0, total - count).toString();
+      if (pText) pText.innerText = `${pct}%`;
+      if (bar) bar.style.width = `${pct}%`;
+
+      // Renderizar Checklist
+      const checkCont = document.getElementById('checklist-modules');
+      if (!checkCont) return;
+
+      if (smartKitItems.length === 0) {
+        checkCont.innerHTML = '<p class="text-xs text-gray-400 py-2">Sem módulos carregados.</p>';
+        return;
+      }
+
+      checkCont.innerHTML = smartKitItems.map(item => {
+        const isDone = myCompletedItemIds.includes(item.id);
+        return `
+          <div class="flex items-center justify-between py-3">
+            <div class="flex items-center gap-3">
+              <input type="checkbox" data-item-id="${item.id}" ${isDone ? 'checked' : ''} class="item-progress-chk h-4 w-4 rounded text-blue-600 cursor-pointer" />
+              <div>
+                <span class="text-xs font-bold text-indigo-950 block">${item.titulo}</span>
+                <span class="text-[10px] text-gray-400 uppercase">${item.seccao}</span>
+              </div>
+            </div>
+            <a href="${item.link_recurso}" target="_blank" class="text-xs text-blue-600 hover:underline font-semibold">Abrir ↗</a>
+          </div>
+        `;
+      }).join('');
+
+      document.querySelectorAll('.item-progress-chk').forEach(chk => {
+        chk.addEventListener('change', async (e) => {
+          const target = e.target as HTMLInputElement;
+          const itemId = target.getAttribute('data-item-id');
+          if (!itemId) return;
+
+          if (target.checked) {
+            await supabase.from('member_progress').insert([{ membro_id: p.id, smartkit_item_id: itemId, concluido: true }]);
+          } else {
+            await supabase.from('member_progress').delete().eq('membro_id', p.id).eq('smartkit_item_id', itemId);
+          }
+          await fetchProgress(p);
+        });
+      });
+    }
+
+    // --- FORMAÇÕES (CALENDÁRIO & ELIMINAÇÃO) ---
+    async function fetchFormacoes() {
+      const { data } = await supabase.from('formacoes').select('*').order('data_hora', { ascending: true });
+      const container = document.getElementById('formacoes-container');
+      const nextName = document.getElementById('next-event-name');
+      const nextDet = document.getElementById('next-event-details');
+
+      if (!data || data.length === 0) {
+        if (container) container.innerHTML = `<p class="text-center text-xs text-gray-400 py-8">Não existem formações agendadas de momento.</p>`;
+        if (nextName) nextName.innerText = 'Sem eventos futuros';
+        return;
+      }
+
+      if (nextName) nextName.innerText = data[0].titulo;
+      if (nextDet) nextDet.innerText = `${new Date(data[0].data_hora).toLocaleDateString('pt-PT', { day: '2-digit', month: 'short', hour: '2-digit', minute: '2-digit' })} • ${data[0].local_link}`;
+
+      const isEF = currentProfile?.department === 'educacao-formacao' || ['diretor_executivo', 'smart_admin'].includes(currentProfile?.role);
+
+      if (container) {
+        container.innerHTML = data.map(f => `
+          <div class="rounded-2xl border border-gray-100 bg-white p-6 shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-4">
+            <div>
+              <span class="text-[10px] font-bold uppercase tracking-wider text-blue-700">Formação Interna</span>
+              <h4 class="text-base font-bold text-indigo-950 mt-0.5">${f.titulo}</h4>
+              <p class="text-xs text-gray-500 mt-1">Formador: ${f.formador} • Local: ${f.local_link}</p>
+            </div>
+            <div class="flex items-center gap-3">
+              <span class="text-xs font-bold text-[#1e1b4b] bg-gray-100 px-4 py-2 rounded-full inline-block">
+                ${new Date(f.data_hora).toLocaleDateString('pt-PT', { day: '2-digit', month: 'short', hour: '2-digit', minute: '2-digit' })}
+              </span>
+              ${isEF ? `<button data-del-form="${f.id}" class="text-xs text-red-500 hover:text-red-700 font-bold px-2 py-1 rounded cursor-pointer" title="Eliminar Formação">✕</button>` : ''}
+            </div>
+          </div>
+        `).join('');
+
+        document.querySelectorAll('[data-del-form]').forEach(btn => {
+          btn.addEventListener('click', async () => {
+            const fid = btn.getAttribute('data-del-form');
+            if (confirm('Desejas eliminar esta formação do calendário?')) {
+              await supabase.from('formacoes').delete().eq('id', fid);
+              await fetchFormacoes();
+            }
+          });
+        });
+      }
+    }
+
+    // --- RECURSOS HUMANOS (RH) & MODAL ---
+    async function fetchRHCandidates() {
+      const { data } = await supabase.from('candidate_portal').select('*').order('submitted_at', { ascending: false });
+      rhCandidatesList = data || [];
+      const tbody = document.getElementById('rh-candidates-table');
+      if (!tbody || !data) return;
+
+      tbody.innerHTML = data.map(c => `
+        <tr class="hover:bg-gray-50/80 transition-colors">
+          <td class="py-3.5 px-4 font-bold text-indigo-950">${c.candidate_name} <br/><span class="text-[10px] text-gray-400 font-normal font-mono">${c.up_number}</span></td>
+          <td class="py-3.5 px-4">${c.current_phase}</td>
+          <td class="py-3.5 px-4 capitalize">${c.target_department ? c.target_department.replace(/-/g, ' ') : 'Geral'}</td>
+          <td class="py-3.5 px-4"><span class="px-2.5 py-1 rounded-full text-[10px] font-bold ${c.status_badge === 'accepted' ? 'bg-emerald-100 text-emerald-800' : c.status_badge === 'rejected' ? 'bg-red-100 text-red-800' : 'bg-blue-100 text-blue-800'}">${c.status}</span></td>
+          <td class="py-3.5 px-4 text-right">
+            <button data-manage-up="${c.up_number}" class="px-3 py-1.5 rounded-full bg-[#1e1b4b] text-white font-bold text-[11px] hover:bg-blue-700 transition-colors cursor-pointer">
+              Gerir
+            </button>
+          </td>
+        </tr>
+      `).join('');
+
+      document.querySelectorAll('[data-manage-up]').forEach(b => {
+        b.addEventListener('click', () => {
+          const up = b.getAttribute('data-manage-up');
+          const candidate = rhCandidatesList.find(c => c.up_number === up);
+          if (candidate) openCandidateModal(candidate);
+        });
+      });
+    }
+
+    function openCandidateModal(c: any) {
+      const modal = document.getElementById('modalCandidate');
+      if (!modal) return;
+
+      (document.getElementById('modalCandidateName') as HTMLElement).innerText = c.candidate_name;
+      (document.getElementById('modalCandidateUP') as HTMLElement).innerText = `${c.up_number} • ${c.email}`;
+      (document.getElementById('modalTargetUP') as HTMLInputElement).value = c.up_number;
+      (document.getElementById('modalCurrentPhase') as HTMLSelectElement).value = c.current_phase;
+      (document.getElementById('modalStatusBadge') as HTMLSelectElement).value = c.status_badge;
+      (document.getElementById('modalTargetDept') as HTMLSelectElement).value = c.target_department || '';
+      (document.getElementById('modalPersonalizedMsg') as HTMLTextAreaElement).value = c.personalized_message || '';
+      (document.getElementById('modalReachedInterview') as HTMLInputElement).checked = !!c.reached_interview;
+
+      const report = c.performance_report || {};
+      (document.getElementById('modalFeedbackSummary') as HTMLInputElement).value = report.summary || '';
+      (document.getElementById('modalFeedbackStrengths') as HTMLInputElement).value = report.strengths || '';
+      (document.getElementById('modalFeedbackNotes') as HTMLInputElement).value = report.feedback_notes || '';
+
+      modal.classList.remove('hidden');
+    }
+
+    document.getElementById('btnCloseModal')?.addEventListener('click', () => {
+      document.getElementById('modalCandidate')?.classList.add('hidden');
+    });
+
+    document.getElementById('candidateManageForm')?.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const up = (document.getElementById('modalTargetUP') as HTMLInputElement).value;
+      const phase = (document.getElementById('modalCurrentPhase') as HTMLSelectElement).value;
+      const badge = (document.getElementById('modalStatusBadge') as HTMLSelectElement).value;
+      const dept = (document.getElementById('modalTargetDept') as HTMLSelectElement).value || null;
+      const msg = (document.getElementById('modalPersonalizedMsg') as HTMLTextAreaElement).value;
+      const reached = (document.getElementById('modalReachedInterview') as HTMLInputElement).checked;
+
+      const statusMap: Record<string, string> = {
+        'pending': 'Em Análise',
+        'active': 'Convocado',
+        'accepted': 'Aprovado',
+        'rejected': 'Não Selecionado'
+      };
+
+      const summary = (document.getElementById('modalFeedbackSummary') as HTMLInputElement).value;
+      const strengths = (document.getElementById('modalFeedbackStrengths') as HTMLInputElement).value;
+      const notes = (document.getElementById('modalFeedbackNotes') as HTMLInputElement).value;
+
+      let perfReport = null;
+      if (reached && (summary || strengths || notes)) {
+        perfReport = { summary, strengths, feedback_notes: notes };
+      }
+
+      await supabase.from('candidate_portal').update({
+        current_phase: phase,
+        status_badge: badge,
+        status: statusMap[badge] || 'Em Análise',
+        target_department: dept,
+        personalized_message: msg,
+        reached_interview: reached,
+        performance_report: perfReport,
+        last_updated: new Date().toISOString()
+      }).eq('up_number', up);
+
+      alert('Dados do candidato atualizados com sucesso!');
+      document.getElementById('modalCandidate')?.classList.add('hidden');
+      await fetchRHCandidates();
+    });
+
+    // --- PERSONAL REVIEWS (PR) ---
+    async function fetchPRs(p: any) {
+      const { data } = await supabase.from('personal_reviews').select('*').eq('membro_id', p.id).order('mes_ano', { ascending: false });
+      const container = document.getElementById('prs-container');
+      if (!container) return;
+
+      if (!data || data.length === 0) {
+        container.innerHTML = `<p class="text-center text-xs text-gray-400 py-8">Ainda não tens avaliações de PR registadas.</p>`;
+        return;
+      }
+
+      container.innerHTML = data.map(pr => `
+        <article class="rounded-2xl border border-gray-100 bg-white p-6 shadow-sm space-y-4">
+          <div class="flex items-center justify-between border-b border-gray-100 pb-3">
+            <span class="text-xs font-bold uppercase tracking-wider text-blue-700">Edição ${new Date(pr.mes_ano).toLocaleDateString('pt-PT', { month: 'long', year: 'numeric' })}</span>
+            <span class="text-xs font-bold text-white bg-[#1e1b4b] px-3 py-1 rounded-full">Nota: ${pr.nota_geral} / 5</span>
+          </div>
+          <div class="space-y-2 text-xs">
+            <div>
+              <span class="font-bold text-indigo-950 block">Pontos Fortes:</span>
+              <p class="text-gray-600 mt-0.5 leading-relaxed">${pr.pontos_fortes}</p>
+            </div>
+            <div>
+              <span class="font-bold text-indigo-950 block">Pontos de Melhoria:</span>
+              <p class="text-gray-600 mt-0.5 leading-relaxed">${pr.pontos_melhoria}</p>
+            </div>
+          </div>
+        </article>
+      `).join('');
+    }
+
+    async function fetchDeptMembersForPR(p: any) {
+      const { data } = await supabase.from('profiles').select('id, nome, up_number, department');
+      const selectPR = document.getElementById('selectMemberPR') as HTMLSelectElement;
+      const selectTransfer = document.getElementById('selectTransferMember') as HTMLSelectElement;
+      if (!data) return;
+
+      const filteredPR = p.role === 'diretor_dept' ? data.filter(m => m.department === p.department && m.id !== p.id) : data.filter(m => m.id !== p.id);
+
+      if (selectPR) {
+        selectPR.innerHTML = '<option value="">Seleciona um membro...</option>' + 
+          filteredPR.map(m => `<option value="${m.id}">${m.nome} (${m.up_number})</option>`).join('');
+      }
+
+      if (selectTransfer) {
+        selectTransfer.innerHTML = '<option value="">Seleciona um membro...</option>' + 
+          data.map(m => `<option value="${m.id}">${m.nome} (${m.department || 'Geral'})</option>`).join('');
+      }
+    }
+
+    // --- GOVERNAÇÃO & FILA DE APROVAÇÕES ---
+    async function fetchApprovals() {
+      const { data } = await supabase.from('system_approvals').select('*, profiles:target_user_id(nome, up_number)').eq('status', 'pendente');
+      const cont = document.getElementById('approvals-container');
+      if (!cont) return;
+
+      if (!data || data.length === 0) {
+        cont.innerHTML = '<p class="text-xs text-gray-400 py-4 italic">Não existem pedidos de autorização pendentes.</p>';
+        return;
+      }
+
+      const isExecutive = ['diretor_executivo', 'smart_admin'].includes(currentProfile?.role);
+
+      cont.innerHTML = data.map(app => `
+        <div class="flex items-center justify-between py-3">
+          <div>
+            <span class="text-xs font-bold text-indigo-950 block">${app.tipo.replace('_', ' ').toUpperCase()} — ${app.profiles?.nome}</span>
+            <span class="text-[10px] text-gray-400 block">${app.motivo || 'Sem justificação'}</span>
+          </div>
+          ${isExecutive ? `
+            <div class="flex items-center gap-2">
+              <button data-approve="${app.id}" class="px-3 py-1 rounded bg-emerald-600 text-white font-bold text-[10px] hover:bg-emerald-700 cursor-pointer">Aprovar</button>
+              <button data-reject="${app.id}" class="px-3 py-1 rounded bg-red-600 text-white font-bold text-[10px] hover:bg-red-700 cursor-pointer">Rejeitar</button>
+            </div>
+          ` : '<span class="text-[10px] text-yellow-600 font-bold bg-yellow-50 px-2 py-0.5 rounded">A aguardar Direção Executiva</span>'}
+        </div>
+      `).join('');
+
+      document.querySelectorAll('[data-approve]').forEach(btn => {
+        btn.addEventListener('click', async () => {
+          const id = btn.getAttribute('data-approve');
+          await resolveApproval(id!, 'aprovado');
+        });
+      });
+
+      document.querySelectorAll('[data-reject]').forEach(btn => {
+        btn.addEventListener('click', async () => {
+          const id = btn.getAttribute('data-reject');
+          await resolveApproval(id!, 'rejeitado');
+        });
+      });
+    }
+
+    async function resolveApproval(id: string, status: string) {
+      const { data: approval } = await supabase.from('system_approvals').select('*').eq('id', id).single();
+      if (!approval) return;
+
+      if (status === 'aprovado') {
+        if (approval.tipo === 'eliminar_membro' || approval.tipo === 'eliminar_diretor') {
+          await supabase.from('profiles').update({ is_active: false }).eq('id', approval.target_user_id);
+        } else if (approval.tipo === 'alterar_diretor') {
+          await supabase.from('profiles').update({
+            role: approval.novo_role || 'membro',
+            department: approval.novo_department
+          }).eq('id', approval.target_user_id);
+        }
+      }
+
+      await supabase.from('system_approvals').update({
+        status: status,
+        aprovador_id: currentProfile.id,
+        aprovado_em: new Date().toISOString()
+      }).eq('id', id);
+
+      alert(`Pedido ${status} com sucesso!`);
+      await fetchApprovals();
+    }
+
+    // --- FORMULÁRIOS RESTANTES ---
+    document.getElementById('createFormacaoForm')?.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const titulo = (document.getElementById('inputFormacaoTitulo') as HTMLInputElement).value;
+      const formador = (document.getElementById('inputFormacaoFormador') as HTMLInputElement).value;
+      const dataHora = (document.getElementById('inputFormacaoData') as HTMLInputElement).value;
+      const local = (document.getElementById('inputFormacaoLocal') as HTMLInputElement).value;
+      const desc = (document.getElementById('inputFormacaoDesc') as HTMLTextAreaElement).value;
+
+      await supabase.from('formacoes').insert([{
+        titulo, formador, data_hora: dataHora, local_link: local, descricao: desc, created_by: currentProfile.id
+      }]);
+
+      alert('Formação publicada com sucesso!');
+      (e.target as HTMLFormElement).reset();
+      await fetchFormacoes();
+    });
+
+    document.getElementById('createSmartkitItemForm')?.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const secao = (document.getElementById('inputKitSecao') as HTMLSelectElement).value;
+      const titulo = (document.getElementById('inputKitTitulo') as HTMLInputElement).value;
+      const link = (document.getElementById('inputKitLink') as HTMLInputElement).value;
+      const dept = (document.getElementById('inputKitDept') as HTMLSelectElement).value || null;
+
+      await supabase.from('smartkit_items').insert([{
+        seccao: secao, titulo, link_recurso: link, department: dept
+      }]);
+
+      alert('Recurso publicado no SmartKit com sucesso!');
+      (e.target as HTMLFormElement).reset();
+      await fetchSmartKit(currentProfile);
+    });
+
+    document.getElementById('submitPRForm')?.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const membroId = (document.getElementById('selectMemberPR') as HTMLSelectElement).value;
+      const nota = parseInt((document.getElementById('inputNotaPR') as HTMLInputElement).value);
+      const fortes = (document.getElementById('inputFortesPR') as HTMLTextAreaElement).value;
+      const melhoria = (document.getElementById('inputMelhoriaPR') as HTMLTextAreaElement).value;
+
+      await supabase.from('personal_reviews').insert([{
+        membro_id: membroId,
+        avaliador_id: currentProfile.id,
+        mes_ano: new Date().toISOString().slice(0, 10),
+        nota_geral: nota,
+        pontos_fortes: fortes,
+        pontos_melhoria: melhoria
+      }]);
+
+      alert('Personal Review gravado com sucesso!');
+      (e.target as HTMLFormElement).reset();
+    });
+
+    document.getElementById('transferDeptForm')?.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const targetId = (document.getElementById('selectTransferMember') as HTMLSelectElement).value;
+      const newDept = (document.getElementById('selectNewDept') as HTMLSelectElement).value;
+
+      await supabase.from('profiles').update({ department: newDept }).eq('id', targetId);
+      alert('Transferência executada com sucesso!');
+      await fetchDeptMembersForPR(currentProfile);
+    });
+
+    document.getElementById('profileEditForm')?.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      if (!currentProfile) return;
+
+      const tel = (document.getElementById('inputTelefone') as HTMLInputElement).value;
+      const lk = (document.getElementById('inputLinkedin') as HTMLInputElement).value;
+      const bio = (document.getElementById('inputBio') as HTMLTextAreaElement).value;
+
+      await supabase.from('profiles').update({ telefone: tel, linkedin_url: lk, bio: bio }).eq('id', currentProfile.id);
+      alert('Contactos guardados com sucesso!');
+    });
+
+    // Abas
+    const navBtns = document.querySelectorAll('.nav-tab-btn');
+    const tabPanes = document.querySelectorAll('.tab-pane');
+
+    navBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const target = (btn as HTMLElement).dataset.tab;
+        if (!target) return;
+
+        navBtns.forEach(b => {
+          b.classList.remove('active', 'text-white', 'after:absolute', 'after:bottom-0', 'after:left-0', 'after:h-0.5', 'after:w-full', 'after:bg-blue-400');
+          b.classList.add('text-gray-400');
+        });
+
+        btn.classList.add('active', 'text-white', 'after:absolute', 'after:bottom-0', 'after:left-0', 'after:h-0.5', 'after:w-full', 'after:bg-blue-400');
+        btn.classList.remove('text-gray-400');
+
+        tabPanes.forEach(p => p.classList.add('hidden'));
+        document.getElementById(`tab-${target}`)?.classList.remove('hidden');
+      });
+    });
+
+    document.getElementById('btnLogout')?.addEventListener('click', async () => {
+      await supabase.auth.signOut();
+      window.location.href = '/login';
+    });
+
+    init();
+  </script>
+</Layout>

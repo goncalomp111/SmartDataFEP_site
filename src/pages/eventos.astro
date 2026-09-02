@@ -1,266 +1,434 @@
 ---
-import Layout from "../layouts/Layout.astro";
+import Layout from '../layouts/Layout.astro';
+import { EVENTOS } from '../data/eventos';
+import { Image } from 'astro:assets';
+import locationPin from '../assets/outros_icons/location_light.svg';
+import calendar from '../assets/outros_icons/calendar_light.svg';
+
+const anosDisponiveis = [...new Set(EVENTOS.map((e) => e.ano))].sort((a, b) => b - a);
 ---
 
-<Layout title="AI Summit 2026 — Eventos">
-  
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
-    <style>
-      /* small global font helpers for Playfair heading and Instrument Sans body */
-      :global(body) { font-family: 'Instrument Sans', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; }
-      :global(.font-playfair) { font-family: 'Playfair Display', serif; }
-    </style>
-  
+<Layout title="Eventos — SmartData FEP">
+  <!-- ===================== HERO COM FILTRO REFINADO ===================== -->
+  <section class="relative overflow-hidden bg-[#1e1b4b] px-4 pt-12 pb-16 text-white md:px-6 md:pt-28 md:pb-24">
+    <div class="absolute inset-0 z-0">
+      <div class="absolute inset-0 bg-[url('/src/assets/home/images/smart_backgroud.png')] bg-cover bg-center opacity-100 mix-blend-overlay"></div>
+      <div class="absolute inset-0 bg-gradient-to-r from-[#1e1b4b] via-[#1e1b4b]/90 to-transparent"></div>
+    </div>
 
-  <section class="bg-gray-50">
-    <div class="max-w-3xl mx-auto bg-white overflow-hidden shadow-md">
+    <div class="relative z-10 mx-auto max-w-screen-xl px-4 md:px-10">
+      <div class="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+        <div>
+          <div class="mb-4 inline-block border-l-4 border-blue-400 pl-4 md:mb-6">
+            <span class="text-xs font-semibold uppercase tracking-widest text-blue-200 md:text-sm">Iniciativas & Conferências</span>
+          </div>
 
-      <!-- HERO -->
-      <div class="relative bg-gradient-to-br from-[#2D1B4E] via-[#4A2D7A] to-[#6B3FA0] px-8 py-12 text-center overflow-hidden">
-        <div class="relative z-10">
-          <span class="inline-block bg-white/10 border border-white/20 rounded-3xl px-4 py-1 text-xs font-semibold tracking-wider uppercase text-amber-300">SmartData FEP apresenta</span>
-
-          <h1 class="mt-4 text-white font-playfair text-3xl md:text-4xl lg:text-5xl leading-tight font-bold">
-            AI Summit 2026
-            <span class="block text-sm font-medium tracking-widest uppercase text-purple-200 mt-3">Faculdade de Economia · Universidade do Porto</span>
+          <h1 class="text-3xl md:text-6xl lg:text-6xl font-medium leading-tight max-w-5xl">
+            Discover our <span class="bg-gradient-to-r from-blue-200 to-indigo-400 bg-clip-text text-transparent">events</span>.
           </h1>
 
-          <div class="inline-flex items-center gap-3 bg-white/8 rounded-lg px-4 py-2 mt-6 mx-auto">
-            <svg class="w-5 h-5 text-amber-400" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor">
-              <rect x="2" y="4" width="16" height="14" rx="2" stroke-width="1.5" />
-              <line x1="6" y1="2" x2="6" y2="6" stroke-width="1.5" stroke-linecap="round" />
-              <line x1="14" y1="2" x2="14" y2="6" stroke-width="1.5" stroke-linecap="round" />
-              <line x1="2" y1="9" x2="18" y2="9" stroke-width="1.5" />
-            </svg>
-            <p class="text-sm text-white"><strong class="text-amber-300">14 &amp; 15 de abril</strong> · Salão Nobre da FEP</p>
-          </div>
+          <p class="mt-6 md:mt-8 text-lg md:text-2xl text-gray-300 font-light max-w-3xl leading-relaxed">
+            Iniciativas desenhadas para partilhar conhecimento, debater o futuro da Inteligência Artificial e aproximar os estudantes dos líderes de mercado.
+          </p>
         </div>
 
-        <!-- decorative circles (purely visual) -->
-        <div class="absolute -top-16 -right-16 w-56 h-56 rounded-full bg-gradient-to-br from-[#9B6DD7]/30 to-transparent pointer-events-none"></div>
-        <div class="absolute -bottom-10 -left-8 w-40 h-40 rounded-full bg-yellow-300/10 pointer-events-none"></div>
-      </div>
-
-      <!-- INTRO -->
-      <div class="px-8 py-8 text-center">
-        <p class="text-xl font-semibold text-purple-700">O maior evento de IA da Universidade do Porto chega pela primeira vez.</p>
-        <p class="mt-4 text-gray-600 max-w-2xl mx-auto leading-relaxed">
-          Dois dias intensos de <strong>keynotes com líderes de empresas como McKinsey, AWS, FC Porto e Millennium BCP</strong>, painéis de debate, workshops práticos e networking exclusivo. Se queres perceber como a Inteligência Artificial está a transformar negócios, carreiras e o mundo — este é o teu lugar.
-        </p>
-      </div>
-
-      <!-- STATS BAR -->
-      <div class="mx-8 mb-6 rounded-xl overflow-hidden bg-gradient-to-br from-[#2D1B4E] to-[#6B3FA0] flex text-center">
-        <div class="flex-1 py-4 border-r border-white/10">
-          <div class="text-3xl font-playfair text-amber-400">6</div>
-          <div class="text-xs uppercase tracking-wider text-purple-200 mt-1">Temas Centrais</div>
-        </div>
-        <div class="flex-1 py-4 border-r border-white/10">
-          <div class="text-3xl font-playfair text-amber-400">10+</div>
-          <div class="text-xs uppercase tracking-wider text-purple-200 mt-1">Oradores</div>
-        </div>
-        <div class="flex-1 py-4">
-          <div class="text-3xl font-playfair text-amber-400">2</div>
-          <div class="text-xs uppercase tracking-wider text-purple-200 mt-1">Dias</div>
+        <!-- Seletor de Anos: Tabs Elegantes com Underline -->
+        <div class="mt-8 flex items-center gap-8 border-b border-white/10 pb-1">
+          <button
+            class="year-filter-btn active relative pb-3 text-sm font-bold text-white transition-all after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-full after:bg-blue-400"
+            data-year="all"
+          >
+            Todos os Eventos
+          </button>
+          {
+            anosDisponiveis.map((ano) => (
+              <button
+                class="year-filter-btn relative pb-3 text-sm font-medium text-gray-400 transition-all hover:text-white"
+                data-year={ano.toString()}
+              >
+                Edição {ano}
+              </button>
+            ))
+          }
         </div>
       </div>
+    </div>
+  </section>
 
-      <!-- SCHEDULE -->
-      <div class="px-8 pb-8">
-        <div class="flex items-center gap-3 mb-6">
-          <div class="flex-1 h-px bg-gradient-to-r from-purple-200 to-transparent"></div>
-          <h2 class="text-xs font-bold uppercase tracking-wider text-purple-600">Programa em Destaque</h2>
-          <div class="flex-1 h-px bg-gradient-to-l from-purple-200 to-transparent"></div>
-        </div>
+  <!-- ===================== CORPO: EVENTOS & TEMAS ===================== -->
+  <section class="bg-gray-50 py-16 md:py-24">
+    <div class="mx-auto max-w-screen-xl px-6 md:px-10 space-y-16">
+      
+      {
+        EVENTOS.map((evento) => (
+          <article
+            class="event-card overflow-hidden rounded-3xl border border-gray-100 bg-white shadow-[0_4px_25px_rgba(0,0,0,0.06)]"
+            data-event-year={evento.ano}
+          >
+            <!-- Banner do Evento -->
+            <div class={`relative bg-gradient-to-r ${evento.corDestaque} p-8 text-white md:p-12 overflow-hidden`}>
+              
+              {evento.logoUrl && (
+                <div class="hidden md:flex absolute -right-12 top-1/2 -translate-y-1/2 w-64 h-64 lg:w-72 lg:h-72 rounded-full bg-white shadow-2xl border-4 border-white/20 items-center justify-center p-8 overflow-hidden pointer-events-none z-0">
+                  <img
+                    src={evento.logoUrl}
+                    alt={`${evento.nome} Logo`}
+                    class="w-full h-full object-contain -translate-x-3"
+                  />
+                </div>
+              )}
 
-        <!-- Day 1 -->
-        <article class="bg-gray-50 rounded-lg p-6 mb-4 border-l-4 border-purple-400">
-          <h3 class="font-playfair text-xl text-purple-900">Dia 1 — Estratégia, Economia e Risco</h3>
-          <p class="text-xs font-semibold uppercase text-purple-500">Segunda-feira, 14 de abril</p>
+              <div class="relative z-10 flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
+                
+                <div class="space-y-3 max-w-xl">
+                  <div class="inline-block rounded-full bg-white/10 border border-white/20 px-4 py-1 text-xs font-bold uppercase tracking-wider text-purple-200">
+                    SmartData FEP Apresenta
+                  </div>
+                  <h2 class="text-3xl font-bold md:text-5xl">{evento.nome}</h2>
+                  <p class="text-sm font-medium tracking-wide text-purple-200 md:text-base">{evento.subtitulo}</p>
+                  
+                  <div class="flex flex-wrap items-center gap-4 text-xs md:text-sm text-purple-100 pt-2">
+                    <span class="flex items-center gap-1.5 font-semibold">
+                      <Image 
+                        src={calendar} 
+                        alt="Calendário" 
+                        class="w-4 h-4 object-contain inline-block shrink-0" 
+                      />
+                      {evento.dataTexto}
+                    </span>
+                    <span>•</span>
+                    <span class="flex items-center gap-1.5">
+                      <Image 
+                        src={locationPin} 
+                        alt="Localização" 
+                        class="w-4 h-4 object-contain inline-block shrink-0" 
+                      />
+                      {evento.local}
+                    </span>
+                  </div>
+                </div>
 
-          <div class="mt-4 divide-y divide-purple-100">
-            <div class="flex py-4 gap-4">
-              <div class="w-20 text-sm font-semibold text-purple-600">10:30</div>
-              <div>
-                <h4 class="font-semibold text-gray-900">A Nova Fronteira da Consultoria: IA e Estratégia Corporativa</h4>
-                <div class="text-sm text-gray-500 mt-1"><strong>Fábio Neves</strong> · McKinsey & Company</div>
-                <span class="inline-block mt-2 text-xs font-bold uppercase px-2 py-1 rounded bg-amber-100 text-amber-700">Keynote</span>
+                <div class="shrink-0 lg:pr-48">
+                  {evento.estado === 'proximo' && evento.linkInscricao && (
+                    <a
+                      href={evento.linkInscricao}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="group relative inline-flex items-center gap-2 overflow-hidden rounded-full bg-white px-7 py-3.5 font-bold text-[#1e1b4b] shadow-lg transition-all hover:shadow-[0_0_20px_rgba(255,255,255,0.4)]"
+                    >
+                      <span class="relative z-10">Garantir Lugar</span>
+                      <svg class="relative z-10 h-4 w-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+                      </svg>
+                      <div class="absolute inset-0 bg-purple-100 opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
+                    </a>
+                  )}
+
+                  {evento.estado === 'passado' && evento.linkRecap && (
+                    <a
+                      href={evento.linkRecap}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="group relative inline-flex items-center gap-2 overflow-hidden rounded-full bg-white/15 border border-white/30 backdrop-blur-md px-7 py-3.5 font-bold text-white shadow-lg transition-all hover:bg-white hover:text-[#1e1b4b]"
+                    >
+                      <span class="relative z-10">Ver mais</span>
+                      <svg class="relative z-10 h-4 w-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+                      </svg>
+                    </a>
+                  )}
+                </div>
+
+              </div>
+
+              <!-- Estatísticas -->
+              <div class="mt-8 grid grid-cols-3 gap-2 border-t border-white/10 pt-6 max-w-xl text-center">
+                <div>
+                  <span class="block text-2xl font-bold text-white md:text-3xl">{evento.stats.temas}</span>
+                  <span class="text-xs text-purple-200 uppercase tracking-wider">Temas</span>
+                </div>
+                <div>
+                  <span class="block text-2xl font-bold text-white md:text-3xl">{evento.stats.oradores}</span>
+                  <span class="text-xs text-purple-200 uppercase tracking-wider">Oradores</span>
+                </div>
+                <div>
+                  <span class="block text-2xl font-bold text-white md:text-3xl">{evento.stats.dias}</span>
+                  <span class="text-xs text-purple-200 uppercase tracking-wider">Dias</span>
+                </div>
               </div>
             </div>
 
-            <div class="flex py-4 gap-4">
-              <div class="w-20 text-sm font-semibold text-purple-600">11:45</div>
-              <div>
-                <h4 class="font-semibold text-gray-900">O Impacto Real da IA na Economia Portuguesa</h4>
-                <div class="text-sm text-gray-500 mt-1"><strong>TelePerformance · Sogrape · AWS</strong></div>
-                <span class="inline-block mt-2 text-xs font-bold uppercase px-2 py-1 rounded bg-green-100 text-green-700">Painel de Debate</span>
+            <!-- SECÇÃO DESTAQUE: OS 6 TEMAS CENTRAIS -->
+            {evento.temasCentrais && evento.temasCentrais.length > 0 && (
+              <div class="border-b border-gray-100 bg-white p-6 md:px-10 md:py-6">
+                <span class="text-[11px] font-bold uppercase tracking-widest text-gray-400 block mb-3">
+                  Temas Centrais em Debate
+                </span>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+                  {evento.temasCentrais.map((tema) => (
+                    <div class="flex items-center gap-2.5 rounded-xl bg-purple-50/60 border border-purple-100/80 px-3.5 py-2.5">
+                      <span class="h-2 w-2 rounded-full bg-purple-600 shrink-0"></span>
+                      <span class="text-xs font-semibold text-purple-950 leading-tight">{tema}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            <!-- Navegação Interna do Evento (Abas) -->
+            <div class="border-b border-gray-100 bg-gray-50/70 p-3 md:px-10 md:py-4">
+              <div class="grid grid-cols-3 gap-1 md:flex md:flex-wrap md:gap-2 text-xs md:text-sm font-semibold">
+                <button class="tab-btn active rounded-xl bg-white px-2 py-2.5 md:px-5 md:py-2.5 text-[#1e1b4b] shadow-sm border border-gray-200 transition-all text-center" data-target={`cronograma-${evento.id}`}>
+                  Cronograma
+                </button>
+                <button class="tab-btn rounded-xl px-2 py-2.5 md:px-5 md:py-2.5 text-gray-500 hover:text-[#1e1b4b] transition-all text-center" data-target={`oradores-${evento.id}`}>
+                  Oradores
+                </button>
+                <button class="tab-btn rounded-xl px-2 py-2.5 md:px-5 md:py-2.5 text-gray-500 hover:text-[#1e1b4b] transition-all text-center truncate" data-target={`panfletos-${evento.id}`}>
+                  <span class="md:hidden">Galeria ({evento.panfletos.length})</span>
+                  <span class="hidden md:inline">Galeria ({evento.panfletos.length})</span>
+                </button>
               </div>
             </div>
 
-            <div class="flex py-4 gap-4">
-              <div class="w-20 text-sm font-semibold text-purple-600">14:00</div>
-              <div>
-                <h4 class="font-semibold text-gray-900">IA, Pedagogia e Ética: Repensar o Futuro do Ensino</h4>
-                <span class="inline-block mt-2 text-xs font-bold uppercase px-2 py-1 rounded bg-green-100 text-green-700">Painel de Debate</span>
+            <!-- Conteúdo das Abas (Cronograma, Oradores, Panfletos) -->
+            <div class="p-6 md:p-10">
+              
+              <!-- ABA: CRONOGRAMA -->
+              <div id={`cronograma-${evento.id}`} class="tab-panel space-y-8">
+                <div class="grid grid-cols-1 gap-8 lg:grid-cols-2">
+                  {
+                    evento.cronograma.map((dia) => (
+                      <div class="rounded-2xl border border-gray-100 bg-gray-50 p-6">
+                        <div class="border-b border-gray-200 pb-3 mb-4">
+                          <span class="text-xs font-bold uppercase tracking-wider text-purple-700">{dia.dia} — {dia.data}</span>
+                          <h4 class="text-lg font-bold text-[#1e1b4b]">{dia.tema}</h4>
+                        </div>
+
+                        <div class="space-y-4">
+                          {dia.sessoes.map((s) => (
+                            <div class="flex flex-col sm:flex-row sm:items-start gap-3 sm:gap-4 rounded-xl bg-white p-4 shadow-sm border border-gray-100">
+                              <span class="font-mono text-xs font-bold text-purple-700 bg-purple-50 rounded px-2.5 py-1 self-start shrink-0">
+                                {s.hora}
+                              </span>
+                              <div class="flex-1">
+                                <h5 class="text-sm font-bold text-gray-900">{s.titulo}</h5>
+                                {s.orador && (
+                                  <p class="text-xs text-gray-500 mt-1">
+                                    <strong>{s.orador}</strong> {s.empresa ? `· ${s.empresa}` : ''}
+                                  </p>
+                                )}
+                                <span class="inline-block mt-2 text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-gray-100 text-gray-600">
+                                  {s.tipo}
+                                </span>
+                              </div>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    ))
+                  }
+                </div>
               </div>
-            </div>
 
-            <div class="flex py-4 gap-4">
-              <div class="w-20 text-sm font-semibold text-purple-600">16:00</div>
-              <div>
-                <h4 class="font-semibold text-gray-900">IA Aplicada ao Negócio: Como Criar Soluções com Retorno</h4>
-                <div class="text-sm text-gray-500 mt-1"><strong>Luís Noronha</strong> · DareData</div>
-                <span class="inline-block mt-2 text-xs font-bold uppercase px-2 py-1 rounded bg-red-100 text-red-700">Workshop</span>
+              <!-- ABA: ORADORES -->
+              <div id={`oradores-${evento.id}`} class="tab-panel hidden">
+                <div class="grid grid-cols-2 gap-3 sm:gap-4 sm:grid-cols-3 lg:grid-cols-4">
+                  {
+                    evento.oradores.map((orador) => (
+                      <div class="flex flex-col items-center text-center sm:flex-row sm:items-center sm:text-left gap-3 rounded-2xl border border-gray-100 bg-gray-50 p-4 min-h-[140px] sm:min-h-0">
+                        <div class="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#1e1b4b] font-bold text-xs text-white shadow-sm">
+                          {orador.iniciais}
+                        </div>
+                        <div class="w-full min-w-0">
+                          <h5 class="text-xs sm:text-sm font-bold text-gray-900 leading-snug break-words">
+                            {orador.nome}
+                          </h5>
+                          <span class="text-[11px] sm:text-xs text-gray-500 block leading-tight mt-1 break-words">
+                            {orador.empresa}
+                          </span>
+                        </div>
+                      </div>
+                    ))
+                  }
+                </div>
               </div>
-            </div>
-          </div>
-        </article>
 
-        <!-- Day 2 -->
-        <article class="bg-gray-50 rounded-lg p-6 mb-4 border-l-4 border-purple-400">
-          <h3 class="font-playfair text-xl text-purple-900">Dia 2 — Rigor, Finanças e Futuro Profissional</h3>
-          <p class="text-xs font-semibold uppercase text-purple-500">Terça-feira, 15 de abril</p>
+              <!-- ABA: PANFLETOS & COLEÇÕES COM CARROSSEL -->
+              <div id={`panfletos-${evento.id}`} class="tab-panel hidden">
+                <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                  {
+                    evento.panfletos.map((grupo, gIndex) => (
+                      <div class="group relative rounded-2xl border border-gray-100 bg-gray-50 p-4 shadow-sm transition-all hover:shadow-md">
+                        
+                        <div class="mb-3 flex items-center justify-between">
+                          <h5 class="text-xs font-bold uppercase tracking-wider text-gray-700 truncate">{grupo.titulo}</h5>
+                          {grupo.imagens.length > 1 && (
+                            <span class="rounded-full bg-purple-100 px-2 py-0.5 text-[10px] font-bold text-purple-800">
+                              {grupo.imagens.length} páginas
+                            </span>
+                          )}
+                        </div>
 
-          <div class="mt-4 divide-y divide-purple-100">
-            <div class="flex py-4 gap-4">
-              <div class="w-20 text-sm font-semibold text-purple-600">10:15</div>
-              <div>
-                <h4 class="font-semibold text-gray-900">Gestão de Marcas e Valor de Negócio na Era da IA</h4>
-                <span class="inline-block mt-2 text-xs font-bold uppercase px-2 py-1 rounded bg-amber-100 text-amber-700">Keynote</span>
+                        <!-- Contentor do Carrossel de Imagens -->
+                        <div class="relative aspect-[4/5] w-full overflow-hidden rounded-xl border border-gray-200 bg-gray-900">
+                          
+                          <div 
+                            id={`carousel-${evento.id}-${gIndex}`}
+                            class="flex h-full w-full overflow-x-auto snap-x snap-mandatory scrollbar-none scroll-smooth"
+                          >
+                            {grupo.imagens.map((imgUrl, iIndex) => (
+                              <div class="relative h-full w-full shrink-0 snap-center">
+                                <img
+                                  src={imgUrl}
+                                  alt={`${grupo.titulo} - ${iIndex + 1}`}
+                                  class="h-full w-full object-cover"
+                                  loading="lazy"
+                                />
+                                <a
+                                  href={imgUrl}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white text-xs font-bold"
+                                >
+                                  Ver original ↗
+                                </a>
+                              </div>
+                            ))}
+                          </div>
+
+                          <!-- Setas de Navegação (Aparecem apenas se houver mais de 1 imagem) -->
+                          {grupo.imagens.length > 1 && (
+                            <>
+                              <button
+                                type="button"
+                                aria-label="Imagem anterior"
+                                class="carousel-prev absolute left-2 top-1/2 -translate-y-1/2 flex h-8 w-8 items-center justify-center rounded-full bg-white/90 text-[#1e1b4b] shadow-lg backdrop-blur-sm transition-all hover:bg-white active:scale-95"
+                                data-target={`carousel-${evento.id}-${gIndex}`}
+                              >
+                                <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                                  <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+                                </svg>
+                              </button>
+
+                              <button
+                                type="button"
+                                aria-label="Próxima imagem"
+                                class="carousel-next absolute right-2 top-1/2 -translate-y-1/2 flex h-8 w-8 items-center justify-center rounded-full bg-white/90 text-[#1e1b4b] shadow-lg backdrop-blur-sm transition-all hover:bg-white active:scale-95"
+                                data-target={`carousel-${evento.id}-${gIndex}`}
+                              >
+                                <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+                                </svg>
+                              </button>
+                            </>
+                          )}
+
+                        </div>
+
+                      </div>
+                    ))
+                  }
+                </div>
               </div>
+
             </div>
-
-            <div class="flex py-4 gap-4">
-              <div class="w-20 text-sm font-semibold text-purple-600">11:30</div>
-              <div>
-                <h4 class="font-semibold text-gray-900">IA, Dados e Performance Desportiva</h4>
-                <div class="text-sm text-gray-500 mt-1"><strong>José Miguel do Carmo</strong> · FC Porto</div>
-                <span class="inline-block mt-2 text-xs font-bold uppercase px-2 py-1 rounded bg-amber-100 text-amber-700">Keynote</span>
-              </div>
-            </div>
-
-            <div class="flex py-4 gap-4">
-              <div class="w-20 text-sm font-semibold text-purple-600">14:30</div>
-              <div>
-                <h4 class="font-semibold text-gray-900">O Papel da IA na Gestão de Risco na Banca</h4>
-                <div class="text-sm text-gray-500 mt-1"><strong>José Miguel Pessanha</strong> · Millennium BCP</div>
-                <span class="inline-block mt-2 text-xs font-bold uppercase px-2 py-1 rounded bg-amber-100 text-amber-700">Keynote</span>
-              </div>
-            </div>
-
-            <div class="flex py-4 gap-4">
-              <div class="w-20 text-sm font-semibold text-purple-600">16:00</div>
-              <div>
-                <h4 class="font-semibold text-gray-900">Talento e Carreira: O Teu Perfil no Mercado</h4>
-                <div class="text-sm text-gray-500 mt-1"><strong>EY · BI4ALL</strong></div>
-                <span class="inline-block mt-2 text-xs font-bold uppercase px-2 py-1 rounded bg-green-100 text-green-700">Painel</span>
-              </div>
-            </div>
-
-            <div class="flex py-4 gap-4">
-              <div class="w-20 text-sm font-semibold text-purple-600">18:00</div>
-              <div>
-                <h4 class="font-semibold text-gray-900">Wine &amp; Networking — Porto de Honra Exclusivo</h4>
-                <div class="text-sm text-gray-500 mt-1">Limitado a <strong>50 participantes</strong></div>
-                <span class="inline-block mt-2 text-xs font-bold uppercase px-2 py-1 rounded bg-blue-100 text-blue-700">Networking</span>
-              </div>
-            </div>
-          </div>
-        </article>
-      </div>
-
-      <!-- SPEAKERS -->
-      <div class="px-8 py-6">
-        <div class="flex items-center gap-3 mb-4">
-          <div class="flex-1 h-px bg-gradient-to-r from-purple-200 to-transparent"></div>
-          <h2 class="text-xs font-bold uppercase tracking-wider text-purple-600">Quem vais ouvir</h2>
-          <div class="flex-1 h-px bg-gradient-to-l from-purple-200 to-transparent"></div>
-        </div>
-
-        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
-          <div class="flex items-center gap-3 bg-gray-50 border border-purple-100 rounded-full px-3 py-2">
-            <div class="w-7 h-7 rounded-full bg-gradient-to-br from-[#9B6DD7] to-[#6B3FA0] flex items-center justify-center text-white font-bold text-xs">FN</div>
-            <div>
-              <div class="text-sm font-semibold">Fábio Neves</div>
-              <div class="text-xs text-gray-500">McKinsey</div>
-            </div>
-          </div>
-
-          <div class="flex items-center gap-3 bg-gray-50 border border-purple-100 rounded-full px-3 py-2">
-            <div class="w-7 h-7 rounded-full bg-gradient-to-br from-[#9B6DD7] to-[#6B3FA0] flex items-center justify-center text-white font-bold text-xs">PG</div>
-            <div>
-              <div class="text-sm font-semibold">Pedro Gomes</div>
-              <div class="text-xs text-gray-500">TelePerformance</div>
-            </div>
-          </div>
-
-          <div class="flex items-center gap-3 bg-gray-50 border border-purple-100 rounded-full px-3 py-2">
-            <div class="w-7 h-7 rounded-full bg-gradient-to-br from-[#9B6DD7] to-[#6B3FA0] flex items-center justify-center text-white font-bold text-xs">TC</div>
-            <div>
-              <div class="text-sm font-semibold">Tiago Costa</div>
-              <div class="text-xs text-gray-500">Sogrape</div>
-            </div>
-          </div>
-
-          <div class="flex items-center gap-3 bg-gray-50 border border-purple-100 rounded-full px-3 py-2">
-            <div class="w-7 h-7 rounded-full bg-gradient-to-br from-[#9B6DD7] to-[#6B3FA0] flex items-center justify-center text-white font-bold text-xs">PL</div>
-            <div>
-              <div class="text-sm font-semibold">Pedro Lopes-Sousa</div>
-              <div class="text-xs text-gray-500">AWS</div>
-            </div>
-          </div>
-
-          <div class="flex items-center gap-3 bg-gray-50 border border-purple-100 rounded-full px-3 py-2">
-            <div class="w-7 h-7 rounded-full bg-gradient-to-br from-[#9B6DD7] to-[#6B3FA0] flex items-center justify-center text-white font-bold text-xs">JC</div>
-            <div>
-              <div class="text-sm font-semibold">José M. do Carmo</div>
-              <div class="text-xs text-gray-500">FC Porto</div>
-            </div>
-          </div>
-
-          <div class="flex items-center gap-3 bg-gray-50 border border-purple-100 rounded-full px-3 py-2">
-            <div class="w-7 h-7 rounded-full bg-gradient-to-br from-[#9B6DD7] to-[#6B3FA0] flex items-center justify-center text-white font-bold text-xs">JP</div>
-            <div>
-              <div class="text-sm font-semibold">José M. Pessanha</div>
-              <div class="text-xs text-gray-500">Millennium BCP</div>
-            </div>
-          </div>
-
-          <div class="flex items-center gap-3 bg-gray-50 border border-purple-100 rounded-full px-3 py-2">
-            <div class="w-7 h-7 rounded-full bg-gradient-to-br from-[#9B6DD7] to-[#6B3FA0] flex items-center justify-center text-white font-bold text-xs">LN</div>
-            <div>
-              <div class="text-sm font-semibold">Luís Noronha</div>
-              <div class="text-xs text-gray-500">DareData</div>
-            </div>
-          </div>
-
-          <div class="flex items-center gap-3 bg-gray-50 border border-purple-100 rounded-full px-3 py-2">
-            <div class="w-7 h-7 rounded-full bg-gradient-to-br from-[#9B6DD7] to-[#6B3FA0] flex items-center justify-center text-white font-bold text-xs">TT</div>
-            <div>
-              <div class="text-sm font-semibold">Telmo Teixeira</div>
-              <div class="text-xs text-gray-500">BI4ALL</div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="text-center text-purple-300 text-xl leading-none py-2">· · ·</div>
-
-      <!-- CTA -->
-      <div class="px-8 pb-10">
-        <div class="rounded-xl p-8 bg-gradient-to-br from-[#2D1B4E] to-[#4A2D7A] text-white text-center">
-          <h3 class="font-playfair text-2xl">Garante o teu lugar.</h3>
-          <p class="mt-2 text-purple-200">Inscrição gratuita · Aberto a todos os estudantes da U.Porto</p>
-          <a href="https://docs.google.com/forms/d/e/1FAIpQLScf398ydrxYg9ZKgWy_BGBFUO-f6cQp7j_ZGG0u2aKz-IUziQ/viewform" class="inline-block mt-6 bg-amber-400 text-[#2D1B4E] font-bold uppercase px-8 py-3 rounded-lg">Inscreve-te Agora →</a>
-          <p class="mt-3 text-xs text-white/70">Lugares limitados · Salão Nobre da FEP (500 lugares)</p>
-        </div>
-      </div>
-
+          </article>
+        ))
+      }
 
     </div>
   </section>
+
+  <!-- Estilos para scroll invisível -->
+  <style>
+    .scrollbar-none::-webkit-scrollbar {
+      display: none;
+    }
+    .scrollbar-none {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+
+  <!-- Script de Filtros, Abas e Carrosséis -->
+  <script>
+    // Filtro por Ano (Underline ativo)
+    const yearBtns = document.querySelectorAll('.year-filter-btn');
+    const eventCards = document.querySelectorAll('.event-card');
+
+    yearBtns.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        yearBtns.forEach((b) => {
+          b.classList.remove('active', 'text-white', 'font-bold', 'after:absolute', 'after:bottom-0', 'after:left-0', 'after:h-0.5', 'after:w-full', 'after:bg-blue-400');
+          b.classList.add('text-gray-400', 'font-medium');
+        });
+
+        btn.classList.add('active', 'text-white', 'font-bold', 'after:absolute', 'after:bottom-0', 'after:left-0', 'after:h-0.5', 'after:w-full', 'after:bg-blue-400');
+        btn.classList.remove('text-gray-400', 'font-medium');
+
+        const selectedYear = btn.getAttribute('data-year');
+
+        eventCards.forEach((card) => {
+          const cardYear = card.getAttribute('data-event-year');
+          if (selectedYear === 'all' || cardYear === selectedYear) {
+            (card as HTMLElement).style.display = 'block';
+          } else {
+            (card as HTMLElement).style.display = 'none';
+          }
+        });
+      });
+    });
+
+    // Abas de Cronograma / Oradores / Galeria
+    const tabBtns = document.querySelectorAll('.tab-btn');
+
+    tabBtns.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const parentCard = btn.closest('.event-card');
+        if (!parentCard) return;
+
+        parentCard.querySelectorAll('.tab-btn').forEach((b) => {
+          b.classList.remove('bg-white', 'text-[#1e1b4b]', 'shadow-sm', 'border', 'border-gray-200', 'active');
+          b.classList.add('text-gray-500');
+        });
+
+        btn.classList.add('bg-white', 'text-[#1e1b4b]', 'shadow-sm', 'border', 'border-gray-200', 'active');
+        btn.classList.remove('text-gray-500');
+
+        const targetId = btn.getAttribute('data-target');
+        parentCard.querySelectorAll('.tab-panel').forEach((panel) => {
+          panel.classList.add('hidden');
+        });
+
+        const targetPanel = parentCard.querySelector(`#${targetId}`);
+        if (targetPanel) {
+          targetPanel.classList.remove('hidden');
+        }
+      });
+    });
+
+    // Controlo das Setas dos Carrosséis de Panfletos
+    document.querySelectorAll('.carousel-prev').forEach((button) => {
+      button.addEventListener('click', (e) => {
+        e.preventDefault();
+        const targetId = button.getAttribute('data-target');
+        const container = document.getElementById(targetId!);
+        if (container) {
+          container.scrollBy({ left: -container.clientWidth, behavior: 'smooth' });
+        }
+      });
+    });
+
+    document.querySelectorAll('.carousel-next').forEach((button) => {
+      button.addEventListener('click', (e) => {
+        e.preventDefault();
+        const targetId = button.getAttribute('data-target');
+        const container = document.getElementById(targetId!);
+        if (container) {
+          container.scrollBy({ left: container.clientWidth, behavior: 'smooth' });
+        }
+      });
+    });
+  </script>
 </Layout>

@@ -4,23 +4,33 @@ import { Image } from 'astro:assets';
 import fepLogo from '../assets/home/images/fep_logo_image.png';
 import microsoftLogo from '../assets/home/images/microsoft_logo_image.png';
 import apbiLogo from '../assets/home/images/apbi_logo_image.png';
+import eyLogo from '../assets/home/images/ey_logo_image.png';
 import servicosImage from '../assets/home/images/home_servicos_image.jpg';
+import marketingIcon from '../assets/departamentos/icons_images/mk_icon.svg';
+import projetosAnaliseDadosIcon from '../assets/departamentos/icons_images/pad_icon.svg';
+import relacoesExternasIcon from '../assets/departamentos/icons_images/re_icon.svg';
+import recursosHumanosIcon from '../assets/departamentos/icons_images/rh_icon.svg';
+import educacaoFormacaoIcon from '../assets/departamentos/icons_images/ef_icon.svg';
+import financeiroIcon from '../assets/departamentos/icons_images/fin_icon.svg';
 ---
 
 <Layout title="SmartData FEP - Shaping the Future">
     <section class="relative bg-[#1e1b4b] text-white pt-20 pb-20 md:pt-28 md:pb-32 px-6 overflow-hidden">
         <div class="absolute inset-0 z-0">
-             <div class="absolute inset-0 bg-[url('/src/assets/home/images/smart_backgroud.png')] opacity-100 bg-cover bg-center mix-blend-overlay"></div>
+            <div class="absolute inset-0 bg-[url('/src/assets/home/images/smart_backgroud.png')] opacity-100 bg-cover bg-center mix-blend-overlay"></div>
             <div class="absolute inset-0 bg-gradient-to-r from-[#1e1b4b] via-[#1e1b4b]/90 to-transparent"></div>
         </div>
 
-        <div class="relative z-10 mx-auto max-w-screen-xl px-6 md:px-10 w-full grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <div class="space-y-8">
+        <!-- Grelha de 5 colunas com items-end -->
+        <div class="relative z-10 mx-auto max-w-screen-xl px-6 md:px-10 w-full grid grid-cols-1 md:grid-cols-5 gap-12 items-end">
+            
+            <!-- Lado Esquerdo (3/5) -->
+            <div class="space-y-8 md:col-span-3">
                 <div class="inline-block border-l-4 border-blue-400 pl-4">
                     <span class="text-blue-200 uppercase tracking-widest text-sm font-semibold">AI & BI</span>
                 </div>
                 <h1 class="text-5xl md:text-6xl font-bold leading-tight tracking-tight">
-                    What is your next <br/>
+                    What is YOUR next <br/>
                     <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-200 to-indigo-400">data-driven</span> move?
                 </h1>
                 <p class="text-xl text-gray-300 max-w-lg font-light leading-relaxed">
@@ -37,27 +47,44 @@ import servicosImage from '../assets/home/images/home_servicos_image.jpg';
                 </div>
             </div>
             
-            <div class="hidden md:block relative">
-                <div class="bg-white/5 backdrop-blur-md rounded-2xl p-8 border border-white/10 shadow-2xl">
-                    <h3 class="text-2xl mb-6 border-b border-white/20 pb-4">O Nosso Impacto</h3>
-                    <div class="grid grid-cols-2 gap-8">
+            <!-- Lado Direito: Caixa de Impacto (2/5) -->
+            <div class="hidden md:block relative md:col-span-2">
+                <div class="w-full rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-md shadow-2xl md:p-8">
+                    
+                    <!-- Cabeçalho da Caixa -->
+                    <div class="mb-6 inline-block border-l-4 border-blue-400 pl-3">
+                        <span class="text-xs font-semibold uppercase tracking-widest text-blue-200">
+                            Resultados & Crescimento
+                        </span>
+                    </div>
+
+                    <h3 class="text-2xl font-bold leading-tight md:text-3xl mb-8">
+                        O Nosso <span class="bg-gradient-to-r from-blue-200 to-indigo-400 bg-clip-text text-transparent">Impacto</span>
+                    </h3>
+
+                    <!-- Grelha de Métricas -->
+                    <div class="grid grid-cols-2 gap-x-6 gap-y-6"> 
                         <div>
-                            <span class="block text-4xl font-bold text-blue-300">40+</span>
-                            <span class="text-sm text-gray-400">Membros Ativos</span>
+                            <span class="block text-3xl md:text-4xl font-bold bg-gradient-to-r from-blue-200 to-indigo-300 bg-clip-text text-transparent">20+</span>
+                            <span class="mt-1 block text-sm font-light text-gray-300">Membros Ativos</span>
                         </div>
+
                         <div>
-                            <span class="block text-4xl font-bold text-blue-300">3+</span>
-                            <span class="text-sm text-gray-400">Parceiros</span>
+                            <span class="block text-3xl md:text-4xl font-bold bg-gradient-to-r from-blue-200 to-indigo-300 bg-clip-text text-transparent">3+</span>
+                            <span class="mt-1 block text-sm font-light text-gray-300">Parceiros</span>
                         </div>
+
                         <div>
-                            <span class="block text-4xl font-bold text-blue-300">100%</span>
-                            <span class="text-sm text-gray-400">Liderada por Estudantes</span>
+                            <span class="block text-3xl md:text-4xl font-bold bg-gradient-to-r from-blue-200 to-indigo-300 bg-clip-text text-transparent">100%</span>
+                            <span class="mt-1 block text-sm font-light text-gray-300">Liderada por Estudantes</span>
                         </div>
-                         <div>
-                            <span class="block text-4xl font-bold text-blue-300">U.Porto</span>
-                            <span class="text-sm text-gray-400">FEP | FCUP | FEUP</span>
+
+                        <div>
+                            <span class="block text-3xl md:text-4xl font-bold bg-gradient-to-r from-blue-200 to-indigo-300 bg-clip-text text-transparent">U.Porto</span>
+                            <span class="mt-1 block text-sm font-light text-gray-300">FEP | FCUP | FEUP</span>
                         </div>
                     </div>
+
                 </div>
             </div>
         </div>
@@ -284,26 +311,267 @@ import servicosImage from '../assets/home/images/home_servicos_image.jpg';
             </div>
 
             <div class="hidden md:grid grid-cols-3 gap-4">
-                <a href="/questionario" class="aspect-square flex items-center justify-center rounded-2xl border border-white/15 bg-white/5 backdrop-blur-md text-lg font-bold text-blue-200 transition-all hover:bg-white/15 hover:-translate-y-1">MK</a>
-                <a href="/questionario" class="aspect-square flex items-center justify-center rounded-2xl border border-white/15 bg-white/5 backdrop-blur-md text-lg font-bold text-blue-200 transition-all hover:bg-white/15 hover:-translate-y-1">PAD</a>
-                <a href="/questionario" class="aspect-square flex items-center justify-center rounded-2xl border border-white/15 bg-white/5 backdrop-blur-md text-lg font-bold text-blue-200 transition-all hover:bg-white/15 hover:-translate-y-1">EF</a>
-                <a href="/questionario" class="aspect-square flex items-center justify-center rounded-2xl border border-white/15 bg-white/5 backdrop-blur-md text-lg font-bold text-blue-200 transition-all hover:bg-white/15 hover:-translate-y-1">RH</a>
-                <a href="/questionario" class="aspect-square flex items-center justify-center rounded-2xl border border-white/15 bg-white/5 backdrop-blur-md text-lg font-bold text-blue-200 transition-all hover:bg-white/15 hover:-translate-y-1">RE</a>
-                <a href="/questionario" class="aspect-square flex items-center justify-center rounded-2xl border border-white/15 bg-white/5 backdrop-blur-md text-lg font-bold text-blue-200 transition-all hover:bg-white/15 hover:-translate-y-1">FIN</a>
-            </div>
+                <!-- 1. Marketing -->
+                <a 
+                href="/questionario" 
+                class="group flex aspect-square flex-col items-center justify-center gap-2.5 rounded-2xl border border-white/15 bg-white/5 p-4 text-center backdrop-blur-md transition-all hover:-translate-y-1 hover:border-blue-400/40 hover:bg-white/15 hover:shadow-lg"
+                >
+                <Image 
+                    src={marketingIcon} 
+                    alt="Marketing" 
+                    class="h-12 w-12 object-contain transition-transform group-hover:scale-110" 
+                />
+                <span class="text-lg font-bold uppercase tracking-wider text-blue-200 group-hover:text-white">
+                    Marketing
+                </span>
+                </a>
+
+                <!-- 2. Projetos & Análise de Dados (PAD) -->
+                <a 
+                href="/questionario" 
+                class="group flex aspect-square flex-col items-center justify-center gap-2.5 rounded-2xl border border-white/15 bg-white/5 p-4 text-center backdrop-blur-md transition-all hover:-translate-y-1 hover:border-blue-400/40 hover:bg-white/15 hover:shadow-lg"
+                >
+                <Image 
+                    src={projetosAnaliseDadosIcon} 
+                    alt="Projetos & Análise de Dados" 
+                    class="h-12 w-12 object-contain transition-transform group-hover:scale-110" 
+                />
+                <span class="text-lg font-bold uppercase tracking-wider text-blue-200 group-hover:text-white">
+                    Projetos & Análise de Dados
+                </span>
+                </a>
+
+                <!-- 3. Educação & Formação (EF) -->
+                <a 
+                href="/questionario" 
+                class="group flex aspect-square flex-col items-center justify-center gap-2.5 rounded-2xl border border-white/15 bg-white/5 p-4 text-center backdrop-blur-md transition-all hover:-translate-y-1 hover:border-blue-400/40 hover:bg-white/15 hover:shadow-lg"
+                >
+                <Image 
+                    src={educacaoFormacaoIcon} 
+                    alt="Educação & Formação" 
+                    class="h-12 w-12 object-contain transition-transform group-hover:scale-110" 
+                />
+                <span class="text-lg font-bold uppercase tracking-wider text-blue-200 group-hover:text-white">
+                    Educação & Formação
+                </span>
+                </a>
+
+                <!-- 4. Recursos Humanos (RH) -->
+                <a 
+                href="/questionario" 
+                class="group flex aspect-square flex-col items-center justify-center gap-2.5 rounded-2xl border border-white/15 bg-white/5 p-4 text-center backdrop-blur-md transition-all hover:-translate-y-1 hover:border-blue-400/40 hover:bg-white/15 hover:shadow-lg"
+                >
+                <Image 
+                    src={recursosHumanosIcon} 
+                    alt="Recursos Humanos" 
+                    class="h-12 w-12 object-contain transition-transform group-hover:scale-110" 
+                />
+                <span class="text-lg font-bold uppercase tracking-wider text-blue-200 group-hover:text-white">
+                    Recursos Humanos
+                </span>
+                </a>
+
+                <!-- 5. Relações Externas (RE) -->
+                <a 
+                href="/questionario" 
+                class="group flex aspect-square flex-col items-center justify-center gap-2.5 rounded-2xl border border-white/15 bg-white/5 p-4 text-center backdrop-blur-md transition-all hover:-translate-y-1 hover:border-blue-400/40 hover:bg-white/15 hover:shadow-lg"
+                >
+                <Image 
+                    src={relacoesExternasIcon} 
+                    alt="Relações Externas" 
+                    class="h-12 w-12 object-contain transition-transform group-hover:scale-110" 
+                />
+                <span class="text-lg font-bold uppercase tracking-wider text-blue-200 group-hover:text-white">
+                    Relações Externas
+                </span>
+                </a>
+
+                <!-- 6. Financeiro (FIN) -->
+                <a 
+                href="/questionario" 
+                class="group flex aspect-square flex-col items-center justify-center gap-2.5 rounded-2xl border border-white/15 bg-white/5 p-4 text-center backdrop-blur-md transition-all hover:-translate-y-1 hover:border-blue-400/40 hover:bg-white/15 hover:shadow-lg"
+                >
+                <Image 
+                    src={financeiroIcon} 
+                    alt="Financeiro" 
+                    class="h-12 w-12 object-contain transition-transform group-hover:scale-110" 
+                />
+                <span class="text-lg font-bold uppercase tracking-wider text-blue-200 group-hover:text-white">
+                    Financeiro
+                </span>
+                </a>            </div>
         </div>
     </section>
 
-    <section class="bg-gray-50 border-y border-gray-200">
-        <div class="mx-auto max-w-screen-xl px-6 py-12">
-            <p class="text-center text-sm font-semibold text-gray-400 uppercase tracking-widest mb-8">Parceiros</p>
-            <div class="flex flex-wrap justify-center items-center gap-12 md:gap-24 opacity-80">
-                <Image class="h-16 w-auto opacity-100" src={fepLogo} alt="FEP Logo" />
-                <Image class="h-16 w-auto opacity-100" src={microsoftLogo} alt="Microsoft Logo" />
-                <Image class="h-16 w-auto opacity-100" src={apbiLogo} alt="APBI Logo" />
+    <!-- ===================== Secção de Parceiros ===================== -->
+    <section class="relative overflow-hidden bg-white py-16 md:py-24 border-t border-gray-100" id="parceiros">
+    <div class="mx-auto max-w-screen-xl px-4 md:px-6">
+        
+        <!-- Cabeçalho -->
+        <div class="mb-12 text-center">
+        <h2 class="mb-4 text-3xl font-bold text-[#1e1b4b] md:text-4xl">
+            Parceiros Estratégicos
+        </h2>
+        <p class="mx-auto max-w-2xl text-gray-600">
+            Entidades de referência que colaboram ativamente com a SmartData FEP.
+        </p>
+        </div>
+
+        <!-- Grelha de Cartões (4 Parceiros) -->
+        <div class="relative grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 h-auto md:h-[280px]">
+        
+        <!-- 1. FEP -->
+        <div class="group relative z-10 hover:z-30 transition-all duration-300 h-full">
+            <!-- Cartão em Repouso -->
+            <article class="relative flex h-full flex-col items-center justify-between rounded-2xl border border-gray-100 bg-white p-8 text-center shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] transition-opacity group-hover:opacity-0">
+            <div class="absolute top-0 left-0 h-1.5 w-full rounded-t-2xl bg-[#1e1b4b]"></div>
+            <div class="flex h-40 w-full items-center justify-center">
+                <Image 
+                src={fepLogo} 
+                alt="FEP" 
+                class="h-30 w-auto max-w-full object-contain" 
+                />
+            </div>
+            <h3 class="mt-4 text-xl font-bold text-indigo-950">
+                FEP
+            </h3>
+            </article>
+
+            <!-- Painel Expandido no Hover -->
+            <div class="invisible absolute inset-0 left-0 flex scale-95 flex-col rounded-2xl border-2 border-[#1e1b4b] bg-white p-8 opacity-0 shadow-2xl transition-all group-hover:visible group-hover:scale-100 group-hover:opacity-100 lg:w-[calc(400%+6rem)] md:p-10">
+            <div class="absolute -top-8 left-12 flex h-16 w-28 items-center justify-center rounded-t-2xl border-2 border-b-0 border-[#1e1b4b] bg-white p-2">
+                <Image src={fepLogo} alt="FEP Icon" class="h-15 w-auto object-contain" />
+            </div>
+            <div class="mt-4 flex flex-col md:flex-row gap-8 items-center justify-between">
+                <div class="md:w-3/5">
+                <h3 class="text-xl md:text-2xl font-bold text-[#1e1b4b] mb-2">Faculdade de Economia do Porto</h3>
+                <p class="text-sm md:text-base text-gray-700 leading-relaxed">
+                    Apoio institucional e académico fundamental na integração dos estudantes e ligação direta à Universidade do Porto.
+                </p>
+                </div>
+                <div class="md:w-2/5 border-l border-[#1e1b4b]/20 pl-6 py-2 text-xs md:text-sm font-semibold text-[#1e1b4b] space-y-1">
+                <p>• Apoio Institucional</p>
+                <p>• Ecossistema Académico U.Porto</p>
+                </div>
+            </div>
             </div>
         </div>
-	</section>
+
+        <!-- 2. Microsoft -->
+        <div class="group relative z-10 hover:z-30 transition-all duration-300 h-full">
+            <!-- Cartão em Repouso -->
+            <article class="relative flex h-full flex-col items-center justify-between rounded-2xl border border-gray-100 bg-white p-8 text-center shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] transition-opacity group-hover:opacity-0">
+            <div class="absolute top-0 left-0 h-1.5 w-full rounded-t-2xl bg-[#1e1b4b]"></div>
+            <div class="flex h-40 w-full items-center justify-center">
+                <Image 
+                src={microsoftLogo} 
+                alt="Microsoft" 
+                class="h-20 w-auto max-w-full object-contain" 
+                />
+            </div>
+            <h3 class="mt-4 text-xl font-bold text-indigo-950">
+                Microsoft
+            </h3>
+            </article>
+
+            <!-- Painel Expandido no Hover -->
+            <div class="invisible absolute inset-0 left-0 lg:-left-[calc(100%+2rem)] flex scale-95 flex-col rounded-2xl border-2 border-[#1e1b4b] bg-white p-8 opacity-0 shadow-2xl transition-all group-hover:visible group-hover:scale-100 group-hover:opacity-100 lg:w-[calc(400%+6rem)] md:p-10">
+            <div class="absolute -top-8 left-1/3 flex h-16 w-28 items-center justify-center rounded-t-2xl border-2 border-b-0 border-[#1e1b4b] bg-white p-2">
+                <Image src={microsoftLogo} alt="Microsoft Icon" class="h-12 w-auto object-contain" />
+            </div>
+            <div class="mt-4 flex flex-col md:flex-row gap-8 items-center justify-between">
+                <div class="md:w-3/5">
+                <h3 class="text-xl md:text-2xl font-bold text-[#1e1b4b] mb-2">Microsoft</h3>
+                <p class="text-sm md:text-base text-gray-700 leading-relaxed">
+                    Parceiro de capacitação tecnológica em soluções cloud, ecossistema Power BI e inteligência artificial aplicada.
+                </p>
+                </div>
+                <div class="md:w-2/5 border-l border-[#1e1b4b]/20 pl-6 py-2 text-xs md:text-sm font-semibold text-[#1e1b4b] space-y-1">
+                <p>• Tecnologia, Cloud & Azure</p>
+                <p>• Ferramentas de Análise & Power BI</p>
+                </div>
+            </div>
+            </div>
+        </div>
+
+        <!-- 3. EY -->
+        <div class="group relative z-10 hover:z-30 transition-all duration-300 h-full">
+            <!-- Cartão em Repouso -->
+            <article class="relative flex h-full flex-col items-center justify-between rounded-2xl border border-gray-100 bg-white p-8 text-center shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] transition-opacity group-hover:opacity-0">
+            <div class="absolute top-0 left-0 h-1.5 w-full rounded-t-2xl bg-[#1e1b4b]"></div>
+            <div class="flex h-40 w-full items-center justify-center">
+                <Image 
+                src={eyLogo} 
+                alt="EY" 
+                class="h-50 w-auto max-w-full object-contain" 
+                />
+            </div>
+            <h3 class="mt-4 text-xl font-bold text-indigo-950">
+                EY
+            </h3>
+            </article>
+
+            <!-- Painel Expandido no Hover -->
+            <div class="invisible absolute inset-0 left-0 lg:-left-[calc(200%+4rem)] flex scale-95 flex-col rounded-2xl border-2 border-[#1e1b4b] bg-white p-8 opacity-0 shadow-2xl transition-all group-hover:visible group-hover:scale-100 group-hover:opacity-100 lg:w-[calc(400%+6rem)] md:p-10">
+            <div class="absolute -top-8 left-2/3 flex h-16 w-28 items-center justify-center rounded-t-2xl border-2 border-b-0 border-[#1e1b4b] bg-white p-2">
+                <Image src={eyLogo} alt="EY Icon" class="h-30 w-auto object-contain" />
+            </div>
+            <div class="mt-4 flex flex-col md:flex-row gap-8 items-center justify-between">
+                <div class="md:w-3/5">
+                <h3 class="text-xl md:text-2xl font-bold text-[#1e1b4b] mb-2">EY (Ernst & Young)</h3>
+                <p class="text-sm md:text-base text-gray-700 leading-relaxed">
+                    Cooperação estratégica em consultoria, mentoria de projetos reais e partilha de boas práticas empresariais.
+                </p>
+                </div>
+                <div class="md:w-2/5 border-l border-[#1e1b4b]/20 pl-6 py-2 text-xs md:text-sm font-semibold text-[#1e1b4b] space-y-1">
+                <p>• Consultoria & Estratégia</p>
+                <p>• Mentoria & Casos de Estudo</p>
+                </div>
+            </div>
+            </div>
+        </div>
+
+        <!-- 4. APBI -->
+        <div class="group relative z-10 hover:z-30 transition-all duration-300 h-full">
+            <!-- Cartão em Repouso -->
+            <article class="relative flex h-full flex-col items-center justify-between rounded-2xl border border-gray-100 bg-white p-8 text-center shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] transition-opacity group-hover:opacity-0">
+            <div class="absolute top-0 left-0 h-1.5 w-full rounded-t-2xl bg-[#1e1b4b]"></div>
+            <div class="flex h-40 w-full items-center justify-center">
+                <Image 
+                src={apbiLogo} 
+                alt="APBI" 
+                class="h-30 w-auto max-w-full object-contain" 
+                />
+            </div>
+            <h3 class="mt-4 text-xl font-bold text-indigo-950">
+                APBI
+            </h3>
+            </article>
+
+            <!-- Painel Expandido no Hover -->
+            <div class="invisible absolute inset-0 right-0 left-auto flex scale-95 flex-col rounded-2xl border-2 border-[#1e1b4b] bg-white p-8 opacity-0 shadow-2xl transition-all group-hover:visible group-hover:scale-100 group-hover:opacity-100 lg:w-[calc(400%+6rem)] md:p-10">
+            <div class="absolute -top-8 right-12 flex h-16 w-28 items-center justify-center rounded-t-2xl border-2 border-b-0 border-[#1e1b4b] bg-white p-2">
+                <Image src={apbiLogo} alt="APBI Icon" class="h-15 w-auto object-contain" />
+            </div>
+            <div class="mt-4 flex flex-col md:flex-row gap-8 items-center justify-between">
+                <div class="md:w-3/5">
+                <h3 class="text-xl md:text-2xl font-bold text-[#1e1b4b] mb-2">APBI</h3>
+                <p class="text-sm md:text-base text-gray-700 leading-relaxed">
+                    Associação Portuguesa de Business Intelligence, promotora de certificações e eventos de networking profissional.
+                </p>
+                </div>
+                <div class="md:w-2/5 border-l border-[#1e1b4b]/20 pl-6 py-2 text-xs md:text-sm font-semibold text-[#1e1b4b] space-y-1">
+                <p>• Business Intelligence & Analytics</p>
+                <p>• Certificações Profissionais</p>
+                </div>
+            </div>
+            </div>
+        </div>
+
+        </div>
+
+    </div>
+    </section>
 
 </Layout>
 

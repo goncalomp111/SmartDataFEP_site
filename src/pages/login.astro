@@ -1,0 +1,198 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { supabase } from '../lib/supabase';
+---
+
+<Layout title="Acesso ao Portal — SmartData FEP">
+  <section class="relative min-h-screen flex items-center justify-center bg-[#1e1b4b] px-4 py-16 text-white overflow-hidden md:px-8 md:py-24">
+    
+    <!-- Background Decorativo -->
+    <div class="absolute inset-0 z-0">
+      <div class="absolute inset-0 bg-[url('/src/assets/home/images/smart_backgroud.png')] bg-cover bg-center opacity-100 mix-blend-overlay"></div>
+      <div class="absolute inset-0 bg-gradient-to-r from-[#1e1b4b] via-[#1e1b4b]/95 to-transparent"></div>
+    </div>
+
+    <!-- Content Container -->
+    <div class="relative z-10 mx-auto w-full max-w-5xl">
+      <div class="grid grid-cols-1 items-center gap-12 lg:grid-cols-12 lg:gap-16">
+        
+        <!-- Coluna Esquerda: Contexto & Mensagem -->
+        <div class="space-y-6 text-left lg:col-span-6">
+          <div class="inline-block border-l-4 border-blue-400 pl-4">
+            <span class="text-xs font-semibold uppercase tracking-widest text-blue-200 md:text-sm">Área Reservada</span>
+          </div>
+
+          <h1 class="text-3xl font-medium leading-tight md:text-5xl lg:text-5xl">
+            Bem-vindo ao ecossistema <span class="bg-gradient-to-r from-blue-200 to-indigo-400 bg-clip-text text-transparent">SmartData</span>.
+          </h1>
+
+          <p class="text-base font-light leading-relaxed text-gray-300 md:text-lg">
+            A plataforma centralizada da SmartData FEP. Acede ao teu espaço pessoal e acompanha todas as atualizações em tempo real.
+          </p>
+
+          <div class="rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur-sm space-y-1.5">
+            <p class="text-xs font-semibold text-blue-200 uppercase tracking-wider">Como iniciar sessão:</p>
+            <p class="text-xs text-gray-300 leading-relaxed">
+              • Insere o teu número de estudante (ex: <code class="text-blue-200">up202601234</code> ou <code class="text-blue-200">up202601234@up.pt</code>).<br/>
+              • Introduz a respetiva palavra-passe ou o código de acesso para entrar diretamente no portal correspondente.
+            </p>
+          </div>
+        </div>
+
+        <!-- Coluna Direita: Cartão de Autenticação -->
+        <div class="lg:col-span-6">
+          <div class="rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur-md shadow-2xl md:p-10">
+            
+            <div class="mb-6">
+              <h2 class="text-2xl font-bold text-white">Entrar no Portal</h2>
+              <p class="text-xs text-gray-400 mt-1">Insere as tuas credenciais para prosseguir</p>
+            </div>
+
+            <form id="loginForm" class="space-y-5">
+              
+              <!-- Input UP / E-mail -->
+              <div>
+                <label for="upInput" class="block text-xs font-semibold uppercase tracking-wider text-gray-300 mb-2">
+                  Número UP ou E-mail
+                </label>
+                <div class="relative">
+                  <span class="absolute inset-y-0 left-0 flex items-center pl-4 text-gray-400">
+                    <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
+                    </svg>
+                  </span>
+                  <input
+                    type="text"
+                    id="upInput"
+                    placeholder="up202601234 ou up202601234@up.pt"
+                    required
+                    class="w-full rounded-xl border border-white/15 bg-[#1e1b4b]/60 pl-11 pr-4 py-3.5 text-sm text-white placeholder-gray-500 transition-colors focus:border-blue-400 focus:bg-[#1e1b4b]/90 focus:outline-none focus:ring-1 focus:ring-blue-400"
+                  />
+                </div>
+              </div>
+
+              <!-- Input Código / Palavra-passe -->
+              <div>
+                <label for="passwordInput" class="block text-xs font-semibold uppercase tracking-wider text-gray-300 mb-2">
+                  Palavra-passe / Código de Acesso
+                </label>
+                <div class="relative">
+                  <span class="absolute inset-y-0 left-0 flex items-center pl-4 text-gray-400">
+                    <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+                    </svg>
+                  </span>
+                  <input
+                    type="password"
+                    id="passwordInput"
+                    placeholder="••••••••"
+                    required
+                    class="w-full rounded-xl border border-white/15 bg-[#1e1b4b]/60 pl-11 pr-12 py-3.5 text-sm text-white placeholder-gray-500 transition-colors focus:border-blue-400 focus:bg-[#1e1b4b]/90 focus:outline-none focus:ring-1 focus:ring-blue-400"
+                  />
+                  <button
+                    type="button"
+                    id="togglePassword"
+                    class="absolute inset-y-0 right-0 flex items-center pr-4 text-gray-400 transition-colors hover:text-white cursor-pointer"
+                    aria-label="Alternar visibilidade da palavra-passe"
+                  >
+                    <svg id="eyeIcon" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Mensagem de Erro Dinâmica -->
+              <div id="errorMsg" class="hidden rounded-xl border border-red-500/40 bg-red-500/10 p-4 text-xs font-medium text-red-200">
+              </div>
+
+              <!-- Botão Submit -->
+              <button
+                type="submit"
+                id="btnSubmit"
+                class="group relative mt-2 inline-flex w-full items-center justify-center gap-2 overflow-hidden rounded-full bg-white px-8 py-3.5 font-bold text-[#1e1b4b] shadow-lg transition-all hover:shadow-[0_0_20px_rgba(255,255,255,0.3)] cursor-pointer active:scale-95"
+              >
+                <span class="relative z-10" id="btnText">Entrar no Portal</span>
+                <svg class="relative z-10 h-4 w-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+                </svg>
+                <div class="absolute inset-0 bg-blue-100 opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
+              </button>
+
+            </form>
+
+            <div class="mt-6 border-t border-white/10 pt-4 text-center">
+              <p class="text-xs text-gray-400">
+                Dificuldades no acesso? 
+                <a href="/contactos" class="text-blue-300 font-semibold hover:underline">Contactar Suporte</a>
+              </p>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <script>
+    import { supabase } from '../lib/supabase';
+
+    const form = document.getElementById("loginForm") as HTMLFormElement;
+    const errorMsg = document.getElementById("errorMsg") as HTMLDivElement;
+    const btnSubmit = document.getElementById("btnSubmit") as HTMLButtonElement;
+    const btnText = document.getElementById("btnText") as HTMLSpanElement;
+    const togglePass = document.getElementById("togglePassword") as HTMLButtonElement;
+    const passField = document.getElementById("passwordInput") as HTMLInputElement;
+
+    togglePass?.addEventListener("click", () => {
+      passField.type = passField.type === "password" ? "text" : "password";
+    });
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      
+      errorMsg.classList.add("hidden");
+      btnText.innerText = "A autenticar...";
+      btnSubmit.disabled = true;
+      btnSubmit.classList.add("opacity-70", "cursor-not-allowed");
+
+      const upField = document.getElementById("upInput") as HTMLInputElement;
+      let rawInput = upField.value.trim().toLowerCase();
+      const password = passField.value.trim();
+
+      const email = rawInput.includes("@") ? rawInput : `${rawInput}@up.pt`;
+
+      const { data: authData, error: authError } = await supabase.auth.signInWithPassword({
+        email: email,
+        password: password
+      });
+
+      if (authError || !authData.user) {
+        errorMsg.innerText = "Credenciais inválidas. Confirma os teus dados de acesso.";
+        errorMsg.classList.remove("hidden");
+        
+        btnText.innerText = "Entrar no Portal";
+        btnSubmit.disabled = false;
+        btnSubmit.classList.remove("opacity-70", "cursor-not-allowed");
+        return;
+      }
+
+      // 1. Verificar se é Membro / Direção na tabela profiles
+      const { data: memberProfile } = await supabase
+        .from('profiles')
+        .select('id, role')
+        .eq('id', authData.user.id)
+        .maybeSingle();
+
+      if (memberProfile) {
+        window.location.href = "/dashboard";
+        return;
+      }
+
+      // 2. Se não estiver em profiles, é Candidato
+      window.location.href = "/portal";
+    });
+  </script>
+</Layout>
